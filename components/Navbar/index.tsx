@@ -1,11 +1,10 @@
-import { useViewportScroll } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Navbar.module.scss'
 
 const Navbar = () => {
     return (
-        <div className={styles.navbarbox}>
+        <div className={styles.navbar}>
             <Link href={'#'}>
                 <a>
                     <Image
