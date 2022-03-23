@@ -1,0 +1,17 @@
+.case {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
+
+	section {
+		height: 100vh;
+		scroll-snap-align: start;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		font-size: xx-large;
+	}
+}
