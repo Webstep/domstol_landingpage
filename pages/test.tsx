@@ -1,6 +1,6 @@
 import type { NextPage } from 'next'
 import styles from '../styles/Test.module.scss'
-import Citation from '../components/common/Citation/Citation'
+import Citation from '../components/common/Citation'
 import '../styles/Citation.module.scss'
 import PixelatedMan from '../components/common/PixelatedMan'
 
