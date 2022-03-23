@@ -18,7 +18,7 @@ const Citation: React.FC<CitationProps> = (props) => {
                     <div className={styles.line}/>
                 </div>
                 <div>
-                    <p className={styles.quote}>"{props.quote}"</p>
+                    <blockquote className={styles.quote}>"{props.quote}"</blockquote>
                 </div>
                 <div className={styles.border}>
                     <div className={styles.line}/>
