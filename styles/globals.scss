@@ -29,35 +29,5 @@ $color-background: linear-gradient(180deg, #1C1E4E 0%, #06022D 123.01%);
 $color-background-landing: linear-gradient(180deg, #E95050 0%, #C63434 132.12%);
 $color-subcolor: #F2B355;
 
-:export {
-    //Change this when Futura is available
-    fontFamilyHeading: $font-family-heading-test;
-    fontWeightHeading: $font-weight-heading;
-    fontSizeHeading1: $font-size-heading1;
-    fontSizeHeading2: $font-size-heading2;
-
-    fontFamilyQuote: $font-family-quote;
-    fontFamilyQuote: $font-weight-quote;
-    fontSizeQuote1: $font-size-quote1;
-    fontSizeQuote2: $font-size-quote2;
-
-    fontFamilyPixel: $font-family-pixel;
-    fontWeightPixelName: $font-weight-pixel-name;
-    fontWeightPixelTitle: $font-weight-pixel-title;
-    fontSizePixel: $font-size-pixel;
-
-    fontFamilyBody: $font-family-body;
-    fontWeightBodyLanding: $font-weight-body-landing;
-    fontWeightBodyArticle: $font-weight-body-article;
-    fontSizeBody: $font-size-body;
-
-    fontStyle: $font-style;
-    fontColor: $font-color;
-
-    colorBackground: $color-background;
-    colorBackgroundLanding: $color-background-landing;
-    colorSubcolor: $color-subcolor;
-}
-
 
 
