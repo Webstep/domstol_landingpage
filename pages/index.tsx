@@ -1,8 +1,8 @@
-import type { NextPage } from "next";
-import Domstol from "./Domstol";
+import type { NextPage } from 'next'
+import Domstol from './Domstol'
 
 const Home: NextPage = () => {
-	return <Domstol />;
-};
+    return <Domstol />
+}
 
-export default Home;
+export default Home
