@@ -1,0 +1,42 @@
+@use 'globals' as *;
+
+.navbarbox {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: top 0.3s;
+    height: 35px;
+    width: 90%;
+    text-align: center;
+    padding-top: 3.5%;
+    padding-inline-start: 3%;
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-title;
+    font-size: $font-size-pixel;
+    color: $font-color-quote;
+}
+
+.middleSection {
+    width: 416px;
+    height: 35px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    a:link,
+    a:visited,
+    a:active {
+        text-decoration: none;
+        color: $font-color-quote;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    color: $font-color-quote;
+}
+
+.rectangle {
+    width: 0;
+    height: 32px;
+    border: 2.5px solid white;
+}
