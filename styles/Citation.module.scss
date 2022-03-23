@@ -1,0 +1,38 @@
+@use 'globals' as *;
+
+.container {
+    width: 80%;
+    color: $font-color-quote;
+}
+.border {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: $font-family-body;
+    font-weight: $font-weight-body-article;
+    font-size: 0.875rem;
+
+    .title {
+        text-transform: uppercase;
+        min-width: fit-content;
+        margin-right: 10px;
+    }
+
+    .name {
+        min-width: fit-content;
+        margin-left: 10px;
+    }
+
+    .line {
+        width: 100%;
+        height: 1.16827px;
+        background-color: $font-color-quote;
+    }
+
+}
+
+.quote {
+    font-family: $font-family-quote;
+    font-weight: $font-weight-quote;
+    font-size: $font-size-quote-small;
+}
