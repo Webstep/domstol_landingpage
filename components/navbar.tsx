@@ -15,7 +15,7 @@ const Navbar = () => {
           />
         </a>
       </Link>
-      <div className={styles.navbar2}>
+      <div className={styles.middleSection}>
         <Link href={"#"}>Samarbeid</Link>
         <div className={styles.rectangle}></div>
         <Link href={"#"}>Ansatte</Link>
