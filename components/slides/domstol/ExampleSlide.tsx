@@ -4,7 +4,7 @@ const ExampleSlide = () => {
 	return (
 		<>
 			{[...new Array(5)].map((_, index) => (
-				<section>{index + 1}</section>
+				<section key={index}>{index + 1}</section>
 			))}
 		</>
 	);
