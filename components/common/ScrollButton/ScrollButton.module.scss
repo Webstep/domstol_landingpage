@@ -1,0 +1,29 @@
+$smallHeight: 33.25px;
+$smallWidth: 19px;
+
+@mixin size($imgHeight, $imgWidth) {
+    img {
+        height: $imgHeight;
+        width: $imgWidth;
+    }
+}
+
+.arrowButton {
+    border: none;
+    background: transparent;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &.small {
+        @include size($imgHeight: $smallHeight, $imgWidth: $smallWidth);
+    }
+
+    &.large {
+        @include size(
+            $imgHeight: calc(2 * $smallHeight),
+            $imgWidth: calc(2 * $smallWidth)
+        );
+    }
+}
