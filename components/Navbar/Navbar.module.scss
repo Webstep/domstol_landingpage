@@ -1,20 +1,18 @@
-@use 'globals' as *;
+@use '../../styles/variables.scss' as *;
 
 .navbar {
     position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    transition: top 0.3s;
     height: 35px;
-    width: 90%;
+    width: 90vw;
+    padding: 0 5vw;
+    padding-top: 5vh;
     text-align: center;
-    padding-top: 3.5%;
-    padding-inline-start: 3%;
     font-family: $font-family-pixel;
     font-weight: $font-weight-pixel-title;
     font-size: $font-size-pixel;
-    color: $font-color-quote;
 }
 
 .middleSection {
@@ -23,16 +21,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+
     a:link,
     a:visited,
     a:active {
         text-decoration: none;
-        color: $font-color-quote;
+        color: $font-color;
     }
     a:hover {
         text-decoration: underline;
     }
-    color: $font-color-quote;
 }
 
 .rectangle {
