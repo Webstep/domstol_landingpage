@@ -42,9 +42,9 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({
             whileHover={{
                 scale: 1.2,
                 type: 'tween',
-                transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0 }}
         >
             <img src="/pixelated_arrow.svg" alt="pil" />
         </motion.button>
