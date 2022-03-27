@@ -4,7 +4,7 @@ import styles from './Navbar.module.scss'
 
 const Navbar = () => {
     return (
-        <div className={styles.navbar}>
+        <nav className={styles.navbar}>
             <Link href={'#'}>
                 <a>
                     <Image
@@ -24,7 +24,7 @@ const Navbar = () => {
                 <div>Meny</div>
                 <div className={styles.hamburgerMenu}></div>
             </div>
-        </div>
+        </nav>
     )
 }
 
