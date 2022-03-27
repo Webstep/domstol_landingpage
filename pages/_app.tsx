@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import scrollStyles from '../styles/Scroll.module.scss'
 import ScrollMenu from '../components/common/ScrollMenu'
+import Navbar from '../components/Navbar'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -14,6 +15,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             </Head>
             <article className={scrollStyles.case}>
                 <ScrollMenu />
+                <Navbar />
                 <Component {...pageProps} />
             </article>
         </>
