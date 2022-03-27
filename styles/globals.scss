@@ -1,39 +1,10 @@
 //<link rel="stylesheet" href="https://use.typekit.net/zdg4usz.css">
-.body {
+@use 'variables.scss' as *;
+
+body {
     margin: 0;
     padding: 0;
+    color: $font-color;
+    width: 100vw;
+    height: 100vh;
 }
-
-//Overskrift landingpage og artikkel
-$font-family-heading: futura-pt-bold, sans-serif;
-$font-weight-heading: 700;
-$font-size-heading-large: 4rem;
-$font-size-heading-small: 3rem;
-//For testing
-$font-family-heading-test: Helvetica, sans-serif;
-
-//Sitat stor og liten
-$font-family-quote: noto-sans, sans-serif;
-$font-weight-quote: 800;
-$font-size-quote-large: 2.43rem;
-$font-size-quote-small: 1.875rem;
-
-//Webstepper navn og tittel
-$font-family-pixel: lores-12, sans-serif;
-$font-weight-pixel-name: 700;
-$font-weight-pixel-title: 500;
-$font-size-pixel: 1.125rem;
-
-//Brødtekst landingpage og artikkel
-$font-family-body: Avenir, sans-serif;
-$font-weight-body-landing: 500;
-$font-weight-body-article: 400;
-$font-size-body: 1rem;
-
-$font-style: normal;
-$font-color: #000000;
-$font-color-quote: #ffffff;
-
-$color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
-$color-background-landing: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
-$color-subcolor: #f2b355;
