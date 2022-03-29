@@ -39,12 +39,10 @@
             justify-content: space-between;
             align-items: center;
 
-            div {
+            .progressBarContainer {
                 $spacing: 15px;
                 margin: 0 $spacing;
                 width: calc(100% - 2 * $spacing);
-                height: 50px;
-
                 height: 2px;
                 background-color: rgba(60, 60, 60, 0.6);
                 display: flex;
@@ -63,8 +61,4 @@
             }
         }
     }
-}
-
-.controlsIcon {
-    cursor: pointer;
 }

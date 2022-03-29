@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
+import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
 
 interface VideoProps {
@@ -10,7 +11,7 @@ const Video: React.FC<VideoProps> = ({ src }) => {
     const [isPlaying, setIsPlaying] = useState<boolean>(false)
     const [duration, setDuration] = useState<number>(0)
     const [currentTime, setCurrentTime] = useState<number>(0)
-    const [progress, setProgress] = useState(0)
+    const [progress, setProgress] = useState<number>(0)
 
     const play = () => {
         setIsPlaying(true)
@@ -23,12 +24,13 @@ const Video: React.FC<VideoProps> = ({ src }) => {
     }
 
     useEffect(() => {
-        setDuration(videoRef.current?.duration ?? 0)
+        const videoDuration = videoRef.current?.duration ?? 1
+        setDuration(videoDuration)
 
         const incrementTime = () => {
             const time = videoRef.current?.currentTime ?? 0
             setCurrentTime(time)
-            setProgress((time / duration) * 100)
+            setProgress((time / videoDuration) * 100)
         }
 
         const intervall = setInterval(incrementTime, 1000)
@@ -40,8 +42,7 @@ const Video: React.FC<VideoProps> = ({ src }) => {
 
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
 
-    const statusbarProgress = progress + '%'
-
+    console.log({ duration })
     return (
         <div className={styles.container}>
             <video src={src} ref={videoRef} />
@@ -57,12 +58,7 @@ const Video: React.FC<VideoProps> = ({ src }) => {
                 </button>
                 <div className={styles.timeControl}>
                     <span>{formatTime(currentTime)}</span>
-                    <div>
-                        <div
-                            style={{ width: statusbarProgress }}
-                            className={styles.progressBar}
-                        ></div>
-                    </div>
+                    <ProgressBar progress={progress} />
                     <span>{formattedDuration}</span>
                 </div>
             </div>
