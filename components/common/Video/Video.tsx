@@ -42,7 +42,6 @@ const Video: React.FC<VideoProps> = ({ src }) => {
 
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
 
-    console.log({ duration })
     return (
         <div className={styles.container}>
             <video src={src} ref={videoRef} />
