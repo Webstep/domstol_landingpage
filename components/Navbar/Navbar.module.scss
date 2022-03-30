@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 35px;
+    height: 2.1875rem;
     width: 90vw;
     padding: 0 5vw;
     padding-top: 5vh;
@@ -16,8 +16,8 @@
 }
 
 .middleSection {
-    width: 416px;
-    height: 35px;
+    width: 26rem;
+    height: 2.1875rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -35,6 +35,6 @@
 
 .rectangle {
     width: 0;
-    height: 32px;
-    border: 2.5px solid white;
+    height: 2rem;
+    border: 0.16rem solid white;
 }
