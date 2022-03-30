@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import React, { useMemo } from 'react'
-import styles from './ScrollButton.module.scss'
+import React from 'react'
+import styles from './ArrowButton.module.scss'
 
 export enum Direction {
     Up,
@@ -14,13 +14,13 @@ export enum Size {
     Small,
 }
 
-interface ScrollButtonProps {
+interface ArrowButtonProps {
     direction: Direction
     onClick: () => void
     size?: Size
 }
 
-const ScrollButton: React.FC<ScrollButtonProps> = ({
+const ArrowButton: React.FC<ArrowButtonProps> = ({
     direction,
     onClick,
     size = Size.Small,
@@ -42,16 +42,16 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({
             whileHover={{
                 scale: 1.2,
                 type: 'tween',
-                transition: { duration: 0.2 },
             }}
             whileTap={{ scale: 0.9 }}
+            transition={{ duration: 0 }}
         >
             <img src="/pixelated_arrow.svg" alt="pil" />
         </motion.button>
     )
 }
 
-export default ScrollButton
+export default ArrowButton
 
 const getVariant = (direction: Direction) => {
     switch (direction) {

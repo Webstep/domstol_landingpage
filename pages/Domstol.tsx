@@ -1,15 +1,12 @@
-import React from "react";
-import ExampleSlide from "../components/slides/domstol/ExampleSlide";
-import scrollStyles from "../styles/Scroll.module.scss";
+import React from 'react'
+import ExampleSlide from '../components/slides/domstol/ExampleSlide'
 
 const Domstol = () => {
-	return (
-		<>
-			<article className={scrollStyles.case}>
-				<ExampleSlide />
-			</article>
-		</>
-	);
-};
+    return (
+        <>
+            <ExampleSlide />
+        </>
+    )
+}
 
-export default Domstol;
+export default Domstol

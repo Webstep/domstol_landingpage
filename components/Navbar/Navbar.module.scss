@@ -1,0 +1,40 @@
+@use '../../styles/variables.scss' as *;
+
+.navbar {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.1875rem;
+    width: 90vw;
+    padding: 0 5vw;
+    padding-top: 5vh;
+    text-align: center;
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-title;
+    font-size: $font-size-pixel;
+}
+
+.middleSection {
+    width: 26rem;
+    height: 2.1875rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a:link,
+    a:visited,
+    a:active {
+        text-decoration: none;
+        color: $font-color;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.rectangle {
+    width: 0;
+    height: 2rem;
+    border: 0.16rem solid white;
+}

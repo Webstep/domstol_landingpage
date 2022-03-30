@@ -1,4 +1,4 @@
-@use 'globals' as *;
+@use 'variables' as *;
 
 .container {
     width: 80%;
@@ -28,7 +28,6 @@
         height: 1.16827px;
         background-color: $font-color-quote;
     }
-
 }
 
 .quote {
