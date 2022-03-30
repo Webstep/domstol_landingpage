@@ -4,6 +4,15 @@ body {
     padding: 0;
 }
 
+button {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 //Overskrift landingpage og artikkel
 $font-family-heading: futura-pt-bold, sans-serif;
 $font-weight-heading: 700;
