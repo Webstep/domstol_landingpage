@@ -1,0 +1,14 @@
+@use 'styles/variables' as *;
+
+.container {
+    height: 200vh;
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+
+    * {
+        margin: auto;
+    }
+}
