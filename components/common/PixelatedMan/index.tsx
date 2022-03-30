@@ -23,7 +23,7 @@ const PixelatedMan = () => {
                 opacity: {duration: 18},
                 scale: {duration: 1}
             }}
-            src="/pixelatedManWhite.svg"
+            src="/pixelated_man_white.svg"
             alt="Figure" >
         </motion.img>
         </>
