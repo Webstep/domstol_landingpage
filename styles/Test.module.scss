@@ -1,0 +1,9 @@
+@use "globals" as *;
+
+.background {
+    height: 1000px;
+    width: 1000px;
+    background: $color-background;
+    font-family: $font-family-heading-test;
+    color: $color-subcolor;
+}

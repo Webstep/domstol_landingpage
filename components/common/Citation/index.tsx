@@ -1,6 +1,6 @@
 import { filterProps } from 'framer-motion';
 import React from 'react';
-import styles from '../../../styles/Citation.module.scss'
+import styles from '/Citation.module.scss';
 
 
 interface CitationProps {
