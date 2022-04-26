@@ -13,33 +13,37 @@ const Employee = () => {
                     transition={{ duration: 10 }}
                 >
                     <div className={styles.container}>
-                        <h1>MØT VÅRE WEBSTEPPERE</h1>
+                        <motion.div animate={{ position: 'sticky' }}>
+                            <h1>MØT VÅRE WEBSTEPPERE</h1>
+                        </motion.div>
                         <div className={styles.section}>
-                            <div className={styles.images}>
-                                <Image
-                                    src={'/assets/employeeBirgitte.svg'}
-                                    layout="fixed"
-                                    width="200vw"
-                                    height="300vw"
-                                    alt={'employeeBirgitte'}
-                                />
+                            <div>
+                                <div className={styles.images}>
+                                    <Image
+                                        src={'/assets/employeeBirgitte.svg'}
+                                        layout="fixed"
+                                        width="250vw"
+                                        height="350vw"
+                                        alt={'employeeBirgitte'}
+                                    />
+                                </div>
+                                <div className={styles.moreInfo}>
+                                    Les mer om Birgitte
+                                    <Link href={'#'}>her</Link>
+                                </div>
                             </div>
                             <div className={styles.textSection}>
                                 <p className={styles.quote}>
-                                    “Noe av det beste med å være en del av dette
-                                    prosjektet, er alt det nye jeg har lært,
-                                    innsikten i hvordan rettsvesenet i Norge
-                                    fungerer”
+                                    - Noe av det beste med å være en del av
+                                    dette prosjektet, er alt det nye jeg har
+                                    lært, innsikten i hvordan rettsvesenet i
+                                    Norge fungerer.
                                 </p>
                                 <p className={styles.name}>Birgitte Bright</p>
                                 <p className={styles.title}>
                                     Systemutvikler, Webstep
                                 </p>
                             </div>
-                        </div>
-                        <div className={styles.moreInfo}>
-                            Les mer om Birgitte
-                            <Link href={'#'}>her</Link>
                         </div>
                     </div>
                 </motion.div>

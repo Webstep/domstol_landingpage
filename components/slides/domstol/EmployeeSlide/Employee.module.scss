@@ -2,63 +2,67 @@
 
 .container {
     margin: auto;
-    max-width: 40vw;
+    width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 30vw;
+    align-items: flex-start;
+}
 
-    .h1 {
-        font-family: $font-family-heading;
-        font-weight: $font-weight-heading;
-        font-size: $font-size-heading-small;
-        margin: 1rem;
-    }
-    .section {
-        display: flex;
-        width: 60rem;
-        align-items: center;
-        gap: 2rem;
-    }
+.h1 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    font-size: $font-size-heading-small;
+    margin: 1rem;
+    position: fixed;
+    top: 4rem;
+}
+.section {
+    display: flex;
+    width: 60rem;
+    align-items: center;
+    gap: 2rem;
+}
 
-    .textSection {
-        display: flex;
-        flex-direction: column;
-        max-width: 20vw;
-        padding-left: 0.5vw;
-    }
-    .quote {
-        font-family: $font-family-quote;
-        font-weight: $font-weight-quote-xsmall;
-        font-size: $font-size-quote-xsmall;
-    }
+.textSection {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    padding-left: 0.5vw;
+    text-align: left;
+}
+.quote {
+    font-family: $font-family-quote;
+    font-weight: $font-weight-quote-xsmall;
+    font-size: $font-size-quote-xsmall;
+}
 
-    .name {
-        font-family: $font-family-pixel;
-        font-weight: $font-weight-pixel-name;
-        font-size: $font-size-pixel;
-    }
+.name {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-name;
+    font-size: $font-size-pixel;
+}
 
-    .title {
-        font-family: $font-family-pixel;
-        font-weight: $font-weight-pixel-title;
-        font-size: $font-size-pixel;
-    }
+.title {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-title;
+    font-size: $font-size-pixel;
+    margin-top: -0.8vw;
+}
 
-    .moreInfo {
-        font-family: $font-family-pixel;
-        font-weight: $font-weight-pixel-title;
-        font-size: $font-size-pixel;
-        padding-left: 1rem;
-        a:link,
-        a:visited,
-        a:active {
-            padding: 0 0.3125rem;
-            text-decoration: none;
-            font-weight: bold;
-            color: $font-color;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
+.moreInfo {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-title;
+    font-size: $font-size-pixel;
+    padding-inline: 2vw;
+    a:link,
+    a:visited,
+    a:active {
+        padding: 0 0.3125rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: $font-color;
+    }
+    a:hover {
+        text-decoration: underline;
     }
 }
