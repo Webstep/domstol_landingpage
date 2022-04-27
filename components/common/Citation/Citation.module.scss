@@ -1,8 +1,8 @@
-@use 'globals' as *;
+@use 'styles/variables.scss' as *;
 
 .container {
     width: 80%;
-    color: $font-color-quote;
+    color: $font-color;
 }
 .border {
     display: flex;
@@ -26,13 +26,15 @@
     .line {
         width: 100%;
         height: 1.16827px;
-        background-color: $font-color-quote;
+        background-color: $font-color;
     }
-
 }
 
 .quote {
     font-family: $font-family-quote;
     font-weight: $font-weight-quote;
     font-size: $font-size-quote-small;
+    line-height: 1.5;
+    margin-top: 0;
+    margin-bottom: 0;
 }

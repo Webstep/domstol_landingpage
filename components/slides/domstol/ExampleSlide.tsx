@@ -1,25 +1,25 @@
 import React from 'react'
-import ScrollButton, { Direction, Size } from '../../common/ScrollButton'
+import ArrowButton, { Direction, Size } from '../../common/ArrowButton'
 
 const ExampleSlide = () => {
     return (
         <>
             <section>
-                <ScrollButton
+                <ArrowButton
                     direction={Direction.Left}
                     onClick={() => console.log('test')}
                     size={Size.Large}
                 />
-                <ScrollButton
+                <ArrowButton
                     direction={Direction.Right}
                     onClick={() => console.log('test')}
                     size={Size.Large}
                 />
-                <ScrollButton
+                <ArrowButton
                     direction={Direction.Down}
                     onClick={() => console.log('test')}
                 />
-                <ScrollButton
+                <ArrowButton
                     direction={Direction.Up}
                     onClick={() => console.log('test')}
                 />
@@ -27,7 +27,9 @@ const ExampleSlide = () => {
 
             {/* provides 5 sections to "test" scrolling 			 */}
             {[...new Array(5)].map((_, index) => (
-                <section key={index}>{index + 1}</section>
+                <section key={index} id={'test' + index}>
+                    {index + 1}
+                </section>
             ))}
         </>
     )

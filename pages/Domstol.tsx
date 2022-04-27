@@ -1,15 +1,24 @@
 import React from "react";
 import ExampleSlide from "../components/slides/domstol/ExampleSlide";
+import NumberSlide from "../components/slides/domstol/NumberSlide";
+import VideoSlide from "../components/slides/domstol/VideoSlide";
+import VideoSlideDA from "../components/slides/domstol/VideoSlideDA";
+import VideoSlideTech from "../components/slides/domstol/VideoSlideTech";
+import VideoSlideWebstep from "../components/slides/domstol/VideoSlideWebstep";
 import scrollStyles from "../styles/Scroll.module.scss";
 
 const Domstol = () => {
 	return (
 		<>
 			<article className={scrollStyles.case}>
-				<ExampleSlide />
+				<NumberSlide></NumberSlide>
+				<ExampleSlide/>
+				<VideoSlideDA/>
+				<VideoSlideWebstep/>
+				<VideoSlideTech/>
 			</article>
 		</>
 	);
 };
 
-export default Domstol;
+export default Domstol
