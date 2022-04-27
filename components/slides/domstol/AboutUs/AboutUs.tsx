@@ -15,7 +15,7 @@ const AboutUs = () => {
                     <div className={styles.images}>
                         <motion.div
                             className={styles.weaponShield}
-                            initial={{ x: -450 }}
+                            initial={{ x: -550 }}
                             whileInView={{ x: 0 }}
                             transition={{ duration: 3 }}
                         >
@@ -29,7 +29,7 @@ const AboutUs = () => {
                         </motion.div>
                         <motion.div
                             className={styles.bookStack}
-                            initial={{ x: -450 }}
+                            initial={{ x: -650, opacity: 1 }}
                             whileInView={{ x: 0 }}
                             transition={{ duration: 2 }}
                         >
