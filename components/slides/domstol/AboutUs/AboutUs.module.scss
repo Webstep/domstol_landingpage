@@ -1,0 +1,48 @@
+@use 'styles/variables.scss' as *;
+
+.container {
+    position: relative;
+    display: flex;
+    width: 80vw;
+    right: 15vw;
+    left: 5vw;
+
+    .textSection {
+        display: flex;
+        flex-direction: column;
+        max-width: 10vw;
+        padding-left: 0.5vw;
+    }
+    .title {
+        font-family: $font-family-heading;
+        font-weight: $font-weight-heading;
+        font-size: $font-size-heading-small;
+        margin: 1rem;
+    }
+
+    .section {
+        font-family: $font-family-body;
+        font-weight: $font-weight-body-article;
+        font-size: $font-size-body;
+        width: 17.5rem;
+        padding-left: 2vw;
+    }
+
+    .images {
+        display: grid;
+        grid-template-rows: 6.25rem 1fr 6.25rem;
+        grid-template-columns: 9.375rem 1fr 9.375rem;
+
+        .weaponShield {
+            grid-row-start: 2;
+            grid-column-start: 1;
+            grid-row-end: 6;
+            grid-column-end: 3;
+        }
+        .bookStack {
+            grid-area: 1 / 3 / 5 /5;
+            grid-row-start: 1;
+            grid-column-start: 2;
+        }
+    }
+}

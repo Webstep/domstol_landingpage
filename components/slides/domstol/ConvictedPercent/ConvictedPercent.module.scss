@@ -1,0 +1,29 @@
+@use 'styles/variables' as *;
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-content: center;
+    padding-top: 12vh;
+
+    * {
+        margin: auto;
+        text-align: center;
+    }
+
+    .popup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        h2 {
+            font-size: 1.875rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1rem;
+        }
+    }
+}

@@ -1,24 +1,34 @@
+import React, { useRef } from 'react'
 import styles from './Employee.module.scss'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import {
+    AnimatePresence,
+    motion,
+    useElementScroll,
+    useViewportScroll,
+} from 'framer-motion'
 import Link from 'next/link'
 
 const Employee = () => {
+    //const { scrollYProgress } = useViewportScroll()
     return (
-        <section>
+        <section className={styles.section}>
             <AnimatePresence>
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 30 }}
-                    transition={{ duration: 10 }}
+                //style={{ scaleX: scrollYProgress }}
                 >
                     <div className={styles.container}>
                         <motion.div animate={{ position: 'sticky' }}>
                             <h1>MØT VÅRE WEBSTEPPERE</h1>
                         </motion.div>
-                        <div className={styles.section}>
+                        <div className={styles.content}>
                             <div>
-                                <div className={styles.images}>
+                                <motion.div
+                                    className={styles.images}
+                                    initial={{ y: 200 }}
+                                    whileInView={{ y: 0 }}
+                                    transition={{ duration: 1 }}
+                                >
                                     <Image
                                         src={'/assets/employeeBirgitte.svg'}
                                         layout="fixed"
@@ -26,13 +36,23 @@ const Employee = () => {
                                         height="350vw"
                                         alt={'employeeBirgitte'}
                                     />
-                                </div>
-                                <div className={styles.moreInfo}>
+                                </motion.div>
+                                <motion.div
+                                    className={styles.moreInfo}
+                                    initial={{ y: 125 }}
+                                    whileInView={{ y: 0 }}
+                                    transition={{ duration: 2 }}
+                                >
                                     Les mer om Birgitte
                                     <Link href={'#'}>her</Link>
-                                </div>
+                                </motion.div>
                             </div>
-                            <div className={styles.textSection}>
+                            <motion.div
+                                className={styles.textSection}
+                                initial={{ y: 200 }}
+                                whileInView={{ y: 0 }}
+                                transition={{ duration: 1 }}
+                            >
                                 <p className={styles.quote}>
                                     - Noe av det beste med å være en del av
                                     dette prosjektet, er alt det nye jeg har
@@ -43,7 +63,7 @@ const Employee = () => {
                                 <p className={styles.title}>
                                     Systemutvikler, Webstep
                                 </p>
-                            </div>
+                            </motion.div>
                         </div>
                     </div>
                 </motion.div>

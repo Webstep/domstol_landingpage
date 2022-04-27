@@ -1,11 +1,15 @@
 import React from 'react'
-import Employee from '../components/slides/domstol/EmployeeSlide'
+import ConvictedPercent from '../components/slides/domstol/ConvictedPercent'
 import ExampleSlide from '../components/slides/domstol/ExampleSlide'
+import AboutUs from '../components/slides/domstol/AboutUs'
+import EmployeeSlide from '../components/slides/domstol/EmployeeSlide'
 
 const Domstol = () => {
     return (
         <>
-            <Employee />
+            <ConvictedPercent />
+            <EmployeeSlide />
+            <AboutUs />
             <ExampleSlide />
         </>
     )

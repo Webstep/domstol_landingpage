@@ -1,11 +1,16 @@
 @use 'styles/variables.scss' as *;
 
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
 .container {
-    margin: auto;
-    width: 80%;
+    width: 70vw;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .h1 {
@@ -13,13 +18,12 @@
     font-weight: $font-weight-heading;
     font-size: $font-size-heading-small;
     margin: 1rem;
-    position: fixed;
     top: 4rem;
 }
-.section {
+.content {
     display: flex;
     width: 60rem;
-    align-items: center;
+    justify-content: center;
     gap: 2rem;
 }
 
@@ -27,8 +31,8 @@
     display: flex;
     flex-direction: column;
     max-width: 20vw;
-    padding-left: 0.5vw;
     text-align: left;
+    padding-top: 4.5rem;
 }
 .quote {
     font-family: $font-family-quote;
