@@ -7,11 +7,12 @@
     section {
         height: 100vh;
         scroll-snap-align: start;
+        margin-bottom: 1px;
 
-        // display: flex;
-        // justify-content: center;
-        // align-items: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: white;
-        // font-size: xx-large;
+        font-size: xx-large;
     }
 }
