@@ -10,13 +10,10 @@ import scrollStyles from "../styles/Scroll.module.scss";
 const Domstol = () => {
 	return (
 		<>
-			<article className={scrollStyles.case}>
-				<ExampleSlide/>
-				<NumberSlide></NumberSlide>
-				<VideoSlideDA/>
-				<VideoSlideWebstep/>
-				<VideoSlideTech/>
-			</article>
+			<NumberSlide></NumberSlide>
+			<VideoSlideDA />
+			<VideoSlideWebstep />
+			<VideoSlideTech />
 		</>
 	);
 };

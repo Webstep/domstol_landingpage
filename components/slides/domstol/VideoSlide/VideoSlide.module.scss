@@ -26,6 +26,16 @@
         font-size: $font-size-body;
         font-weight: $font-weight-body-article;
 
+        i {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         .bold{
             font-weight: $font-weight-body-landing;
             margin-bottom: 5px;
