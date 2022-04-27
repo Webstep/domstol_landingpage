@@ -848,6 +848,7 @@ __metadata:
     prettier: ^2.6.0
     react: 17.0.2
     react-dom: 17.0.2
+    react-hook-inview: ^4.4.1
     react-intersection-observer: ^8.33.1
     sass: ^1.49.9
     typescript: 4.6.2
@@ -2548,6 +2549,16 @@ __metadata:
   peerDependencies:
     react: 17.0.2
   checksum: 1c1eaa3bca7c7228d24b70932e3d7c99e70d1d04e13bb0843bbf321582bc25d7961d6b8a6978a58a598af2af496d1cedcfb1bf65f6b0960a0a8161cb8dab743c
+  languageName: node
+  linkType: hard
+
+"react-hook-inview@npm:^4.4.1":
+  version: 4.4.1
+  resolution: "react-hook-inview@npm:4.4.1"
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0
+    react-dom: ^16.8.0 || ^17.0.0
+  checksum: 30ad64cbe982e0abc208db9006e6e818cd145e7bb8b3fe87e5f7f76ed2d2d112182de3191ceef7cd79195aa4597bab09472319054fa5dc2681de51295f8961ef
   languageName: node
   linkType: hard
 

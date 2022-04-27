@@ -11,8 +11,8 @@ const Domstol = () => {
 	return (
 		<>
 			<article className={scrollStyles.case}>
-				<NumberSlide></NumberSlide>
 				<ExampleSlide/>
+				<NumberSlide></NumberSlide>
 				<VideoSlideDA/>
 				<VideoSlideWebstep/>
 				<VideoSlideTech/>

@@ -9,6 +9,7 @@
     align-items: flex-end;
     justify-content: center;
     margin-bottom: 40vh;
+    overflow-x: hidden;
 }
 
 .textContainer{
@@ -18,6 +19,7 @@
 
 .number{
     margin-left: 4vw;
+    $screenwidth: 100vw;
 }
 
 .text {
