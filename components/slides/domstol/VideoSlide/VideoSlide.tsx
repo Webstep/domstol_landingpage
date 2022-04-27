@@ -1,8 +1,5 @@
-import { filterProps, motion, useViewportScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { useInView } from 'react-intersection-observer';
-import internal from 'stream';
-import Citation from '../../../common/Citation';
 import Video from '../../../common/Video';
 import styles from './VideoSlide.module.scss';
 

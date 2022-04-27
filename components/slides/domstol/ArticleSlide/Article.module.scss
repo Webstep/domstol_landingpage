@@ -1,0 +1,38 @@
+@use 'styles/variables.scss'as *;
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 1fr;
+
+    .image {
+        grid-column: 2;
+        right: 0;
+        display: flex;
+        justify-self: flex-end;
+        align-self: center;
+        margin-right: 5vw;
+        margin-top: 10px;
+    }
+
+    .text {
+        grid-column: 3;
+        font-family: $font-family-body;
+
+        .heading {
+            font-weight: $font-weight-body-heading;
+            font-size: $font-size-heading-small;
+            margin-bottom: 0;
+            margin-top: 10px;
+        }
+
+        .description {
+            display: flex;
+            font-weight: $font-weight-body-article;
+            font-size: $font-size-body;
+            p{
+                margin-right: 3vw;
+                width: 20vw;
+            }
+        }
+    }
+}
