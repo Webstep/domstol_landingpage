@@ -18,7 +18,7 @@ const Article: React.FC<ArticleProps> = ({ }) => {
     return (
         <>
             <section ref={ref}>
-                {inView? 
+                {inView && 
                 <div className={styles.container}>
                     <motion.div
                         className={styles.image}
@@ -60,8 +60,7 @@ const Article: React.FC<ArticleProps> = ({ }) => {
                         </motion.div>
                     </div>
 
-                </div>
-                    : <div className={styles.container}/>}
+                </div>}
 
             </section>
 
