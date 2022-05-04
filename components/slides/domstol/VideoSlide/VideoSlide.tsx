@@ -16,7 +16,7 @@ const VideoSlide: React.FC<VideoSlideProps> = (props) => {
     useEffect(() => {
         setHeight(window.innerHeight-100)
         setTextHeight((window.innerHeight / 2) - window.innerHeight*props.center);
-    })
+    }, [])
 
 
     return (

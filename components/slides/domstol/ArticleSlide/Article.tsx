@@ -13,7 +13,7 @@ const Article: React.FC<ArticleProps> = ({ }) => {
 
     useEffect(() => {
         setHeight(window.innerHeight);
-    });
+    }, [inView]);
 
     return (
         <>
