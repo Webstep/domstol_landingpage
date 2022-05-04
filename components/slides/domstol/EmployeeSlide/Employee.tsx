@@ -27,6 +27,17 @@ const Employee = () => {
             window.removeEventListener('scroll', handleScroll, false)
         }
     }, [lastYPos])
+
+    useEffect(() => {
+        const test = () => {
+            setShowNewEmployee(true)
+            console.log(showNewEmployee)
+        }
+
+        const timeout = setTimeout(test, 3000)
+
+        return clearTimeout(timeout)
+    }, [])
     return (
         <section className={styles.section}>
             <AnimatePresence>
@@ -43,6 +54,9 @@ const Employee = () => {
                     </div>
                 </motion.div>
             </AnimatePresence>
+            <button onClick={() => setShowNewEmployee(!showNewEmployee)}>
+                test
+            </button>
         </section>
     )
 }
