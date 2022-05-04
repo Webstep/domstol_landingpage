@@ -4,48 +4,84 @@ import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 
-const EmployeeBirgitte: React.FC = () => {
+interface IProps {
+    isShown: boolean
+}
+
+const EmployeeBirgitte: React.FC<IProps> = ({ isShown }) => {
     return (
         <div className={styles.content}>
             <div>
-                <motion.div
-                    className={styles.images}
-                    initial={{ y: 200 }}
-                    whileInView={{ y: 0 }}
-                    transition={{ duration: 1 }}
-                >
-                    <Image
-                        src={'/assets/employeeBirgitte.svg'}
-                        layout="fixed"
-                        width="250vw"
-                        height="350vw"
-                        alt={'employeeBirgitte'}
-                    />
-                </motion.div>
-                <motion.div
-                    className={styles.moreInfo}
-                    initial={{ y: 125 }}
-                    whileInView={{ y: 0 }}
-                    transition={{ duration: 2 }}
-                >
-                    Les mer om Birgitte
-                    <Link href={'#'}>her</Link>
-                </motion.div>
+                <AnimatePresence>
+                    {isShown && (
+                        <motion.div
+                            initial={{ y: 250, opacity: 0 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            exit={{
+                                x: -600,
+                                opacity: 0,
+                                transition: { duration: 2 },
+                            }}
+                            transition={{ duration: 2, ease: 'easeInOut' }}
+                            className={styles.images}
+                        >
+                            <img
+                                src={'/assets/Birgitte.jpg'}
+                                width="250vw"
+                                alt={'employeeBirgitte'}
+                            />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                <AnimatePresence>
+                    {isShown && (
+                        <motion.div
+                            className={styles.moreInfo}
+                            initial={{ y: 140, opacity: -1 }}
+                            whileInView={{ y: 0, opacity: 1 }}
+                            transition={{
+                                duration: 3,
+                                delay: 1,
+                                ease: 'easeOut',
+                            }}
+                            exit={{
+                                x: -600,
+                                opacity: 0,
+                                transition: {
+                                    duration: 2,
+                                },
+                            }}
+                        >
+                            Les mer om Birgitte
+                            <Link href={'#'}>her</Link>
+                        </motion.div>
+                    )}
+                </AnimatePresence>
             </div>
-            <motion.div
-                className={styles.textSection}
-                initial={{ y: 200 }}
-                whileInView={{ y: 0 }}
-                transition={{ duration: 1 }}
-            >
-                <p className={styles.quote}>
-                    - Noe av det beste med å være en del av dette prosjektet, er
-                    alt det nye jeg har lært, innsikten i hvordan rettsvesenet i
-                    Norge fungerer.
-                </p>
-                <p className={styles.name}>Birgitte Bright</p>
-                <p className={styles.title}>Systemutvikler, Webstep</p>
-            </motion.div>
+            <AnimatePresence>
+                {isShown && (
+                    <motion.div
+                        className={styles.textSection}
+                        initial={{ y: 250, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        exit={{
+                            x: -500,
+                            opacity: 0,
+                            transition: { duration: 2 },
+                        }}
+                        transition={{ duration: 2, ease: 'easeInOut' }}
+                    >
+                        <p className={styles.quote}>
+                            - Noe av det beste med å være en del av dette
+                            prosjektet, er alt det nye jeg har lært, innsikten i
+                            hvordan rettsvesenet i Norge fungerer.
+                        </p>
+                        <p className={styles.name}>Birgitte Bright</p>
+                        <p className={styles.title}>Systemutvikler, Webstep</p>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     )
 }
