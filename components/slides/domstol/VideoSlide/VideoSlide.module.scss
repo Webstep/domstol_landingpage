@@ -26,22 +26,23 @@
         font-size: $font-size-body;
         font-weight: $font-weight-body-article;
 
-        i {
+        q {
             margin-top: 20px;
-            margin-bottom: 20px;
+            quotes: none;
         }
 
-        p {
-            margin-top: 20px;
-            margin-bottom: 20px;
+        .ending {
+            margin-top: 60px;
         }
 
         .bold{
             font-weight: $font-weight-body-landing;
             margin-bottom: 5px;
+            margin-top: 20px;
         }
         .workPosition{
             margin-top: 0;
+            margin-bottom: 20px;
         }
     }
 }
