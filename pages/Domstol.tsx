@@ -1,4 +1,7 @@
 import React from "react";
+import AboutUs from "../components/slides/domstol/AboutUs";
+import ArticleSlide from "../components/slides/domstol/ArticleSlide";
+import ConvictedPercent from "../components/slides/domstol/ConvictedPercent";
 import ExampleSlide from "../components/slides/domstol/ExampleSlide";
 import NumberSlide from "../components/slides/domstol/NumberSlide";
 import VideoSlide from "../components/slides/domstol/VideoSlide";
@@ -11,9 +14,11 @@ const Domstol = () => {
 	return (
 		<>
 			<article className={scrollStyles.case}>
-				<ExampleSlide/>
+				<ConvictedPercent></ConvictedPercent>
 				<NumberSlide></NumberSlide>
+				<AboutUs></AboutUs>
 				<VideoSlideDA/>
+				<ArticleSlide image={""}></ArticleSlide>
 				<VideoSlideWebstep/>
 				<VideoSlideTech/>
 			</article>
