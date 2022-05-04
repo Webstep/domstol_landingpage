@@ -1,5 +1,5 @@
 //<link rel="stylesheet" href="https://use.typekit.net/zdg4usz.css">
-@use 'variables.scss' as *;
+@use 'variables.scss'as *;
 
 body {
     margin: 0;
@@ -20,9 +20,18 @@ button {
 
 @font-face {
     font-family: 'Lo-Res';
-    src: url('../public/fonts/LoRes12OT-Regular.woff2') format('woff2'),
-        url('../public/fonts/LoRes12OT-Regular.woff') format('woff'),
-        url('../public/fonts/LoRes12OT-Regular.ttf') format('truetype');
+    src: url('../public/fonts/LoRes12OTRegular/LoRes12OT-Regular.woff2') format('woff2'),
+        url('../public/fonts/LoRes12OTRegular/LoRes12OT-Regular.woff') format('woff'),
+        url('../public/fonts/LoRes12OTRegular/LoRes12OT-Regular.ttf') format('truetype');
     font-weight: 400;
     font-style: normal;
-  }
+}
+
+@font-face {
+    font-family: 'Lo-Res';
+    src: url('../public/fonts/LoRes12OTBold/LoRes12OT-Bold.woff2') format('woff2'),
+        url('../public/fonts/LoRes12OTBold/LoRes12OT-Bold.woff') format('woff'),
+        url('../public/fonts/LoRes12OTBold/LoRes12OT-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
