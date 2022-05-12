@@ -28,8 +28,7 @@ const NumberSlide = () => {
             setNumber(0);
             setWidth(window.innerWidth * 0.8);
         }
-    }, [inView, setNumber, setWidth])
-
+      
     return (
         <section ref={ref}>
             {inView &&
@@ -72,7 +71,6 @@ const NumberSlide = () => {
                 </div>
             }
         </section>
-
     );
 };
 
