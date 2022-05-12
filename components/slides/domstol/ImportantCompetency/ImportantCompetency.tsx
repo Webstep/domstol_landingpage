@@ -26,7 +26,7 @@ const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
                         whileInView={{ y: 0, opacity: 1 }}
                             transition={{ y: { duration: 1 }, opacity: { duration: 2 } }}
                         viewport={{ once: false }}>
-                        <img src={"/images/samfunnsansvar.jpg"}/>
+                        <img src={"/assets/important-competency.jpg"}/>
                     </motion.div>
                     <div className={styles.text}>
                         <motion.div
