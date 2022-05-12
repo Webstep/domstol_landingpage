@@ -19,7 +19,7 @@ const AboutUs = () => {
                             className={styles.weaponShield}
                             initial={{ x: -550 }}
                             animate={{ x: 0, z: 0 }}
-                            transition={{ duration: 3 }}
+                            transition={{ duration: 2 }}
                         >
                             <Image
                                 src={'/assets/weapon-shield.jpg'}
@@ -33,7 +33,7 @@ const AboutUs = () => {
                             className={styles.bookStack}
                             initial={{ x: -650 }}
                             animate={{ x: 0, z: 1 }}
-                            transition={{ duration: 2 }}
+                            transition={{ duration: 1 }}
                         >
                             <video
                                 src={require('../../../../public/videos/Webstap_DA_loop_1_1208x1920.mp4')}
@@ -52,7 +52,7 @@ const AboutUs = () => {
                             className={styles.title}
                             initial={{ x: 780 }}
                             animate={{ x: 0 }}
-                            transition={{ duration: 2 }}
+                            transition={{ duration: 1 }}
                         >
                             <span className={styles.redLetter}>D</span>OMSTOL-
                             <span className={styles.redLetter}>A</span>DMINISTRASJONEN
@@ -61,7 +61,7 @@ const AboutUs = () => {
                             className={styles.description}
                             initial={{ x: 780 }}
                             animate={{ x: 0 }}
-                            transition={{ duration: 3 }}
+                            transition={{ duration: 2 }}
                         >
                             <p>
                                 Domstoladministrasjonen, DA, bygger systemene

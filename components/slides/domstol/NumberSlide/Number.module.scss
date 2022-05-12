@@ -1,24 +1,26 @@
 @use 'styles/variables.scss'as *;
 
 .container {
-    height: 100vh;
+    height: 100%;
     width:100vw;
     display: flex;
     font-family: $font-family-body;
     font-weight: $font-weight-heading;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 40vh;
     overflow-x: hidden;
+
+    
 }
 
 .textContainer{
-    margin-bottom: 45px;
+    //margin-bottom: 45px;
     margin-left: 2vw;
 }
 
 .number{
     margin-left: 4vw;
+    margin-bottom: 4vh;
 }
 
 .text {

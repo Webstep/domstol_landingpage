@@ -14,13 +14,13 @@ const Domstol = () => {
     return (
         <>
             <Introduction />
-            <ImportantCompetency />
+            <AboutUs />
             <ConvictedPercent />
             <HairyGoals />
-            <AboutUs />
-            <NumberSlide />
             <VideoSlideDA />
+            <ImportantCompetency />
             <VideoSlideWebstep />
+            <NumberSlide />
             <VideoSlideTech />
             <Employee />
         </>
