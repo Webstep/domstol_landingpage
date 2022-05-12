@@ -1,6 +1,6 @@
 .container {
-    height: 200vh;
-    min-height: 200vh;
+    height: 220vh;
+    min-height: 220vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -41,9 +41,7 @@
             height: 100%;
 
             grid-column: 2;
-            // margin-top: 2rem;
             width: 100%;
-            // width: 50%;
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -77,6 +75,11 @@
                 span {
                     font-size: 1.5rem;
                     font-weight: bold;
+                }
+
+                div {
+                    width: max-content;
+                    margin: auto;
                 }
             }
         }

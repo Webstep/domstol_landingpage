@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
@@ -22,10 +23,20 @@ const DomstolIntroduction = () => {
                     </p>
                     <div className={styles.scrollDown}>
                         <span>Scroll</span>
-                        <ArrowButton
-                            direction={Direction.Down}
-                            onClick={() => { }}
-                        />
+                        <motion.div
+                            animate={{
+                                y: [0, 8, 0]
+                            }}
+                            transition={{
+                                repeat: Infinity,
+                                duration: 1.5
+                            }}>
+
+                            <ArrowButton
+                                direction={Direction.Down}
+                                onClick={() => { }}
+                            />
+                        </motion.div>
                     </div>
                 </div>
             </div>
