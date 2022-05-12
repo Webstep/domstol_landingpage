@@ -64,7 +64,7 @@ const Video: React.FC<VideoProps> = (props) => {
     const progressClick = (e: { nativeEvent: { offsetX: number } }) => {
         const click = (e.nativeEvent.offsetX /buttonWidth)* 100
         const progressTime = (duration/100) * click
-        if (videoRef.current != null) { videoRef.current.currentTime = progressTime; videoRef.current.play; }
+        if (videoRef.current != null) { setProgress(progressTime); videoRef.current.currentTime = progressTime; videoRef.current.play; }
     }
 
     return (
