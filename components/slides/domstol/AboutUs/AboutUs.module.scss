@@ -1,31 +1,34 @@
 @use 'styles/variables.scss' as *;
 
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
 .container {
     position: relative;
     display: flex;
-    width: 80vw;
-    right: 15vw;
-    left: 5vw;
+    max-width: max-content;
 
     .textSection {
         display: flex;
         flex-direction: column;
-        max-width: 10vw;
-        padding-left: 0.5vw;
+        max-width: 31.25rem;
+        margin-left: 3rem;
     }
     .title {
         font-family: $font-family-heading;
         font-weight: $font-weight-heading;
         font-size: $font-size-heading-small;
-        margin: 1rem;
+        margin-bottom: -0.5rem;
     }
 
-    .section {
+    .description {
         font-family: $font-family-body;
         font-weight: $font-weight-body-article;
         font-size: $font-size-body;
         width: 17.5rem;
-        padding-left: 2vw;
     }
 
     .images {

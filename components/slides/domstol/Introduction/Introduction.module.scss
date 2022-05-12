@@ -1,0 +1,111 @@
+.container {
+    height: 200vh;
+    min-height: 200vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    .tintedBackground {
+        height: 100vh;
+        width: 100vw;
+        z-index: 9;
+        position: absolute;
+        background: rgba($color: #000000, $alpha: 0.5);
+    }
+
+    .overlay {
+        height: 100vh;
+        width: 100vw;
+        background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
+        clip-path: url(#clip);
+        position: absolute;
+        z-index: 10;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        // .logo {
+        //     background-repeat: no-repeat;
+        //     background-size: contain;
+        //     background-color: transparent;
+
+        //     height: 200px;
+        //     width: 200px;
+
+        //     backface-visibility: visible;
+        // }
+
+        .test {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            padding: 40px;
+            background-clip: content-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            div {
+                height: 50%;
+                background: blue;
+                background-clip: border-box;
+                width: 50%;
+            }
+        }
+
+        .information {
+            margin-top: 2rem;
+            width: 50%;
+            display: flex;
+            align-items: flex-end;
+            flex-direction: column;
+
+            * {
+                max-width: 100%;
+            }
+
+            h1 {
+                text-transform: uppercase;
+                font-size: 4rem;
+                margin-bottom: 0;
+                text-align: right;
+            }
+            p {
+                width: min(80%, 340px);
+                text-align: justify;
+            }
+
+            .scrollDown {
+                margin-top: 2rem;
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+
+                padding: 1rem;
+                text-transform: uppercase;
+                text-align: center;
+
+                span {
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .videoContainer {
+        width: 100vw;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+
+        video {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
