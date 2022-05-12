@@ -1,4 +1,3 @@
-import { filterProps } from 'framer-motion'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ProgressBar from './ProgressBar'
@@ -10,13 +9,17 @@ interface VideoProps {
 }
 
 const Video: React.FC<VideoProps> = (props) => {
+    const [ref, inView] = useInView();
+    const buttonRef = useRef<HTMLButtonElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [isPlaying, setIsPlaying] = useState<boolean>(true)
     const [isSound, setIsSound] = useState<boolean>(false)
     const [duration, setDuration] = useState<number>(0)
     const [currentTime, setCurrentTime] = useState<number>(0)
     const [progress, setProgress] = useState<number>(0)
-    const [ref, inView] = useInView();
+    const [buttonWidth, setButtonWidth] = useState<number>(0)
+
+
 
     const play = () => {
         setDuration(videoRef.current?.duration || 1);
@@ -39,6 +42,7 @@ const Video: React.FC<VideoProps> = (props) => {
 
 
     useEffect(() => {
+        setButtonWidth(buttonRef?.current?.clientWidth || 100);
         setDuration(videoRef.current?.duration || 71);
         setIsSound(false);
 
@@ -53,23 +57,15 @@ const Video: React.FC<VideoProps> = (props) => {
         return () => {
             clearInterval(intervall)
         }
-    }, [inView])
+    }, [inView, buttonWidth])
 
 
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
 
     const progressClick = (e: { nativeEvent: { offsetX: number } }) => {
-        //setProgress((e.nativeEvent.offsetX  / duration) * 100)
-        //const progressTime = (e.nativeEvent.offsetX / progress) * duration
-        const progressTime = e.nativeEvent.offsetX *(duration / 100)
-        console.log(e.nativeEvent.offsetX)
-        console.log(progressTime)
-        console.log(progress)
-        //setProgress((progressTime / duration) * 100)
+        const click = (e.nativeEvent.offsetX /buttonWidth)* 100
+        const progressTime = (duration/100) * click
         if (videoRef.current != null) { videoRef.current.currentTime = progressTime; videoRef.current.play; }
-        //setProgress(progressTime)
-        //setCurrentTime(progressTime)
-        //if (videoRef.current != null) { videoRef.current.currentTime = progressTime; videoRef.current.play; }
     }
 
     return (
@@ -80,7 +76,7 @@ const Video: React.FC<VideoProps> = (props) => {
                     {isPlaying ?
                         <div className={styles.controls}>
                             <button
-                                onClick={() => { setIsSound(!isSound); if(videoRef.current != null){ videoRef.current.muted = isSound }; }}
+                                onClick={() => { setIsSound(!isSound); if (videoRef.current != null) { videoRef.current.muted = isSound }; }}
                                 className={styles.controlsIcon}
                             >
                                 <img
@@ -100,7 +96,7 @@ const Video: React.FC<VideoProps> = (props) => {
                             </button>
                             <div className={styles.timeControl}>
                                 <span>{formatTime(currentTime)}</span>
-                                <button onClick={(e)=>progressClick(e)}><ProgressBar progress={progress}/></button>
+                                <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
                                 <span>{formattedDuration}</span>
                             </div>
                         </div>

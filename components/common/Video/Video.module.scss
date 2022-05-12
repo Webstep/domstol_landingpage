@@ -3,7 +3,6 @@
 
 .container {
     height: 99.999vh;
-    width: 62vh; //placeholder value
     display: grid;
     grid-template-rows: 1fr 60% 150px;
     grid-template-columns: 1fr;
@@ -54,10 +53,16 @@
             align-items: center;
             font-family: $font-family-pixel;
 
-            .progressBarContainer {
+            button {
                 $spacing: 15px;
                 margin: 0 $spacing;
                 width: calc(100% - 2 * $spacing);
+                padding: 0;
+            }
+
+            .progressBarContainer {
+                margin: 0;
+                width: 100%;
                 height: 2px;
                 background-color: rgba(60, 60, 60, 0.6);
                 display: flex;
@@ -69,16 +74,10 @@
                 }
             }
 
-            button {
-                width: 100%;
-                margin: 0;
-                //endre margin til progressbar inni
-            }
-
             span {
                 width: 38px;
                 text-align: center;
-                font-size: 1.25rem; //placeholder value
+                font-size: 1.25rem;
             }
         }
     }
