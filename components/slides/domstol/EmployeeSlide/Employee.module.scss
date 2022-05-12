@@ -1,11 +1,20 @@
 @use 'styles/variables.scss' as *;
 
 .section {
+    height: auto;
+    flex-direction: column;
+    height: 200vh !important;
+    position: relative;
+}
+
+.stickydiv {
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    position: sticky;
+    top: 20vh;
+    height: 50vh;
 }
+
 .container {
     width: 70vw;
     display: flex;
@@ -57,6 +66,7 @@
     font-family: $font-family-pixel;
     font-weight: $font-weight-pixel-title;
     font-size: $font-size-pixel;
+    padding-top: 0.5rem;
     padding-inline: 2vw;
     a:link,
     a:visited,
@@ -69,4 +79,16 @@
     a:hover {
         text-decoration: underline;
     }
+}
+
+.breakpoint {
+    height: 0.125rem;
+    width: 100%;
+    margin-top: 100vh;
+}
+
+.employees {
+    height: 25rem;
+    max-height: 25rem;
+    overflow: hidden;
 }
