@@ -2,6 +2,11 @@ import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useInView } from 'react-intersection-observer'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
+import Image from 'next/image';
+import PlayIcon from '../../../public/icons/play.svg';
+import PauseIcon from '../../../public/icons/pause.svg';
+import MuteIcon from '../../../public/icons/mute.svg';
+import SoundIcon from '../../../public/icons/sound.svg';
 
 interface VideoProps {
     src: string
@@ -19,8 +24,6 @@ const Video: React.FC<VideoProps> = (props) => {
     const [progress, setProgress] = useState<number>(0)
     const [buttonWidth, setButtonWidth] = useState<number>(0)
 
-
-
     const play = () => {
         setDuration(videoRef.current?.duration || 1);
         videoRef?.current?.play()
@@ -32,14 +35,12 @@ const Video: React.FC<VideoProps> = (props) => {
         videoRef?.current?.pause()
     }
 
-    const sound = () => {
-        setIsSound(true)
+    const toggleSound = () => {
+        setIsSound(!isSound);
+        if (videoRef.current != null) {
+            videoRef.current.muted = isSound
+        };
     }
-
-    const mute = () => {
-        setIsSound(false)
-    }
-
 
     useEffect(() => {
         setButtonWidth(buttonRef?.current?.clientWidth || 100);
@@ -56,14 +57,14 @@ const Video: React.FC<VideoProps> = (props) => {
         return () => {
             clearInterval(intervall)
         }
-    }, [inView, buttonWidth])
+    }, [inView, buttonWidth, duration])
 
 
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
 
     const progressClick = (e: { nativeEvent: { offsetX: number } }) => {
-        const click = (e.nativeEvent.offsetX /buttonWidth)* 100
-        const progressTime = (duration/100) * click
+        const click = (e.nativeEvent.offsetX / buttonWidth) * 100
+        const progressTime = (duration / 100) * click
         if (videoRef.current != null) { setProgress(progressTime); videoRef.current.currentTime = progressTime; videoRef.current.play; }
     }
 
@@ -71,16 +72,18 @@ const Video: React.FC<VideoProps> = (props) => {
         <div ref={ref}>
             {inView &&
                 <div className={styles.container}>
-                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay}/>
+                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay} />
                     {isPlaying ?
                         <div className={styles.controls}>
                             <button
-                                onClick={() => { setIsSound(!isSound); if (videoRef.current != null) { videoRef.current.muted = isSound }; }}
+                                onClick={toggleSound}
                                 className={styles.controlsIcon}
                             >
-                                <img
-                                    alt="Sound on/off"
-                                    src={isSound ? '/sound.svg' : '/mute.svg'}
+                                <Image
+                                    width="45px"
+                                    height="34px"
+                                    alt="toggle sound"
+                                    src={isSound ? SoundIcon : MuteIcon}
                                 />
 
                             </button>
@@ -88,10 +91,7 @@ const Video: React.FC<VideoProps> = (props) => {
                                 onClick={() => (isPlaying ? pause() : play())}
                                 className={styles.controlsIcon}
                             >
-                                <img
-                                    alt="pause"
-                                    src={isPlaying ? '/pause.svg' : '/play.svg'}
-                                />
+                                <Image src={PauseIcon} width="31px" height="36px" alt="pause" />
                             </button>
                             <div className={styles.timeControl}>
                                 <span>{formatTime(currentTime)}</span>
@@ -100,7 +100,9 @@ const Video: React.FC<VideoProps> = (props) => {
                             </div>
                         </div>
                         :
-                        <button className={styles.playButton} onClick={() => play()}><img src="/play.svg" alt="play" /></button>
+                        <button className={styles.playButton} onClick={() => play()}>
+                            <Image src={PlayIcon} alt="play" height="100px" width="100px" />
+                        </button>
                     }
                 </div>
             }
