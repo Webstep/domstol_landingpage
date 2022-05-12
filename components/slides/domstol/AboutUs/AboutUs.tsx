@@ -14,20 +14,20 @@ const AboutUs = () => {
                 >
                     <div className={styles.images}>
                         <div className={styles.weaponShield}>
-                            <Image
-                                src={'/assets/weapon_shield.svg'}
-                                layout="fixed"
+                            <img
+                                src={'/assets/weapon-shield.jpg'}
+                                //layout="fixed"
                                 width="200vw"
-                                height="300vw"
+                                //height="300vw"
                                 alt={'weaponShield'}
                             />
                         </div>
                         <div className={styles.bookStack}>
-                            <Image
-                                src={'/assets/book_stack.svg'}
-                                layout="fixed"
+                            <img
+                                src={'/assets/book-stack.jpg'}
+                                //layout="fixed"
                                 width="200vw"
-                                height="300vw"
+                                //height="300vw"
                                 alt={'bookStack'}
                             />
                         </div>

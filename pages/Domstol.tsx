@@ -20,6 +20,7 @@ const Domstol = () => {
 				<VideoSlideDA/>
 				<ArticleSlide image={""}></ArticleSlide>
 				<VideoSlideWebstep/>
+				<VideoSlideDA />
 				<VideoSlideTech/>
 			</article>
 		</>
