@@ -1,6 +1,5 @@
 import React from 'react'
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent'
-import ExampleSlide from '../components/slides/domstol/ExampleSlide'
 import Introduction from '../components/slides/domstol/Introduction'
 import AboutUs from '../components/slides/domstol/AboutUs'
 import HairyGoals from '../components/slides/domstol/HairyGoals'
@@ -10,7 +9,7 @@ const Domstol = () => {
     return (
         <>
             <Introduction />
-            <Article/>
+            <Article />
             <ConvictedPercent />
             <HairyGoals />
             <AboutUs />
