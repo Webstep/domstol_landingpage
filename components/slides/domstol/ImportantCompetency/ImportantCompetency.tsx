@@ -1,13 +1,13 @@
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styles from './Article.module.scss';
+import styles from './ImportantCompetency.module.scss';
 
-interface ArticleProps {
+interface ImportantCompetencyProps {
     //image: string;
 }
 
-const Article: React.FC<ArticleProps> = ({ }) => {
+const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
     const [height, setHeight] = useState<number>(500);
     const [ref, inView] = useInView();
 
@@ -68,4 +68,4 @@ const Article: React.FC<ArticleProps> = ({ }) => {
     );
 };
 
-export default Article;
+export default ImportantCompetency;
