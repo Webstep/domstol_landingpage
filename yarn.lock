@@ -853,7 +853,7 @@ __metadata:
     eslint-config-next: 12.1.0
     framer-motion: ^6.2.8
     next: 12.1.0
-    next-videos: 1.4.0
+    next-videos: ^1.4.0
     prettier: ^2.6.0
     react: 17.0.2
     react-dom: 17.0.2
@@ -2177,7 +2177,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next-videos@npm:1.4.0":
+"next-videos@npm:^1.4.0":
   version: 1.4.0
   resolution: "next-videos@npm:1.4.0"
   dependencies:
