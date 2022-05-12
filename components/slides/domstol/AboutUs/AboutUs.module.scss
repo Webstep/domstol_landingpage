@@ -31,21 +31,30 @@
         width: 17.5rem;
     }
 
-    .images {
+    .redLetter {
+        color: $color-red;
+    }
+
+    .media {
         display: grid;
         grid-template-rows: 6.25rem 1fr 6.25rem;
-        grid-template-columns: 9.375rem 1fr 9.375rem;
+        grid-template-columns: 8.375rem 5.5rem 8.375rem;
 
         .weaponShield {
             grid-row-start: 2;
             grid-column-start: 1;
-            grid-row-end: 6;
-            grid-column-end: 3;
+            grid-row-end: 3;
+            grid-column-end: 4;
         }
         .bookStack {
             grid-area: 1 / 3 / 5 /5;
             grid-row-start: 1;
-            grid-column-start: 2;
+            grid-column-start: 3;
+        }
+        video {
+        height: 75%;
+        object-fit: cover;
         }
     }
+   
 }
