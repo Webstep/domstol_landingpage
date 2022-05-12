@@ -14,9 +14,9 @@ const VideoSlide: React.FC<VideoSlideProps> = (props) => {
     const [textHeight, setTextHeight] = useState<number>(50);
 
     useEffect(() => {
-        setHeight(window.innerHeight-100)
-        setTextHeight((window.innerHeight / 2) - window.innerHeight*props.center);
-    }, [])
+        setHeight(window.innerHeight - 100)
+        setTextHeight((window.innerHeight / 2) - window.innerHeight * props.center);
+    }, [props.center])
 
 
     return (
@@ -30,7 +30,7 @@ const VideoSlide: React.FC<VideoSlideProps> = (props) => {
                             transition={{ duration: 0.5 }}
                             viewport={{ once: false }}
                         >
-                        <Video src={props.src} autoplay={props.autoplay}></Video>
+                            <Video src={props.src} autoplay={props.autoplay}></Video>
                         </motion.div>
                     </div>
                     <motion.div
@@ -39,9 +39,9 @@ const VideoSlide: React.FC<VideoSlideProps> = (props) => {
                         transition={{ duration: 0.5 }}
                         viewport={{ once: false }}
                     >
-                    {props.children}
+                        {props.children}
                     </motion.div>
-                    </div>
+                </div>
             </section>
         </>
     );

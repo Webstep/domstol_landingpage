@@ -2,13 +2,15 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
+import Weight from '../../../../public/assets/domstol/weight.svg';
+import Image from 'next/image';
 
 const DomstolIntroduction = () => {
     return (
         <section className={styles.container}>
             <div className={styles.overlay}>
                 <div className={styles.information}>
-                    <img src="/assets/domstol/weight.svg" alt="" />
+                    <Image src={Weight} alt="" height="41" width="48" />
                     <h1>
                         DIGITALISERING <br /> AV DOMSTOLENE
                     </h1>
@@ -35,6 +37,7 @@ const DomstolIntroduction = () => {
                             <ArrowButton
                                 direction={Direction.Down}
                                 onClick={() => { }}
+                                alt='pil ned'
                             />
                         </motion.div>
                     </div>
