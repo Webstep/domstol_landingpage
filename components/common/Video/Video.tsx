@@ -5,15 +5,15 @@ import styles from './Video.module.scss'
 
 interface VideoProps {
     src: string
-    //autoplay: boolean
+    autoplay: boolean
 }
 
 const Video: React.FC<VideoProps> = (props) => {
     const [ref, inView] = useInView();
     const buttonRef = useRef<HTMLButtonElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
-    const [isPlaying, setIsPlaying] = useState<boolean>(true)
-    const [isSound, setIsSound] = useState<boolean>(false)
+    const [isPlaying, setIsPlaying] = useState<boolean>(props.autoplay)
+    const [isSound, setIsSound] = useState<boolean>(!props.autoplay)
     const [duration, setDuration] = useState<number>(0)
     const [currentTime, setCurrentTime] = useState<number>(0)
     const [progress, setProgress] = useState<number>(0)
@@ -44,7 +44,6 @@ const Video: React.FC<VideoProps> = (props) => {
     useEffect(() => {
         setButtonWidth(buttonRef?.current?.clientWidth || 100);
         setDuration(videoRef.current?.duration || 71);
-        setIsSound(false);
 
         const incrementTime = () => {
             const time = videoRef.current?.currentTime ?? 0
@@ -72,7 +71,7 @@ const Video: React.FC<VideoProps> = (props) => {
         <div ref={ref}>
             {inView &&
                 <div className={styles.container}>
-                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay disablePictureInPicture muted />
+                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay}/>
                     {isPlaying ?
                         <div className={styles.controls}>
                             <button
