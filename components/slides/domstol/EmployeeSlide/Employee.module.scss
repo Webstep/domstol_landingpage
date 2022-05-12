@@ -1,0 +1,94 @@
+@use 'styles/variables.scss' as *;
+
+.section {
+    height: auto;
+    flex-direction: column;
+    height: 200vh !important;
+    position: relative;
+}
+
+.stickydiv {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 20vh;
+    height: 50vh;
+}
+
+.container {
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h1 {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    font-size: $font-size-heading-large;
+    margin: 1rem;
+    top: 4rem;
+}
+.content {
+    display: flex;
+    width: 60rem;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.textSection {
+    display: flex;
+    flex-direction: column;
+    max-width: 20vw;
+    text-align: left;
+    padding-top: 2rem;
+}
+.quote {
+    font-family: $font-family-quote;
+    font-weight: $font-weight-quote-xsmall;
+    font-size: $font-size-quote-xsmall;
+}
+
+.name {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-name;
+    font-size: $font-size-pixel;
+}
+
+.title {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel;
+    font-size: $font-size-pixel;
+    margin-top: -0.8vw;
+}
+
+.moreInfo {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-pixel-name;
+    font-size: $font-size-pixel;
+    padding-top: 0.5rem;
+    padding-inline: 2vw;
+    a:link,
+    a:visited,
+    a:active {
+        padding: 0 0.3125rem;
+        text-decoration: none;
+        font-weight: bold;
+        color: $font-color;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+}
+
+.breakpoint {
+    height: 0.125rem;
+    width: 100%;
+    margin-top: 100vh;
+}
+
+.employees {
+    height: 25rem;
+    max-height: 25rem;
+    overflow: hidden;
+}

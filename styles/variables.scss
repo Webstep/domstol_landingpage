@@ -12,6 +12,11 @@ $font-weight-quote: 800;
 $font-size-quote-short: 3.125rem;
 $font-size-quote-long: 2rem;
 
+//Sitat ansatt
+$font-family-quote: noto-sans, sans-serif;
+$font-weight-quote-xsmall: 300;
+$font-size-quote-xsmall: 1rem;
+
 //Webstepper navn og tittel
 $font-family-pixel: Lo-Res, sans-serif;
 $font-weight-pixel: 400;
@@ -31,4 +36,11 @@ $font-color-highlight: #f2b355;
 
 $color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
 $color-subcolor: #f2b355;
+
+@mixin centerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 $color-red: #E84F4F;
