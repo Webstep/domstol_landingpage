@@ -1,6 +1,6 @@
 import { filterProps } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { useInView } from 'react-hook-inview';
+import { useInView } from 'react-intersection-observer';
 import styles from './Citation.module.scss';
 
 

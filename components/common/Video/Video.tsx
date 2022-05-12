@@ -1,6 +1,6 @@
 import { filterProps } from 'framer-motion'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useInView } from 'react-hook-inview'
+import { useInView } from 'react-intersection-observer'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
 

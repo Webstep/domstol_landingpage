@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
-import { useInView } from 'react-hook-inview';
+import { useInView } from 'react-intersection-observer';
 import styles from './Article.module.scss';
 
 interface ArticleProps {
