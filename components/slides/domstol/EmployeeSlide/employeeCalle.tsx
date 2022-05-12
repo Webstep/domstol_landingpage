@@ -17,7 +17,7 @@ export const EmployeeCalle: React.FC = () => {
                 </div>
                 <div className={styles.moreInfo}>
                     Les mer om Calle
-                    <Link href={'#'}>her</Link>
+                    <Link href={'https://www.webstep.no/carl-fredrik-bokestad/'}>her</Link>
                 </div>
             </div>
             <div className={styles.textSection}>

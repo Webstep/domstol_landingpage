@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Employee.module.scss'
-import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { motion } from 'framer-motion'
 import Link from 'next/link'
 
 const EmployeeBirgitte: React.FC = ({ }) => {
@@ -15,9 +14,9 @@ const EmployeeBirgitte: React.FC = ({ }) => {
                     className={styles.images}
                 >
                     <img
-                        src={'/assets/Brigitte.jpg'}
+                        src={'/assets/Brigitt.jpg'}
                         width="250vw"
-                        alt={'employeeBrigitte'}
+                        alt={'employeeBrigitt'}
                     />
                 </motion.div>
 
@@ -38,8 +37,8 @@ const EmployeeBirgitte: React.FC = ({ }) => {
                         },
                     }}
                 >
-                    Les mer om Brigitte
-                    <Link href={'#'}>her</Link>
+                    Les mer om Brigitt
+                    <Link href={'https://www.webstep.no/brigitt-bright/'}>her</Link>
                 </motion.div>
             </div>
             <motion.div
@@ -58,7 +57,7 @@ const EmployeeBirgitte: React.FC = ({ }) => {
                     alt det nye jeg har lært, innsikten i hvordan rettsvesenet i
                     Norge fungerer.
                 </p>
-                <p className={styles.name}>Brigitte Bright</p>
+                <p className={styles.name}>Brigitt Bright</p>
                 <p className={styles.title}>Systemutvikler, Webstep</p>
             </motion.div>
         </div>

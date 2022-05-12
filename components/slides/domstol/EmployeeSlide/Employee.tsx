@@ -23,39 +23,41 @@ const Employee = () => {
                         <motion.div>
                             <h1>MØT VÅRE WEBSTEPPERE</h1>
                         </motion.div>
-                        <div className={styles.employees}>
-                            <AnimatePresence initial={false} exitBeforeEnter>
-                                {showNewEmployee ? (
-                                    <motion.div
-                                        key="calle"
-                                        initial={{ x: 400 }}
-                                        animate={{ x: 0 }}
-                                        transition={{ duration: 1 }}
-                                        exit={{
-                                            x: -600,
-                                            opacity: 0,
-                                            transition: {
-                                                duration: 1,
-                                            },
-                                        }}
-                                    >
-                                        <EmployeeCalle />
-                                    </motion.div>
-                                ) : (
-                                    <motion.div
-                                        key="brigitte"
-                                        exit={{
-                                            x: -600,
-                                            opacity: 0,
-                                            transition: {
-                                                duration: 1,
-                                            },
-                                        }}
-                                    >
-                                        <EmployeeBirgitte />
-                                    </motion.div>
-                                )}
-                            </AnimatePresence>
+                        <div>
+                            <div className={styles.employees}>
+                                <AnimatePresence initial={false} exitBeforeEnter>
+                                    {showNewEmployee ? (
+                                        <motion.div
+                                            key="calle"
+                                            initial={{ x: 400 }}
+                                            animate={{ x: 0 }}
+                                            transition={{ duration: 1 }}
+                                            exit={{
+                                                x: -600,
+                                                opacity: 0,
+                                                transition: {
+                                                    duration: 1,
+                                                },
+                                            }}
+                                        >
+                                            <EmployeeCalle />
+                                        </motion.div>
+                                    ) : (
+                                        <motion.div
+                                            key="brigitte"
+                                            exit={{
+                                                x: -600,
+                                                opacity: 0,
+                                                transition: {
+                                                    duration: 1,
+                                                },
+                                            }}
+                                        >
+                                            <EmployeeBirgitte />
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </div>
                         </div>
                     </div>
                 </div>

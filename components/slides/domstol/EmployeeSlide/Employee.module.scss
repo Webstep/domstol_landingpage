@@ -25,7 +25,7 @@
 .h1 {
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
-    font-size: $font-size-heading-small;
+    font-size: $font-size-heading-large;
     margin: 1rem;
     top: 4rem;
 }
@@ -57,14 +57,14 @@
 
 .title {
     font-family: $font-family-pixel;
-    font-weight: $font-weight-pixel-title;
+    font-weight: $font-weight-pixel;
     font-size: $font-size-pixel;
     margin-top: -0.8vw;
 }
 
 .moreInfo {
     font-family: $font-family-pixel;
-    font-weight: $font-weight-pixel-title;
+    font-weight: $font-weight-pixel-name;
     font-size: $font-size-pixel;
     padding-top: 0.5rem;
     padding-inline: 2vw;
