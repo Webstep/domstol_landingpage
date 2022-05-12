@@ -13,7 +13,7 @@ const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
 
     useEffect(() => {
         setHeight(window.innerHeight);
-    }, [inView]);
+    }, [inView, setHeight]);
 
     return (
         <>

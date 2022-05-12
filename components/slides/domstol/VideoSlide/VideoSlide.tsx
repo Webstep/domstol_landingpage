@@ -6,7 +6,7 @@ import styles from './VideoSlide.module.scss';
 interface VideoSlideProps {
     src: string;
     center: number;
-    //autoplay: boolean
+    autoplay: boolean
 }
 
 const VideoSlide: React.FC<VideoSlideProps> = (props) => {
@@ -30,7 +30,7 @@ const VideoSlide: React.FC<VideoSlideProps> = (props) => {
                             transition={{ duration: 0.5 }}
                             viewport={{ once: false }}
                         >
-                        <Video src={props.src}></Video>
+                        <Video src={props.src} autoplay={props.autoplay}></Video>
                         </motion.div>
                     </div>
                     <motion.div
