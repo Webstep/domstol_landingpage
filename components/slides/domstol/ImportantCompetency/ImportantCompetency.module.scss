@@ -1,4 +1,8 @@
-@use 'styles/variables.scss'as *;
+@use 'styles/variables.scss' as *;
+
+.section {
+    @include centerContent;
+}
 
 .container {
     display: grid;
@@ -29,7 +33,7 @@
             display: flex;
             font-weight: $font-weight-body-article;
             font-size: $font-size-body;
-            p{
+            p {
                 margin-right: 3vw;
                 width: 20vw;
             }

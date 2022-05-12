@@ -1,9 +1,7 @@
 @use 'styles/variables.scss' as *;
 
 .section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include centerContent;
     overflow-x: hidden;
 }
 .container {

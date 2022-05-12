@@ -7,14 +7,13 @@
 
     .video {
         grid-column: 1;
-}
+    }
 
     .citation {
         grid-column: 2;
         align-self: center;
         justify-content: center;
         padding: 10%;
-
     }
     .article {
         grid-column: 2;
@@ -35,12 +34,12 @@
             margin-top: 60px;
         }
 
-        .bold{
+        .bold {
             font-weight: $font-weight-body-landing;
             margin-bottom: 5px;
             margin-top: 20px;
         }
-        .workPosition{
+        .workPosition {
             margin-top: 0;
             margin-bottom: 20px;
         }
