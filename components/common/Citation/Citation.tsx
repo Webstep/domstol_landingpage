@@ -1,5 +1,4 @@
-import { filterProps } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Citation.module.scss';
 
@@ -13,12 +12,7 @@ interface CitationProps {
 }
 
 const Citation: React.FC<CitationProps> = (props) => {
-    const [type, setType] = useState<string>(props.quoteType);
     const [ref, inView] = useInView();
-
-    useEffect(() => {
-        setType(props.quoteType);
-    }, [setType, inView]);
 
     return (
         <>
@@ -26,7 +20,7 @@ const Citation: React.FC<CitationProps> = (props) => {
                 {inView &&
                     <div className={styles.container} >
                         <div className={styles.quote}>
-                            <blockquote className={`${styles[type]}`}>"{props.quote}"</blockquote>
+                            <blockquote className={`${styles[props.quoteType]}`}>&quot;{props.quote}&quot;</blockquote>
                         </div>
                         <div className={styles.origin}>
                             <p className={styles.name}>{props.name}</p>

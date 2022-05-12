@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, MotionConfig } from 'framer-motion';
+import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Number.module.scss';
@@ -28,8 +28,8 @@ const NumberSlide = () => {
             setNumber(0);
             setWidth(window.innerWidth * 0.8);
         }
-    })
-      
+    }, [inView, number])
+
     return (
         <section ref={ref}>
             {inView &&

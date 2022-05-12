@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import styles from './ArrowButton.module.scss'
+import ArrowIcon from '../../../public/icons/pixelated_arrow.svg';
+import Image from 'next/image';
 
 export enum Direction {
     Up,
@@ -17,25 +19,23 @@ export enum Size {
 interface ArrowButtonProps {
     direction: Direction
     onClick: () => void
+    alt: string
     size?: Size
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({
     direction,
     onClick,
+    alt,
     size = Size.Small,
 }) => {
     const variant = getVariant(direction)
-
-    const className = [
-        styles.arrowButton,
-        size === Size.Large ? styles.large : styles.small,
-    ].join(' ')
+    const dimentions = getDimentions(size === Size.Large ? 2 : 1)
 
     return (
         <motion.button
             onClick={onClick}
-            className={className}
+            className={styles.arrowButton}
             initial={{
                 rotate: variant.rotate,
             }}
@@ -46,7 +46,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0 }}
         >
-            <img src="/pixelated_arrow.svg" alt="pil" />
+            <Image src={ArrowIcon} height={dimentions.h} width={dimentions.w} alt={alt} />
         </motion.button>
     )
 }
@@ -64,4 +64,8 @@ const getVariant = (direction: Direction) => {
         default:
             return { rotate: 0 }
     }
+}
+
+const getDimentions = (scale: number = 1) => {
+    return { w: 19 * scale, h: 33.25 * scale }
 }
