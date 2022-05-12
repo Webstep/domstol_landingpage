@@ -37,6 +37,7 @@ const DomstolIntroduction = () => {
                             <ArrowButton
                                 direction={Direction.Down}
                                 onClick={() => { }}
+                                alt='pil ned'
                             />
                         </motion.div>
                     </div>
