@@ -1,58 +1,78 @@
+import React, { useState } from 'react'
 import styles from './AboutUs.module.scss'
 import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 
 const AboutUs = () => {
+    const { ref, inView, entry } = useInView({
+        threshold: 0,
+    })
     return (
-        <section>
+        <section className={styles.section} ref={ref}>
             <AnimatePresence>
-                <motion.div
-                    className={styles.container}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 100 }}
-                    transition={{ duration: 30 }}
-                >
+                <div className={styles.container}>
                     <div className={styles.images}>
-                        <div className={styles.weaponShield}>
-                            <img
-                                src={'/assets/weapon-shield.jpg'}
-                                //layout="fixed"
-                                width="200vw"
-                                //height="300vw"
+                        <motion.div
+                            className={styles.weaponShield}
+                            initial={{ x: -550 }}
+                            whileInView={{ x: 0 }}
+                            transition={{ duration: 3 }}
+                        >
+                            <Image
+                                src={'/assets/weapon_shield.svg'}
+                                layout="fixed"
+                                width="250vw"
+                                height="350vw"
                                 alt={'weaponShield'}
                             />
-                        </div>
-                        <div className={styles.bookStack}>
-                            <img
-                                src={'/assets/book-stack.jpg'}
-                                //layout="fixed"
-                                width="200vw"
-                                //height="300vw"
+                        </motion.div>
+                        <motion.div
+                            className={styles.bookStack}
+                            initial={{ x: -650, opacity: 1 }}
+                            whileInView={{ x: 0 }}
+                            transition={{ duration: 2 }}
+                        >
+                            <Image
+                                src={'/assets/book_stack.svg'}
+                                layout="fixed"
+                                width="250vw"
+                                height="350vw"
                                 alt={'bookStack'}
                             />
-                        </div>
+                        </motion.div>
                     </div>
                     <div className={styles.textSection}>
-                        <h1 className={styles.title}>
+                        <motion.h1
+                            className={styles.title}
+                            initial={{ x: 780 }}
+                            whileInView={{ x: 0 }}
+                            transition={{ duration: 2 }}
+                        >
                             DOMSTOL-
                             <br />
                             ADMINISTRASJONEN
-                        </h1>
-                        <div className={styles.section}>
+                        </motion.h1>
+                        <motion.div
+                            className={styles.description}
+                            initial={{ x: 780 }}
+                            whileInView={{ x: 0 }}
+                            transition={{ duration: 3 }}
+                        >
                             <p>
                                 Domstoladministrasjonen, DA, bygger systemene
                                 som samler, sikrer og deler informasjonen. De
                                 forvalter tilliten, sikrer uavhengigheten, møter
                                 kravene og innfrir forventningene. På våre vegne
                                 - alle oss i Norge.
+                                <br></br>
+                                <br></br>Å jobbe for DA betyr oppgaver med
+                                mening. Mange oppgaver. For tjenester som betyr
+                                noe.
                             </p>
-                            <p>
-                                Å jobbe for DA betyr oppgaver med mening. Mange
-                                oppgaver. For tjenester som betyr noe.
-                            </p>
-                        </div>
+                        </motion.div>
                     </div>
-                </motion.div>
+                </div>
             </AnimatePresence>
         </section>
     )

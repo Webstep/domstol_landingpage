@@ -1,30 +1,30 @@
-import React from "react";
-import AboutUs from "../components/slides/domstol/AboutUs";
-import ArticleSlide from "../components/slides/domstol/ArticleSlide";
-import ConvictedPercent from "../components/slides/domstol/ConvictedPercent";
-import ExampleSlide from "../components/slides/domstol/ExampleSlide";
-import NumberSlide from "../components/slides/domstol/NumberSlide";
-import VideoSlide from "../components/slides/domstol/VideoSlide";
-import VideoSlideDA from "../components/slides/domstol/VideoSlideDA";
-import VideoSlideTech from "../components/slides/domstol/VideoSlideTech";
-import VideoSlideWebstep from "../components/slides/domstol/VideoSlideWebstep";
-import scrollStyles from "../styles/Scroll.module.scss";
+import React from 'react'
+import ConvictedPercent from '../components/slides/domstol/ConvictedPercent'
+import ExampleSlide from '../components/slides/domstol/ExampleSlide'
+import Introduction from '../components/slides/domstol/Introduction'
+import AboutUs from '../components/slides/domstol/AboutUs'
+import HairyGoals from '../components/slides/domstol/HairyGoals'
+import ArticleSlide from '../components/slides/domstol/ArticleSlide'
+import NumberSlide from '../components/slides/domstol/NumberSlide'
+import VideoSlideDA from '../components/slides/domstol/VideoSlideDA'
+import VideoSlideTech from '../components/slides/domstol/VideoSlideTech'
+import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep'
 
 const Domstol = () => {
-	return (
-		<>
-			<article className={scrollStyles.case}>
-				<ConvictedPercent></ConvictedPercent>
-				<NumberSlide></NumberSlide>
-				<AboutUs></AboutUs>
-				<VideoSlideDA/>
-				<ArticleSlide image={""}></ArticleSlide>
-				<VideoSlideWebstep/>
-				<VideoSlideDA />
-				<VideoSlideTech/>
-			</article>
-		</>
-	);
-};
+    return (
+        <>
+            <Introduction />
+            <ConvictedPercent />
+            <HairyGoals />
+            <AboutUs />
+            <NumberSlide/>
+			<VideoSlideDA/>
+			<ArticleSlide/>
+			<VideoSlideWebstep/>
+			<VideoSlideDA />
+			<VideoSlideTech/>
+        </>
+    )
+}
 
 export default Domstol

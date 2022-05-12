@@ -1,0 +1,32 @@
+@use '../../../../styles/variables.scss' as *;
+
+.section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    overflow-x: hidden;
+    font-family: $font-family-body;
+
+    div:nth-child(1) {
+        box-shadow: 7px 7px 10px rgba(60, 60, 60, 0.6);
+        height: 500px;
+    }
+}
+
+.description {
+    width: 40vw;
+    max-width: 400px;
+    font-weight: 300;
+    line-height: 1.4rem;
+
+    h2 {
+        font-size: 50px;
+        min-width: 341px;
+    }
+
+    span {
+        display: block;
+    }
+}

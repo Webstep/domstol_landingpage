@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import styles from './Article.module.scss';
 
 interface ArticleProps {
-    image: string;
+    //image: string;
 }
 
 const Article: React.FC<ArticleProps> = ({ }) => {
