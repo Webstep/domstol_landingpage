@@ -1,0 +1,33 @@
+@use 'styles/variables.scss'as *;
+
+.container {
+    height: 100vh;
+    width:100vw;
+    display: flex;
+    font-family: $font-family-body;
+    font-weight: $font-weight-heading;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 40vh;
+    overflow-x: hidden;
+}
+
+.textContainer{
+    margin-bottom: 45px;
+    margin-left: 2vw;
+}
+
+.number{
+    margin-left: 4vw;
+}
+
+.text {
+    width: 20.625rem;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    justify-items: flex-start;
+    align-items: flex-start;
+}
