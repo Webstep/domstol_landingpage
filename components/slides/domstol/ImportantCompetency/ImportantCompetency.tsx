@@ -2,12 +2,10 @@ import { motion } from 'framer-motion';
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './ImportantCompetency.module.scss';
+import Image from 'next/image';
+import SamfunnsAnsvar from '../../../../public/assets/important-competency.jpg';
 
-interface ImportantCompetencyProps {
-    //image: string;
-}
-
-const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
+const ImportantCompetency: React.FC = () => {
     const [height, setHeight] = useState<number>(500);
     const [ref, inView] = useInView();
 
@@ -26,7 +24,7 @@ const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
                             whileInView={{ y: 0, opacity: 1 }}
                             transition={{ y: { duration: 1 }, opacity: { duration: 2 } }}
                             viewport={{ once: false }}>
-                            <img src={"/images/samfunnsansvar.jpg"} />
+                            <Image src={SamfunnsAnsvar} alt="" width="358px" height="467px" />
                         </motion.div>
                         <div className={styles.text}>
                             <motion.div
@@ -61,9 +59,7 @@ const ImportantCompetency: React.FC<ImportantCompetencyProps> = ({ }) => {
                         </div>
 
                     </div>}
-
             </section>
-
         </>
     );
 };
