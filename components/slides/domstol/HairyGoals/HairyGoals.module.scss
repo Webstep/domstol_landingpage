@@ -1,10 +1,9 @@
 @use '../../../../styles/variables.scss' as *;
 
 .section {
-    display: flex;
+    @include centerContent;
+
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     gap: 3rem;
     overflow-x: hidden;
     font-family: $font-family-body;

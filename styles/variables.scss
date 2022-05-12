@@ -31,4 +31,11 @@ $font-color-highlight: #f2b355;
 
 $color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
 $color-subcolor: #f2b355;
+
+@mixin centerContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 $color-red: #E84F4F;
