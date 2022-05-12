@@ -1,4 +1,3 @@
-import { filterProps } from 'framer-motion'
 import React, { useEffect, useMemo, useRef, useState } from 'react'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
