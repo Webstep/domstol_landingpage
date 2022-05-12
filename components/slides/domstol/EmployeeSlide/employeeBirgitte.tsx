@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 
-const EmployeeBirgitte: React.FC = ({}) => {
+const EmployeeBirgitte: React.FC = ({ }) => {
     return (
         <div className={styles.content}>
             <div>
