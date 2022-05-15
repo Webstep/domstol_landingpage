@@ -38,9 +38,11 @@ $color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
 $color-subcolor: #f2b355;
 
 @mixin centerContent {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
-$color-red: #E84F4F;
+$color-red: #e84f4f;

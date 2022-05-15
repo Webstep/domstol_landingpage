@@ -31,7 +31,7 @@ const NumberSlide = () => {
     }, [inView, number])
 
     return (
-        <section ref={ref}>
+        <section ref={ref} className={styles.section}>
             {inView &&
                 <div className={styles.container}>
                     <motion.div
@@ -69,7 +69,7 @@ const NumberSlide = () => {
                         <p className={styles.text}>Straffede personer i 2020.</p>
                         <p className={styles.text}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
                     </motion.div>
-                   
+
                 </div>
             }
         </section>

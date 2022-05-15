@@ -5,18 +5,24 @@ export enum ScrollDirection {
     Down = "DOWN"
 }
 
-const useScroll = (threshold: number = 50, disable: boolean = false) => {
+/**
+ * hook for checking if the user attempt to scoll vertically
+ * 
+ * @param threshold threshold before scroll should be triggered
+ * @param resetTime seconds before scoll state should reset
+ * @returns The direction the user scrolls
+ */
+const useScroll = (threshold: number = 50, resetTime?: number,) => {
     const [value, setValue] = useState<undefined | ScrollDirection>();
     const [scrollSum, setScrollSum] = useState<number>(0);
 
     useEffect(() => {
-        if (disable) return;
-
         const onScrollAttempt = (e: WheelEvent) => {
-
             //if scroll has passed threshold then value should update
             if (Math.abs(scrollSum) > threshold) {
-                setValue(scrollSum < 0 ? ScrollDirection.Up : ScrollDirection.Down)
+                const direction = scrollSum < 0 ? ScrollDirection.Up : ScrollDirection.Down
+                if (value !== direction)
+                    setValue(direction)
             }
             else {
                 setScrollSum(scrollSum + e.deltaY)
@@ -27,18 +33,17 @@ const useScroll = (threshold: number = 50, disable: boolean = false) => {
 
         return () => window.removeEventListener("wheel", onScrollAttempt)
 
-    }, [disable, scrollSum, threshold]);
+    }, [scrollSum, threshold, value]);
 
-    //resets sum if not progress have been made for a while
+    //resets value after resetTime
     useEffect(() => {
-        if (scrollSum !== 0) {
-            const timeout = setTimeout(() => {
-                setScrollSum(0)
-                setValue(undefined)
-            }, 1000)
-            return () => clearTimeout(timeout)
-        }
-    }, [scrollSum])
+        if (scrollSum === 0 || resetTime === undefined || resetTime < 0) return;
+        const timeout = setTimeout(() => {
+            setScrollSum(0)
+            setValue(undefined)
+        }, resetTime * 1000)
+        return () => clearTimeout(timeout)
+    }, [scrollSum, resetTime])
 
     return value
 };

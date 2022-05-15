@@ -1,10 +1,10 @@
 import type { NextPage } from 'next'
-import Domstol from './Domstol'
+import Domstol from './Domstol_v2'
 
 const Home: NextPage = () => {
     return <>
-   <Domstol />
-   </>
+        <Domstol />
+    </>
 }
 
 export default Home;

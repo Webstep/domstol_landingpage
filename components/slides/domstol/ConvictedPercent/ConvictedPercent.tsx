@@ -12,15 +12,13 @@ const ConvictedPercent = () => {
 
     const [isHighlighted, setIsHighlighted] = useState<boolean>(false)
 
-    useEffect(() => {}, [])
-
     useEffect(() => {
         if (inView) setTimeout(() => setIsHighlighted(true), delay * 1000 * 0.5)
         else setIsHighlighted(false)
     }, [inView])
 
     return (
-        <section ref={ref} style={{ height: '100vh' }}>
+        <section ref={ref} className={styles.section}>
             <AnimatePresence>
                 {inView && (
                     <>
