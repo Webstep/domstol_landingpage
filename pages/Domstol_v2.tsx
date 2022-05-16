@@ -13,9 +13,20 @@ import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
 import { useSlideStore } from '../stores/activeSlide';
 
+const slides = [
+    <Introduction key="1" />,
+    <AboutUs key="2" />,
+    <ConvictedPercent key="3" />,
+    <HairyGoals key="4" />,
+    <VideoSlideDA key="5" />,
+    <ImportantCompetency key="6" />,
+    <VideoSlideWebstep key="7" />,
+    <NumberSlide key="8" />,
+    <VideoSlideTech key="9" />,
+    <Employee key="10" />
+]
 
-
-const Test = () => {
+const Domstol = () => {
     const activeSlide = useSlideStore((state) => state.activeSlide)
     const setSlidesLength = useSlideStore((state) => state.setSlidesLength)
     const previousSlide = useSlideStore((state) => state.previousSlide)
@@ -42,17 +53,4 @@ const Test = () => {
     );
 };
 
-export default Test;
-
-const slides = [
-    <Introduction key="1" />,
-    <AboutUs key="2" />,
-    <ConvictedPercent key="3" />,
-    <HairyGoals key="4" />,
-    <VideoSlideDA key="5" />,
-    <ImportantCompetency key="6" />,
-    <VideoSlideWebstep key="7" />,
-    <NumberSlide key="8" />,
-    <VideoSlideTech key="9" />,
-    <Employee key="10" />
-]
+export default Domstol;
