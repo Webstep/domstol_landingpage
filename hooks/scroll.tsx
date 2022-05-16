@@ -1,51 +1,44 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 
 export enum ScrollDirection {
     Up = "UP",
     Down = "DOWN"
 }
 
+interface useScrollParams {
+    handleScroll: (direction: ScrollDirection) => void,
+    threshold?: number,
+    resetTime?: number
+}
+
+
 /**
  * hook for checking if the user attempt to scoll vertically
- * 
+ *
+ * @param handleScroll function to run when user is scrolling, takes one parameter of type ScrollDirection 
  * @param threshold threshold before scroll should be triggered
- * @param resetTime seconds before scoll state should reset
+ * @param resetTime seconds before scroll can be triggered again
  * @returns The direction the user scrolls
  */
-const useScroll = (threshold: number = 50, resetTime?: number,) => {
-    const [value, setValue] = useState<undefined | ScrollDirection>();
-    const [scrollSum, setScrollSum] = useState<number>(0);
+const useScroll = ({ handleScroll, threshold = 25, resetTime = 0.5 }: useScrollParams): void => {
 
-    useEffect(() => {
-        const onScrollAttempt = (e: WheelEvent) => {
-            //if scroll has passed threshold then value should update
-            if (Math.abs(scrollSum) > threshold) {
-                const direction = scrollSum < 0 ? ScrollDirection.Up : ScrollDirection.Down
-                if (value !== direction)
-                    setValue(direction)
-            }
-            else {
-                setScrollSum(scrollSum + e.deltaY)
-            }
+    const onScroll = useCallback((e: WheelEvent) => {
+        if (Math.abs(e.deltaY) > threshold) {
+            //remove eventlistener to limit how often handleScroll can be triggered
+            window.removeEventListener("wheel", onScroll)
+            setTimeout(() => window.addEventListener("wheel", onScroll), resetTime * 1000)
+
+            const direction = e.deltaY < 0 ? ScrollDirection.Up : ScrollDirection.Down
+            handleScroll(direction)
+
         }
+    }, [handleScroll, resetTime, threshold])
 
-        window.addEventListener("wheel", onScrollAttempt)
-
-        return () => window.removeEventListener("wheel", onScrollAttempt)
-
-    }, [scrollSum, threshold, value]);
-
-    //resets value after resetTime
     useEffect(() => {
-        if (scrollSum === 0 || resetTime === undefined || resetTime < 0) return;
-        const timeout = setTimeout(() => {
-            setScrollSum(0)
-            setValue(undefined)
-        }, resetTime * 1000)
-        return () => clearTimeout(timeout)
-    }, [scrollSum, resetTime])
+        window.addEventListener("wheel", onScroll)
 
-    return value
+        return () => window.removeEventListener("wheel", onScroll)
+    }, [onScroll]);
 };
 
 export default useScroll;

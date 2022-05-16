@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
 import Employee from '../components/slides/domstol/EmployeeSlide';
@@ -21,26 +21,19 @@ const Test = () => {
     const previousSlide = useSlideStore((state) => state.previousSlide)
     const nextSlide = useSlideStore((state) => state.nextSlide)
 
-    const scrollThreshold = 50
-    const resetScrollAfterSeconds = 1
-    const scroll = useScroll(scrollThreshold, resetScrollAfterSeconds);
-
-    useEffect(() => {
-        if (!scroll) return;
-
-        if (scroll === ScrollDirection.Down) {
+    const handleScroll = useCallback((direction: ScrollDirection) => {
+        if (direction === ScrollDirection.Down) {
             nextSlide()
         } else {
             previousSlide()
         }
-    }, [nextSlide, previousSlide, scroll]);
+    }, [nextSlide, previousSlide])
+
+    useScroll({ handleScroll });
 
     useEffect(() => {
         setSlidesLength(slides.length)
     }, [setSlidesLength]);
-
-    console.log(activeSlide);
-
 
     return (
         <AnimatePresence exitBeforeEnter>
@@ -52,7 +45,7 @@ const Test = () => {
 export default Test;
 
 const slides = [
-    // <Introduction key="1" />,
+    <Introduction key="1" />,
     <AboutUs key="2" />,
     <ConvictedPercent key="3" />,
     <HairyGoals key="4" />,
