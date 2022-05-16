@@ -1,24 +1,26 @@
-@use 'styles/variables.scss'as *;
+@use 'styles/variables.scss' as *;
+
+.section {
+    @include centerContent;
+}
 
 .container {
     height: 100%;
-    width:100vw;
+    width: 100vw;
     display: flex;
     font-family: $font-family-body;
     font-weight: $font-weight-heading;
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
-
-    
 }
 
-.textContainer{
+.textContainer {
     //margin-bottom: 45px;
     margin-left: 2vw;
 }
 
-.number{
+.number {
     margin-left: 4vw;
     margin-bottom: 4vh;
 }
