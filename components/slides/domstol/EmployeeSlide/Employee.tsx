@@ -4,6 +4,8 @@ import { AnimatePresence, motion } from 'framer-motion'
 import EmployeeCalle from './employeeCalle'
 import EmployeeBirgitte from './employeeBirgitte'
 import { useInView } from 'react-intersection-observer'
+import ProgressBar, { Direction } from '../../../common/ProgressBar'
+
 
 const Employee = () => {
     const [lastYPos, setLastYPos] = useState(0)

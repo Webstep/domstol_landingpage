@@ -1,0 +1,15 @@
+.horizontal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rectangle {
+    margin: 1rem;
+}
