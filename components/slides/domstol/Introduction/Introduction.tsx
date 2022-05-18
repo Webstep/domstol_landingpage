@@ -1,11 +1,22 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
 import Weight from '../../../../public/assets/domstol/weight.svg';
 import Image from 'next/image';
+import { useInView } from 'react-intersection-observer';
 
-const DomstolIntroduction = () => {
+interface IntroductionProps {
+    allowScrolling: (value: boolean) => void;
+}
+
+const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) => {
+    const { ref, inView } = useInView()
+
+    useEffect(() => {
+        allowScrolling(inView)
+    }, [allowScrolling, inView]);
+
     return (
         <section className={styles.container}>
             <div className={styles.overlay}>
@@ -52,6 +63,7 @@ const DomstolIntroduction = () => {
                     loop
                 ></video>
             </div>
+            <div className={styles.breakpoint} ref={ref}></div>
         </section>
     )
 }
