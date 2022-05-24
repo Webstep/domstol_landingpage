@@ -24,6 +24,16 @@ button {
 //     color: white;
 // }
 
+//This styles hide the scrollbar
+* {
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
 @font-face {
     font-family: 'Lo-Res';
     src: url('../public/fonts/LoRes12OTRegular/LoRes12OT-Regular.woff2')
