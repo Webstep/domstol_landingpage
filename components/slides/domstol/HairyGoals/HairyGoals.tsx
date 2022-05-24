@@ -6,19 +6,11 @@ import Image from 'next/image'
 const HairyGoals = () => {
 
     const descriptionContainer: Variants = {
-        hidden: {
-            //x: 300,
-            // opacity: 0
-        },
+        hidden: {},
         show: {
-            // x: 0,
             opacity: 1,
             transition: {
-                // delay: 0.5,
-                // duration: 1,
                 delayChildren: 1,
-
-                // staggerChildren: 0.5
                 staggerChildren: 0.25
             }
         },
@@ -35,7 +27,7 @@ const HairyGoals = () => {
     const item = {
         hidden: {
             opacity: 0,
-            x: 300
+            x: 200
         },
         show: {
             opacity: 1,
@@ -45,8 +37,6 @@ const HairyGoals = () => {
             }
         }
     }
-
-
 
     return (
         <section className={styles.section}>
@@ -80,16 +70,16 @@ const HairyGoals = () => {
                     DA har tro på teknologi og de har en klar
                     ambisjon:
                 </motion.p>
-                <motion.q variants={item} className={styles.quote}>Vi skal være best i verden!</motion.q>
+                <motion.q variants={item} className={styles.quote}>
+                    Vi skal være best i verden!
+                </motion.q>
                 <motion.span variants={item} className={styles.signature}>
                     <span>
                         Herman Seip,
                     </span>
                     Arkitekt hos DA
                 </motion.span>
-                <motion.p
-                    variants={item}
-                >
+                <motion.p variants={item}>
                     DA har ambisjon om å la norske borgere
                     kommunisere digitalt med Domstolene. Når Norge
                     digitaliseres må Domstolene henge med. Dette
@@ -97,9 +87,7 @@ const HairyGoals = () => {
                     systemer for effektiv samhandling rundt
                     strafferett, sivilrett og tvister.
                 </motion.p>
-                <motion.p
-                    variants={item}
-                >
+                <motion.p variants={item}>
                     DA er en offensiv oppdragsgiver med tro på ny
                     teknologi. De drømmer om verdens beste løsninger
                     og vi skal være med og gi dem det. Oppdraget for
