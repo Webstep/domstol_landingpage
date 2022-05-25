@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect } from 'react';
 import AboutUs from '../components/slides/domstol/AboutUs';
+import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
 import Employee from '../components/slides/domstol/EmployeeSlide';
 import HairyGoals from '../components/slides/domstol/HairyGoals';
@@ -23,6 +24,7 @@ const slides = [
     <VideoSlideWebstep key="7" />,
     <NumberSlide key="8" />,
     <VideoSlideTech key="9" />,
+    <Collaboration key="Webstep og domstolene" />,
     <Employee key="10" />
 ]
 
