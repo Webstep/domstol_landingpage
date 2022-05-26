@@ -55,7 +55,19 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                         </div>
                     </div>
                 </div>
-                <div className={styles.tintedBackground} />
+                <motion.div className={styles.tintedBackground}
+                    initial={{
+                        x: 0
+                    }}
+                    animate={{
+                        x: 2000
+                    }}
+                    transition={{
+                        duration: 3.5,
+                        ease: 'linear'
+                    }}
+
+                />
                 <div className={styles.videoContainer}>
                     <video
                         src={require('../../../../public/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4')}

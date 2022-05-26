@@ -1,3 +1,5 @@
+$image-width: 1280px;
+
 .container {
     height: 220vh;
     min-height: 220vh;
@@ -8,10 +10,11 @@
 
     .tintedBackground {
         height: 100vh;
-        width: 100%;
+        width: $image-width;
         z-index: 9;
         position: absolute;
-        background: rgba($color: #000000, $alpha: 0.5);
+        // background: rgba($color: #000000, $alpha: 0.5);
+        background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
     }
 
     .overlay {
@@ -22,7 +25,7 @@
         position: absolute;
         z-index: 10;
         display: grid;
-        grid-template-columns: 1fr 1280px 1fr;
+        grid-template-columns: 1fr $image-width 1fr;
         flex-direction: row;
         align-items: center;
         justify-content: center;
