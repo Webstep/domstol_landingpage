@@ -1,70 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './Employee.module.scss'
 import { AnimatePresence, motion } from 'framer-motion'
 import EmployeeCalle from './employeeCalle'
 import EmployeeBirgitte from './employeeBirgitte'
-import { useInView } from 'react-intersection-observer'
-import ProgressBar, { Direction } from '../../../common/ProgressBar'
+import ProgressBar from '../../../common/DottedProgressBar'
 
+const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
 const Employee = () => {
-    const [lastYPos, setLastYPos] = useState(0)
-    const [showNewEmployee, setShowNewEmployee] = useState(false)
-    const [ref, inView] = useInView()
-    const employees = [EmployeeBirgitte, EmployeeCalle]
-
-    useEffect(() => {
-        setShowNewEmployee(inView)
-    }, [inView])
+    const [currentEmployee, setCurrentEmployee] = useState<number>(0);
 
     return (
         <section className={styles.section}>
-            <div className={styles.stickydiv}>
+            <div className={styles.container}>
+                <motion.div>
+                    <h1>MØT VÅRE WEBSTEPPERE</h1>
+                </motion.div>
                 <div>
-                    <div className={styles.container}>
-                        <motion.div>
-                            <h1>MØT VÅRE WEBSTEPPERE</h1>
-                        </motion.div>
-                        <div>
-                            <div className={styles.employees}>
-                                <AnimatePresence initial={false} exitBeforeEnter>
-                                    {showNewEmployee ? (
-                                        <motion.div
-                                            key="calle"
-                                            initial={{ x: 400 }}
-                                            animate={{ x: 0 }}
-                                            transition={{ duration: 1 }}
-                                            exit={{
-                                                x: -600,
-                                                opacity: 0,
-                                                transition: {
-                                                    duration: 1,
-                                                },
-                                            }}
-                                        >
-                                            <EmployeeCalle />
-                                        </motion.div>
-                                    ) : (
-                                        <motion.div
-                                            key="brigitte"
-                                            exit={{
-                                                x: -600,
-                                                opacity: 0,
-                                                transition: {
-                                                    duration: 1,
-                                                },
-                                            }}
-                                        >
-                                            <EmployeeBirgitte />
-                                        </motion.div>
-                                    )}
-                                </AnimatePresence>
-                            </div>
-                        </div>
+                    <div className={styles.employees}>
+                        <AnimatePresence initial={false} exitBeforeEnter>
+                            {Employees[currentEmployee]}
+                        </AnimatePresence>
                     </div>
                 </div>
             </div>
-            <div className={styles.breakpoint} ref={ref}></div>
+            <ProgressBar progress={currentEmployee} size={Employees.length} onClick={(value) => setCurrentEmployee(value)} />
         </section>
     )
 }

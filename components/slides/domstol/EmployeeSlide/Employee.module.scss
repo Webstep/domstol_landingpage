@@ -1,18 +1,8 @@
 @use 'styles/variables.scss' as *;
 
 .section {
-    height: auto;
+    @include centerContent;
     flex-direction: column;
-    height: 200vh !important;
-    position: relative;
-}
-
-.stickydiv {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 20vh;
-    height: 50vh;
 }
 
 .container {

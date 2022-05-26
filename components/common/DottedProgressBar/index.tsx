@@ -1,1 +1,1 @@
-export { default, Direction } from './ProgressBar'
+export { default } from './DottedProgressBar'
