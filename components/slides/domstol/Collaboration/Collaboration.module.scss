@@ -1,0 +1,57 @@
+@use 'styles/variables' as *;
+
+.section {
+    @include centerContent;
+}
+
+.imageContainer {
+    height: 550px;
+    width: 650px;
+    margin-right: 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    span,
+    video {
+        display: block;
+        grid-row: 1 / 2;
+    }
+
+    span {
+        grid-column: 2 / -1;
+        align-self: flex-start;
+    }
+
+    video {
+        grid-column: 1 / 5;
+        align-self: flex-end;
+    }
+}
+
+.description {
+    width: 400px;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 3rem;
+    }
+
+    blockquote {
+        margin-inline: 0;
+
+        .signature {
+            @include pixelText;
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+
+            * {
+                display: block;
+            }
+
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+}
