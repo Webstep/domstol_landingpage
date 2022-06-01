@@ -1,4 +1,4 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export enum ScrollDirection {
     Up = "UP",
@@ -21,23 +21,32 @@ interface useScrollParams {
  * @returns The direction the user scrolls
  */
 const useScroll = ({ handleScroll, threshold = 25, resetTime = 0.5 }: useScrollParams): void => {
+    const scrollingTimer = useRef<any>()
 
     const onScroll = useCallback((e: WheelEvent) => {
         if (Math.abs(e.deltaY) > threshold) {
-            //remove eventlistener to limit how often handleScroll can be triggered
+            //deactivate eventlistener to limit how often handleScroll can be triggered
             window.removeEventListener("wheel", onScroll)
-            setTimeout(() => window.addEventListener("wheel", onScroll), resetTime * 1000)
+
+            clearTimeout(scrollingTimer.current) //prevents eventslisteners with an old onScoll function to be triggered
+
+            //reactivate eventlistener after specified amount of time
+            scrollingTimer.current = setTimeout(() => window.addEventListener("wheel", onScroll), resetTime * 1000)
 
             const direction = e.deltaY < 0 ? ScrollDirection.Up : ScrollDirection.Down
             handleScroll(direction)
-
         }
     }, [handleScroll, resetTime, threshold])
+
+
 
     useEffect(() => {
         window.addEventListener("wheel", onScroll)
 
-        return () => window.removeEventListener("wheel", onScroll)
+        return () => {
+            window.removeEventListener("wheel", onScroll)
+            clearTimeout(scrollingTimer.current)
+        }
     }, [onScroll]);
 };
 

@@ -13,7 +13,7 @@ import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep'
 const Domstol = () => {
     return (
         <>
-            <Introduction />
+            <Introduction allowScrolling={() => { }} />
             <AboutUs />
             <ConvictedPercent />
             <HairyGoals />
