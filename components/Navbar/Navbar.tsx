@@ -15,7 +15,7 @@ const Navbar = () => {
                     />
                 </a>
             </Link>
-            <div className={styles.middleSection}>
+            {/* <div className={styles.middleSection}>
                 <Link href={'#'}>Samarbeid</Link>
                 <div className={styles.rectangle}></div>
                 <Link href={'#'}>Ansatte</Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
             <div className={styles.menu}>
                 <div>Meny</div>
                 <div className={styles.hamburgerMenu}></div>
-            </div>
+            </div> */}
         </nav>
     )
 }
