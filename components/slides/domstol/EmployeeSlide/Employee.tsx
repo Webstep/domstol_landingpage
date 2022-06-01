@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Employee.module.scss'
 import { AnimatePresence, motion } from 'framer-motion'
-import EmployeeCalle from './employeeCalle'
-import EmployeeBirgitte from './employeeBirgitte'
 import ProgressBar from '../../../common/DottedProgressBar'
 import Image from 'next/image'
 import { EmployeeData } from './EmployeeData'
 
-const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
+// const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
 const RotatingElement: React.FC<any> = ({ className, ...options }) => {
     return (
@@ -35,11 +33,15 @@ const RotatingElement: React.FC<any> = ({ className, ...options }) => {
 
 const Employee = () => {
     const [currentEmployee, setCurrentEmployee] = useState<number>(0);
-    const [img, setImg] = useState<JSX.Element>()
+    const [img, setImg] = useState<JSX.Element>(
+        <div style={{ height: 305, width: 305 }} />
+    )
     // const [firstName, setFirstName] = useState<JSX.Element>();
     // const [link, setLink] = useState<string>("");
-    const [fullName, setFullName] = useState<JSX.Element>();
-    const [quote, setQuote] = useState<JSX.Element>();
+    const [fullName, setFullName] = useState<JSX.Element>(<div style={{ height: 16 * 3.125, width: 250 }} />);
+    const [quote, setQuote] = useState<JSX.Element>(
+        <div style={{ height: 200, width: 250 }}></div>
+    );
     const [role, setRole] = useState<JSX.Element>();
 
 
@@ -133,13 +135,21 @@ const Employee = () => {
                         <AnimatePresence exitBeforeEnter>
                             {role}
                         </AnimatePresence>
-                        <span>
+                        <motion.span
+                            initial={{ rotateX: -90 }}
+                            animate={{ rotateX: 0 }}
+                            transition={{
+                                duration: 0.5,
+                                ease: 'linear',
+                                delay: 0.321 * 4
+                            }}
+                        >
                             , Webstep
-                        </span>
+                        </motion.span>
                     </p>
                 </div>
             </div>
-            <ProgressBar progress={currentEmployee} size={Employees.length} onClick={(value) => setCurrentEmployee(value)} />
+            <ProgressBar progress={currentEmployee} size={EmployeeData.length} onClick={(value) => setCurrentEmployee(value)} />
         </section>
     )
 }
