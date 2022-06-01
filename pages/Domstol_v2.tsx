@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import DottedProgressBar from '../components/common/DottedProgressBar';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
@@ -19,6 +20,7 @@ const Domstol: React.VFC = () => {
     const setSlidesLength = useSlideStore((state) => state.setSlidesLength)
     const previousSlide = useSlideStore((state) => state.previousSlide)
     const nextSlide = useSlideStore((state) => state.nextSlide)
+    const setActiveSlide = useSlideStore((state) => state.setActiveSlide)
 
     const slides = useMemo(() => [
         <Introduction key="1" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
@@ -30,6 +32,7 @@ const Domstol: React.VFC = () => {
         <VideoSlideWebstep key="7" />,
         <NumberSlide key="8" />,
         <VideoSlideTech key="9" />,
+        <Collaboration key="collaboration" />,
         <Employee key="10" />
     ], [])
 
@@ -57,9 +60,19 @@ const Domstol: React.VFC = () => {
 
 
     return (
-        <AnimatePresence exitBeforeEnter>
-            {slides[activeSlide]}
-        </AnimatePresence>
+        <>
+            <AnimatePresence exitBeforeEnter>
+                {slides[activeSlide]}
+            </AnimatePresence>
+            <div style={{
+                position: "fixed",
+                right: "20px",
+                top: "50vh",
+                transform: "translateY(-50%)"
+            }}>
+                <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
+            </div>
+        </>
     );
 };
 
