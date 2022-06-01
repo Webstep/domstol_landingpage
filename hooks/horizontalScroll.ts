@@ -39,7 +39,7 @@ const useHorizontalScroll = ({
             } else {
                 if (Math.abs(e.deltaX) > threshold) {
                     direction =
-                        e.deltaX < 0
+                        e.deltaX > 0
                             ? HorizontalScrollDirection.Right
                             : HorizontalScrollDirection.Left
                 }
