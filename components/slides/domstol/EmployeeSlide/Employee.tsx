@@ -7,7 +7,7 @@ import { EmployeeData } from './EmployeeData'
 
 // const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
-const RotatingElement: React.FC<any> = ({ className, ...options }) => {
+const RotatingElement: React.FC<any> = ({ className, children, ...options }) => {
     return (
         <motion.div
             initial={{
@@ -26,13 +26,15 @@ const RotatingElement: React.FC<any> = ({ className, ...options }) => {
             className={className}
             {...options}
         >
-
+            {children}
         </motion.div>
     )
 }
 
 const Employee = () => {
     const [currentEmployee, setCurrentEmployee] = useState<number>(0);
+
+    //Empty divs are used to create a smoother enter animation, as content will not
     const [img, setImg] = useState<JSX.Element>(
         <div style={{ height: 305, width: 305 }} />
     )
@@ -40,7 +42,7 @@ const Employee = () => {
     // const [link, setLink] = useState<string>("");
     const [fullName, setFullName] = useState<JSX.Element>(<div style={{ height: 16 * 3.125, width: 250 }} />);
     const [quote, setQuote] = useState<JSX.Element>(
-        <div style={{ height: 200, width: 250 }}></div>
+        <div style={{ height: 200, width: 250 }} />
     );
     const [role, setRole] = useState<JSX.Element>();
 
@@ -141,7 +143,7 @@ const Employee = () => {
                             transition={{
                                 duration: 0.5,
                                 ease: 'linear',
-                                delay: 0.321 * 4
+                                delay: 0.321 * 4 //to line up with initial role animation
                             }}
                         >
                             , Webstep
