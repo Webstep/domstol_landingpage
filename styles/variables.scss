@@ -23,6 +23,12 @@ $font-weight-pixel: 400;
 $font-weight-pixel-name: 700;
 $font-size-pixel: 1.125rem;
 
+@mixin pixelText($font-weight: 400) {
+    font-family: Lo-Res, sans-serif;
+    font-weight: $font-weight;
+    font-size: 1.125rem;
+}
+
 //Brødtekst landingpage og artikkel
 $font-family-body: Roboto, sans-serif;
 $font-weight-body-landing: 600;

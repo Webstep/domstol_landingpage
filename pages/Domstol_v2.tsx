@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import AboutUs from '../components/slides/domstol/AboutUs';
+import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
 import Employee from '../components/slides/domstol/EmployeeSlide';
 import HairyGoals from '../components/slides/domstol/HairyGoals';
@@ -12,7 +13,6 @@ import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
 import { useSlideStore } from '../stores/activeSlide';
-
 
 const Domstol: React.VFC = () => {
     const activeSlide = useSlideStore((state) => state.activeSlide)
