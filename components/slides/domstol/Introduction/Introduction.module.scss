@@ -13,6 +13,7 @@ $image-width: 1280px;
         width: $image-width;
         z-index: 9;
         position: absolute;
+        right: 0;
         // background: rgba($color: #000000, $alpha: 0.5);
         background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
     }

@@ -57,10 +57,10 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                 </div>
                 <motion.div className={styles.tintedBackground}
                     initial={{
-                        x: 0
+                        width: '100vw'
                     }}
                     animate={{
-                        x: 2000
+                        width: '0px'
                     }}
                     transition={{
                         duration: 3.5,
