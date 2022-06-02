@@ -1,77 +1,60 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import React, { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import React from 'react'
 import PixelatedMan from '../../../common/PixelatedMan'
 import styles from './ConvictedPercent.module.scss'
-import { useInView } from 'react-intersection-observer'
 
-const ConvictedPercent = () => {
-    const { ref, inView } = useInView()
+const ConvictedPercent: React.VFC = () => {
+    const exitAnimationTransition = { duration: 3, times: [0, 0.4, 1] }
 
-    //animation delay in seconds
-    const delay = 4
-
-    const [isHighlighted, setIsHighlighted] = useState<boolean>(false)
-
-    useEffect(() => {
-        if (inView) setTimeout(() => setIsHighlighted(true), delay * 1000 * 0.5)
-        else setIsHighlighted(false)
-    }, [inView])
 
     return (
-        <section ref={ref} className={styles.section}>
-            <AnimatePresence>
-                {inView && (
-                    <>
-                        <div className={styles.container}>
-                            {[...new Array(3)].map((_, index) => (
-                                <PixelatedMan key={index} />
-                            ))}
-                            <motion.div
-                                className={styles.popup}
-                                initial={{
-                                    translateY: 0,
-                                }}
-                                animate={{ translateY: -100 }}
-                                transition={{ delay }}
-                            >
-                                <PixelatedMan
-                                    key="3"
-                                    highlight={isHighlighted}
-                                />
+        <section className={styles.section}>
+            <motion.div className={styles.container}
+                exit={{ opacity: [1, 1, 0] }}
+                transition={exitAnimationTransition}
+            >
 
-                                <motion.div
-                                    initial={{
-                                        opacity: 0,
-                                        height: 0,
-                                    }}
-                                    animate={{
-                                        opacity: 100,
-                                        height: 'auto',
-                                        marginTop: '2rem',
-                                    }}
-                                    transition={{ delay }}
-                                >
-                                    <h2>
-                                        1/6 av Norges befolkning har blitt
-                                        domfelt.
-                                    </h2>
-                                    <p>
-                                        Dette kan skyldes alt fra en trafikkbot
-                                        til en langvarig fengselsstraff. Flere
-                                        du kjenner, eller kanskje også deg selv,
-                                        har med andre ord vært i kontakt med
-                                        domstoladministrasjonen på et eller
-                                        annet vis i løpet av livet.
-                                    </p>
-                                </motion.div>
-                            </motion.div>
-                            {[...new Array(2)].map((_, index) => (
-                                <PixelatedMan key={index + 3} />
-                            ))}
-                        </div>
-                    </>
-                )}
-            </AnimatePresence>
+                {[...new Array(6)].map((_, index) => (
+                    <PixelatedMan key={index + 3} highlight={index === 2} />
+                ))}
+            </motion.div>
+
+            <motion.div
+                initial={{
+                    opacity: 0,
+                }}
+                animate={{
+                    opacity: 1,
+                }}
+                transition={{ duration: 2, delay: 0.5 }}
+                className={styles.textSection}
+            >
+                <motion.h2
+                    exit={{
+                        color: ['white', '#F2B355', '#F2B355'],
+                        opacity: [1, 1, 0]
+                    }}
+                    transition={exitAnimationTransition}
+                >
+                    <span>
+                        1/6
+                    </span>
+                    <div>
+                        av Norges befolkning har blitt          domfelt.
+                    </div>
+                </motion.h2>
+                <motion.p
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Dette kan skyldes alt fra en trafikkbot
+                    til en langvarig fengselsstraff. Flere
+                    du kjenner, eller kanskje også deg selv,
+                    har med andre ord vært i kontakt med
+                    domstoladministrasjonen på et eller
+                    annet vis i løpet av livet.
+                </motion.p>
+            </motion.div>
         </section>
     )
 }
