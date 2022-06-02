@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion'
 import ProgressBar from '../../../common/DottedProgressBar'
 import Image from 'next/image'
 import { EmployeeData } from './EmployeeData'
+import useHorizontalScroll, { HorizontalScrollDirection } from '../../../../hooks/horizontalScroll'
 
 // const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
@@ -33,6 +34,16 @@ const RotatingElement: React.FC<any> = ({ className, children, ...options }) => 
 
 const Employee = () => {
     const [currentEmployee, setCurrentEmployee] = useState<number>(0);
+
+    const handleScroll = (value: HorizontalScrollDirection) => {
+        if (value === HorizontalScrollDirection.Left && currentEmployee > 0) {
+            setCurrentEmployee(currentEmployee - 1)
+        } else if (value === HorizontalScrollDirection.Right && currentEmployee < EmployeeData.length - 1) {
+            setCurrentEmployee(currentEmployee + 1)
+        }
+    }
+
+    useHorizontalScroll({ handleScroll })
 
     //Empty divs are used to create a smoother enter animation, as content will not
     const [img, setImg] = useState<JSX.Element>(
