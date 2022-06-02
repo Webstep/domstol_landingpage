@@ -56,7 +56,7 @@ const Domstol: React.VFC = () => {
         }
     }, [nextSlide, previousSlide, preventScrolling])
 
-    useScroll({ handleScroll, resetTime: 1 });
+    useScroll({ handleScroll, resetTime: 0.5 });
 
 
     return (

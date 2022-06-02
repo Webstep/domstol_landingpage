@@ -43,18 +43,18 @@ const AboutUs = () => {
                 <div className={styles.textSection}>
                     <motion.h1
                         className={styles.title}
-                        initial={{ x: 780 }}
-                        animate={{ x: 0 }}
-                        transition={{ duration: 1 }}
+                        initial={{ x: 420, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1, ease: 'easeOut' }}
                     >
                         <span className={styles.redLetter}>D</span>OMSTOL-
                         <span className={styles.redLetter}>A</span>DMINISTRASJONEN
                     </motion.h1>
                     <motion.div
                         className={styles.description}
-                        initial={{ x: 780 }}
-                        animate={{ x: 0 }}
-                        transition={{ duration: 2 }}
+                        initial={{ x: 420, opacity: 0 }}
+                        animate={{ x: 0, opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
                     >
                         <p>
                             Domstoladministrasjonen, DA, bygger systemene
