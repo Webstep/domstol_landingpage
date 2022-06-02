@@ -10,8 +10,11 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
     padding-top: 12vh;
+
+    img {
+        justify-self: center;
+    }
 }
 
 .textSection {

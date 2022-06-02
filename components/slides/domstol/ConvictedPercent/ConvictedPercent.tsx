@@ -31,7 +31,7 @@ const ConvictedPercent: React.VFC = () => {
             >
                 <motion.h2
                     exit={{
-                        color: ['white', '#F2B355', '#F2B355'],
+                        color: ['#FFFFFF', '#F2B355', '#F2B355'],
                         opacity: [1, 1, 0]
                     }}
                     transition={exitAnimationTransition}
