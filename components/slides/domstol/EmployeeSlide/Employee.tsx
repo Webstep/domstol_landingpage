@@ -9,15 +9,19 @@ import useHorizontalScroll, { HorizontalScrollDirection } from '../../../../hook
 // const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
 const RotatingElement: React.FC<any> = ({ className, children, ...options }) => {
+    const perspective = 500
     return (
         <motion.div
             initial={{
+                perspective,
                 rotateX: -90
             }}
             animate={{
+                perspective,
                 rotateX: 0
             }}
             exit={{
+                perspective,
                 rotateX: 90
             }}
             transition={{
