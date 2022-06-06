@@ -9,15 +9,18 @@ const ConvictedPercent: React.VFC = () => {
 
     return (
         <section className={styles.section}>
-            <motion.div className={styles.container}
-                exit={{ opacity: [1, 1, 0] }}
-                transition={exitAnimationTransition}
-            >
-
+            <div className={styles.container}>
                 {[...new Array(6)].map((_, index) => (
-                    <PixelatedMan key={index + 3} highlight={index === 2} />
+                    <motion.div
+                        key={index}
+                        exit={{ opacity: [1, index === 2 ? 1 : 0, 0] }}
+                        transition={exitAnimationTransition}
+                    >
+
+                        <PixelatedMan key={index + 3} highlight={index === 2} />
+                    </motion.div>
                 ))}
-            </motion.div>
+            </div>
 
             <motion.div
                 initial={{
