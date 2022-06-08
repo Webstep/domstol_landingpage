@@ -1,47 +1,6 @@
 @use 'styles/variables.scss' as *;
+
 .container {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     width: 100vw;
     height: 100vh;
-
-    .video {
-        grid-column: 1;
-    }
-
-    .citation {
-        grid-column: 2;
-        align-self: center;
-        justify-content: center;
-        padding: 10%;
-    }
-    .article {
-        grid-column: 2;
-        align-self: center;
-        justify-content: center;
-        padding: 10%;
-        margin-right: 10vw;
-        font-family: $font-family-body;
-        font-size: $font-size-body;
-        font-weight: $font-weight-body-article;
-
-        q {
-            margin-top: 20px;
-            quotes: none;
-        }
-
-        .ending {
-            margin-top: 60px;
-        }
-
-        .bold {
-            font-weight: $font-weight-body-landing;
-            margin-bottom: 5px;
-            margin-top: 20px;
-        }
-        .workPosition {
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-    }
 }
