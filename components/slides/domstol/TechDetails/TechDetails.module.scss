@@ -1,0 +1,57 @@
+@use '../../../../styles/variables.scss' as *;
+
+.section {
+    @include centerContent;
+
+    flex-direction: row;
+    gap: 3rem;
+    font-family: $font-family-body;
+
+    div:first-child {
+        box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
+        height: 464.58px;
+        width: 358px;
+    }
+}
+
+.quote {
+    font-size: 2rem;
+    font-weight: 800;
+    display: block;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    line-height: 2.4rem;
+}
+
+.signature {
+    @include pixelText;
+
+    span {
+        font-weight: bold;
+        display: block;
+    }
+}
+
+.hashtag {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1.75rem;
+}
+
+.description {
+    width: 55vw;
+    max-width: 600px;
+    font-weight: 300;
+    line-height: 1.3rem;
+    font-size: 1rem;
+
+    h2 {
+        font-size: 50px;
+        min-width: 341px;
+    }
+
+    span {
+        display: block;
+    }
+}
