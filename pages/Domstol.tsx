@@ -17,11 +17,11 @@ const Domstol = () => {
             <AboutUs />
             <ConvictedPercent />
             <HairyGoals />
-            <VideoSlideDA />
+            {/* <VideoSlideDA /> */}
             <ImportantCompetency />
-            <VideoSlideWebstep />
+            {/* <VideoSlideWebstep /> */}
             <NumberSlide />
-            <VideoSlideTech />
+            {/* <VideoSlideTech /> */}
             <Employee />
         </>
     )

@@ -27,11 +27,11 @@ const Domstol: React.VFC = () => {
         <AboutUs key="2" />,
         <ConvictedPercent key="3" />,
         <HairyGoals key="4" />,
-        <VideoSlideDA key="5" />,
+        // <VideoSlideDA key="5" />,
         <ImportantCompetency key="6" />,
-        <VideoSlideWebstep key="7" />,
+        // <VideoSlideWebstep key="7" />,
         <NumberSlide key="8" />,
-        <VideoSlideTech key="9" />,
+        // <VideoSlideTech key="9" />,
         <Collaboration key="collaboration" />,
         <Employee key="10" />
     ], [])

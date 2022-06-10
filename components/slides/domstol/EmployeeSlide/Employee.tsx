@@ -127,7 +127,7 @@ const Employee = () => {
         <section className={styles.section}>
             <h1 className={styles.h1}>MØT VÅRE WEBSTEPPERE</h1>
             <div className={styles.container}>
-                <div className={styles.employees}>
+                <div className={styles.images}>
                     <AnimatePresence exitBeforeEnter>
                         {img}
                     </AnimatePresence>

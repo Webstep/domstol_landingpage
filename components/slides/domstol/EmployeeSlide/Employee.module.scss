@@ -15,6 +15,19 @@
     gap: 4rem;
 }
 
+.images {
+    &::after {
+        align-self: center;
+        justify-self: center;
+        width: 305px;
+        height: 305px;
+        border-radius: 100px;
+        background-color: black;
+        transform: translateZ(10px);
+        content: '';
+    }
+}
+
 .h1 {
     font-family: $font-family-heading;
     // font-weight: $font-weight-heading;
