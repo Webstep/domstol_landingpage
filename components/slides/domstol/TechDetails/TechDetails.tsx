@@ -49,7 +49,11 @@ const TechDetails: React.FC = ({ }) => {
     }
 
     return (
-        <section className={styles.section}>
+        <section className={styles.background}>
+            <div className={styles.kotlin}>KOTLIN</div>
+            <div className={styles.react}>REACT</div>
+            <div className={styles.java}>JAVA</div>
+            <div className={styles.section}>
             <motion.div
                 initial={{ x: -200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -66,7 +70,7 @@ const TechDetails: React.FC = ({ }) => {
                         height={464.58}
                         objectFit="cover"
                     ></Image>
-                <motion.p>
+                <motion.p className={styles.moreInfo}>
                     Ønsker du mer teknisk info? <strong>Se Carl forklare i videoen over</strong>
                 </motion.p>
             </motion.div>
@@ -107,6 +111,7 @@ const TechDetails: React.FC = ({ }) => {
                     #kotlin #react #java <br /> #tjukkllient
                 </motion.p>
             </motion.div>
+            </div>
         </section>
     );
 };
