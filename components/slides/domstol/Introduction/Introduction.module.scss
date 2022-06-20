@@ -93,6 +93,7 @@ $image-width: 1280px;
         height: 100vh;
         position: sticky;
         top: 0;
+        overflow: hidden;
 
         video {
             padding: 0;
