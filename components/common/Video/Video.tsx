@@ -73,37 +73,33 @@ const Video: React.FC<VideoProps> = (props) => {
             {inView &&
                 <div className={styles.container}>
                     <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay} />
-                    {isPlaying ?
-                        <div className={styles.controls}>
+                    <div className={styles.controls}>
+                        <div className={styles.buttonGroup}>
                             <button
                                 onClick={toggleSound}
-                                className={styles.controlsIcon}
+                                className={styles.soundButton}
                             >
                                 <Image
-                                    width="45px"
-                                    height="34px"
-                                    alt="toggle sound"
+                                    alt="sound on/off"
                                     src={isSound ? SoundIcon : MuteIcon}
                                 />
-
                             </button>
                             <button
+                                className={styles.playButton}
                                 onClick={() => (isPlaying ? pause() : play())}
-                                className={styles.controlsIcon}
                             >
-                                <Image src={PauseIcon} width="31px" height="36px" alt="pause" />
+                                <Image
+                                    alt="play/pause"
+                                    src={isPlaying ? PauseIcon : PlayIcon}
+                                />
                             </button>
-                            <div className={styles.timeControl}>
-                                <span>{formatTime(currentTime)}</span>
-                                <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
-                                <span>{formattedDuration}</span>
-                            </div>
                         </div>
-                        :
-                        <button className={styles.playButton} onClick={() => play()}>
-                            <Image src={PlayIcon} alt="play" height="100px" width="100px" />
-                        </button>
-                    }
+                        <div className={styles.timeControl}>
+                            <span>{formatTime(currentTime)}</span>
+                            <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
+                            <span>{formattedDuration}</span>
+                        </div>
+                    </div>
                 </div>
             }
         </div>
