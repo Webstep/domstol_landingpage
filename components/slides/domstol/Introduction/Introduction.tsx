@@ -5,6 +5,7 @@ import styles from './Introduction.module.scss'
 import Weight from '../../../../public/assets/domstol/weight.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import useScroll, { ScrollDirection } from '../../../../hooks/scroll';
 
 interface IntroductionProps {
     allowScrolling: (value: boolean) => void;
@@ -12,15 +13,26 @@ interface IntroductionProps {
 
 const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) => {
     const { ref, inView } = useInView()
+    const overlayId = "overlay"
+    const breakpointId = "breakpoint"
 
     useEffect(() => {
         allowScrolling(inView)
     }, [allowScrolling, inView]);
 
+
+    const handleScroll = (direction: ScrollDirection) => {
+        document.getElementById(direction === ScrollDirection.Down ? breakpointId : overlayId)?.scrollIntoView(
+            // { behavior: 'smooth', block: 'end' }
+        );
+    }
+
+    useScroll({ handleScroll })
+
     return (
         <>
             <section className={styles.container}>
-                <div className={styles.overlay}>
+                <div className={styles.overlay} id={overlayId}>
                     <div className={styles.information}>
                         <Image src={Weight} alt="" height="41" width="48" />
                         <h1>
@@ -77,7 +89,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                     ></video>
                 </div>
             </section>
-            <div className={styles.breakpoint} ref={ref}></div>
+            <div className={styles.breakpoint} ref={ref} id={breakpointId}></div>
         </>
     )
 }
