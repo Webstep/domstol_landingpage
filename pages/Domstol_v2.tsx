@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import Device from '../components/common/Device/Device';
 import DottedProgressBar from '../components/common/DottedProgressBar';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import Collaboration from '../components/slides/domstol/Collaboration';
@@ -36,12 +37,6 @@ const Domstol: React.VFC = () => {
         <Employee key="10" />
     ], [])
 
-    const [isMobile, setIsMobile] = useState<boolean>();
-
-    useEffect(() => {
-        setIsMobile(window.screen.width <= 1200)
-    }, []);
-
     useEffect(() => {
         setSlidesLength(slides.length)
     }, [setSlidesLength, slides.length]);
@@ -53,40 +48,40 @@ const Domstol: React.VFC = () => {
     }, [activeSlide]);
 
     const handleScroll = useCallback((direction: ScrollDirection) => {
-        //disables scrolling if on mobile version or manually overwritten
-        if (isMobile || preventScrolling === true) return;
+        if (preventScrolling === true) return;
 
         if (direction === ScrollDirection.Down) {
             nextSlide()
         } else {
             previousSlide()
         }
-    }, [isMobile, preventScrolling, nextSlide, previousSlide])
+    }, [preventScrolling, nextSlide, previousSlide])
 
     useScroll({ handleScroll, resetTime: 0.5 });
 
-
     return (
-        <>
+        <Device>
+            {({ isMobile }) =>
+                isMobile ? (
+                    slides
+                ) : (
+                    <>
 
-            {isMobile ? <>
-                {slides}
-
-            </> : <>
-                <AnimatePresence exitBeforeEnter>
-                    {slides[activeSlide]}
-                </AnimatePresence>
-            </>}
-
-            <div style={{
-                position: "fixed",
-                right: "20px",
-                top: "50vh",
-                transform: "translateY(-50%)"
-            }}>
-                <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
-            </div>
-        </>
+                        <AnimatePresence exitBeforeEnter>
+                            {slides[activeSlide]}
+                        </AnimatePresence>
+                        <div style={{
+                            position: "fixed",
+                            right: "20px",
+                            top: "50vh",
+                            transform: "translateY(-50%)"
+                        }}>
+                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
+                        </div>
+                    </>
+                )
+            }
+        </Device>
     );
 };
 
