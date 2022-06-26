@@ -36,19 +36,23 @@ const Domstol: React.VFC = () => {
         <Employee key="10" />
     ], [])
 
+
+    const isMobile = window.screen.width <= 1200;
+
     useEffect(() => {
         setSlidesLength(slides.length)
     }, [setSlidesLength, slides.length]);
 
     const [preventScrolling, setPreventScrolling] = useState<boolean>(true);
+
     useEffect(() => {
-        if (activeSlide === 0) {
-            setPreventScrolling(true)
-        }
+        setPreventScrolling(activeSlide === 0)
     }, [activeSlide]);
 
     const handleScroll = useCallback((direction: ScrollDirection) => {
-        if (preventScrolling === true) return;
+        //disables scrolling if on mobile version or manually overwritten
+        if (isMobile || preventScrolling === true) return;
+
         if (direction === ScrollDirection.Down) {
             nextSlide()
         } else {
@@ -61,9 +65,16 @@ const Domstol: React.VFC = () => {
 
     return (
         <>
-            <AnimatePresence exitBeforeEnter>
-                {slides[activeSlide]}
-            </AnimatePresence>
+
+            {isMobile ? <>
+                {slides}
+
+            </> : <>
+                <AnimatePresence exitBeforeEnter>
+                    {slides[activeSlide]}
+                </AnimatePresence>
+            </>}
+
             <div style={{
                 position: "fixed",
                 right: "20px",
