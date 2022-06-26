@@ -36,8 +36,11 @@ const Domstol: React.VFC = () => {
         <Employee key="10" />
     ], [])
 
+    const [isMobile, setIsMobile] = useState<boolean>();
 
-    const isMobile = window.screen.width <= 1200;
+    useEffect(() => {
+        setIsMobile(window.screen.width <= 1200)
+    }, []);
 
     useEffect(() => {
         setSlidesLength(slides.length)
@@ -58,7 +61,7 @@ const Domstol: React.VFC = () => {
         } else {
             previousSlide()
         }
-    }, [nextSlide, previousSlide, preventScrolling])
+    }, [isMobile, preventScrolling, nextSlide, previousSlide])
 
     useScroll({ handleScroll, resetTime: 0.5 });
 
