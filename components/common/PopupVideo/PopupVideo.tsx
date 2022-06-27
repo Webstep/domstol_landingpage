@@ -68,32 +68,34 @@ const PopupVideo: React.FC<VideoProps> = (props) => {
 
     return (
         <div className={styles.container}>
-            <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay disablePictureInPicture />
-            <div className={styles.controls}>
-                <div className={styles.buttonGroup}>
-                    <button
-                        onClick={toggleSound}
-                        className={styles.soundButton}
-                    >
-                        <Image
-                            alt="sound on/off"
-                            src={isSound ? SoundIcon : MuteIcon}
-                        />
-                    </button>
-                    <button
-                        className={styles.playButton}
-                        onClick={() => (isPlaying ? pause() : play())}
-                    >
-                        <Image
-                            alt="play/pause"
-                            src={isPlaying ? PauseIcon : PlayIcon}
-                        />
-                    </button>
-                </div>
-                <div className={styles.timeControl}>
-                    <span>{formatTime(currentTime)}</span>
-                    <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
-                    <span>{formattedDuration}</span>
+            <div className={styles.player}>
+                <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay disablePictureInPicture />
+                <div className={styles.controls}>
+                    <div className={styles.buttonGroup}>
+                        <button
+                            onClick={toggleSound}
+                            className={styles.soundButton}
+                        >
+                            <Image
+                                alt="sound on/off"
+                                src={isSound ? SoundIcon : MuteIcon}
+                            />
+                        </button>
+                        <button
+                            className={styles.playButton}
+                            onClick={() => (isPlaying ? pause() : play())}
+                        >
+                            <Image
+                                alt="play/pause"
+                                src={isPlaying ? PauseIcon : PlayIcon}
+                            />
+                        </button>
+                    </div>
+                    <div className={styles.timeControl}>
+                        <span>{formatTime(currentTime)}</span>
+                        <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
+                        <span>{formattedDuration}</span>
+                    </div>
                 </div>
             </div>
         </div>
