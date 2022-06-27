@@ -1,5 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import Device from '../components/common/Device/Device';
 import DottedProgressBar from '../components/common/DottedProgressBar';
 import PopupVideo from '../components/common/PopupVideo';
 import AboutUs from '../components/slides/domstol/AboutUs';
@@ -45,38 +46,46 @@ const Domstol: React.VFC = () => {
     }, [setSlidesLength, slides.length]);
 
     const [preventScrolling, setPreventScrolling] = useState<boolean>(true);
+
     useEffect(() => {
-        if (activeSlide === 0) {
-            setPreventScrolling(true)
-        }
+        setPreventScrolling(activeSlide === 0)
     }, [activeSlide]);
 
     const handleScroll = useCallback((direction: ScrollDirection) => {
         if (preventScrolling === true) return;
+
         if (direction === ScrollDirection.Down) {
             nextSlide()
         } else {
             previousSlide()
         }
-    }, [nextSlide, previousSlide, preventScrolling])
+    }, [preventScrolling, nextSlide, previousSlide])
 
     useScroll({ handleScroll, resetTime: 0.5 });
 
-
     return (
-        <>
-            <AnimatePresence exitBeforeEnter>
-                {slides[activeSlide]}
-            </AnimatePresence>
-            <div style={{
-                position: "fixed",
-                right: "20px",
-                top: "50vh",
-                transform: "translateY(-50%)"
-            }}>
-                <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
-            </div>
-        </>
+        <Device>
+            {({ isMobile }) =>
+                isMobile ? (
+                    slides
+                ) : (
+                    <>
+
+                        <AnimatePresence exitBeforeEnter>
+                            {slides[activeSlide]}
+                        </AnimatePresence>
+                        <div style={{
+                            position: "fixed",
+                            right: "20px",
+                            top: "50vh",
+                            transform: "translateY(-50%)"
+                        }}>
+                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
+                        </div>
+                    </>
+                )
+            }
+        </Device>
     );
 };
 

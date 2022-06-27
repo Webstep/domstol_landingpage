@@ -1,49 +1,47 @@
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './ImportantCompetency.module.scss';
 import Image from 'next/image';
 import SamfunnsAnsvar from '../../../../public/assets/important-competency.jpg';
 
 const ImportantCompetency: React.FC = () => {
-    const [height, setHeight] = useState<number>(500);
 
-    useEffect(() => {
-        setHeight(window.innerHeight);
-    }, [setHeight]);
+    const enterTransistion = {
+        duration: 1.5,
+    }
+
+    const exitTransition = {
+        duration: 1,
+    }
+
 
     return (
         <section className={styles.section}>
             <div className={styles.container}>
                 <motion.div
                     className={styles.image}
-                    initial={{ y: -height / 3, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ x: -200, opacity: 0 }}
-                    transition={{ duration: 2 }}
-                    viewport={{ once: false }}>
+                    initial={{ y: -200, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                    exit={{ x: -100, opacity: 0, transition: exitTransition }}
+                >
                     <Image src={SamfunnsAnsvar} alt="" width="358px" height="467px" />
                 </motion.div>
                 <div className={styles.text}>
                     <motion.div
-                        initial={{ y: -height / 4, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ x: 100, opacity: 0 }}
-                        // transition={{ y: { duration: 1 }, opacity: { duration: 2 } }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: false }}>
+                        initial={{ y: -200, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        exit={{ x: 100, opacity: 0, transition: exitTransition }}
+                    >
                         <h1 className={styles.heading}>
                             TRENGER VIKTIG KOMPETANSE FRA WEBSTEP
                         </h1>
                     </motion.div>
 
                     <motion.div
-                        initial={{ y: height / 4, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-
-                        exit={{ y: 100, opacity: 0 }}
-                        // transition={{ y: { duration: 1 }, opacity: { duration: 2 } }}
-                        transition={{ duration: 2 }}
-                        viewport={{ once: false }}>
+                        initial={{ y: 200, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        exit={{ y: 100, opacity: 0, transition: exitTransition }}
+                    >
                         <div className={styles.description}>
                             <p>Dagens DA-løsning er en hybridløsning, dels systemstøtte, dels manuelle operasjoner. Ting tar tid fra beslutning til resultat. Men hvordan skulle de løse de teknologiske problemene? Herman har svaret:
                                 <br />
@@ -65,4 +63,4 @@ const ImportantCompetency: React.FC = () => {
     );
 };
 
-export default ImportantCompetency;
+export default ImportantCompetency
