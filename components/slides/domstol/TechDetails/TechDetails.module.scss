@@ -51,7 +51,7 @@
     flex-direction: row;
     gap: 3rem;
     font-family: $font-family-body;
-    z-index: 3;
+    //z-index: 3;
 
     div:first-child {
         box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
@@ -107,4 +107,9 @@
     span {
         display: block;
     }
+}
+
+.imageButton {
+    cursor: pointer;
+
 }

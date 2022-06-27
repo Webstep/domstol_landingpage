@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styles from './TechDetails.module.scss';
 import { motion, Variants } from 'framer-motion';
 import Image from 'next/image'
+import PopupVideo from '../../../common/PopupVideo';
 
 /*interface TechDetailsProps {
     : string;
@@ -12,7 +13,9 @@ const TechDetails: React.FC = ({ }) => {
     const [showVideo, setShowVideo] = useState<boolean>(false);
 
     useEffect(() => {
-        setShowVideo(!showVideo);
+        console.log(showVideo);
+        //setShowVideo(!showVideo);
+        console.log(showVideo);
     }, []);
 
     const descriptionContainer: Variants = {
@@ -63,13 +66,13 @@ const TechDetails: React.FC = ({ }) => {
                     duration: 1.5,
                 }}
             >
-                    <Image
+                    <button className={styles.imageButton} onClick={() => setShowVideo(!showVideo)}><Image
                         src="/assets/carl_bokestad.jpg"
                         alt="bilde av Carl Fredrik Bøkestad"
                         width={358}
                         height={464.58}
                         objectFit="cover"
-                    ></Image>
+                    ></Image></button>
                 <motion.p className={styles.moreInfo}>
                     Ønsker du mer teknisk info? <strong>Se Carl forklare i videoen over</strong>
                 </motion.p>
@@ -112,6 +115,8 @@ const TechDetails: React.FC = ({ }) => {
                 </motion.p>
             </motion.div>
             </div>
+            {showVideo &&
+                <PopupVideo src={require('../../../../public/videos/Webstep_DA_intervju_teknisk_1208x1920_v02_1.mp4')}></PopupVideo>}
         </section>
     );
 };

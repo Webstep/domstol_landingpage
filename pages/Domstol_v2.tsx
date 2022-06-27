@@ -1,6 +1,7 @@
 import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import DottedProgressBar from '../components/common/DottedProgressBar';
+import PopupVideo from '../components/common/PopupVideo';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
@@ -9,6 +10,7 @@ import HairyGoals from '../components/slides/domstol/HairyGoals';
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency';
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
+import TechDetails from '../components/slides/domstol/TechDetails';
 import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
@@ -33,7 +35,9 @@ const Domstol: React.VFC = () => {
         <NumberSlide key="8" />,
         <VideoSlideTech key="9" />,
         <Collaboration key="collaboration" />,
-        <Employee key="10" />
+        <Employee key="10" />,
+        <TechDetails key="11" />,
+        /*<PopupVideo key="12" src={require('../public/videos/')} autoplay={false} />*/
     ], [])
 
     useEffect(() => {
