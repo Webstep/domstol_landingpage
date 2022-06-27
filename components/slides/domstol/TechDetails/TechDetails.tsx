@@ -78,13 +78,21 @@ const TechDetails: React.FC = ({ }) => {
                         duration: 1,
                     }}
                 >
-                    <button className={styles.imageButton} onClick={() => setShowVideo(!showVideo)}><Image
+                    <motion.button
+                        whileHover={{ scale: 1.1 }}
+                        onClick={() => setShowVideo(!showVideo)}
+                        className={styles.imageButton}
+                        >
+
+                    <Image
                         src="/assets/carl_bokestad.jpg"
                         alt="bilde av Carl Fredrik Bøkestad"
                         width={358}
                         height={464.58}
                         objectFit="cover"
-                    ></Image></button>
+                    ></Image>
+
+                        </motion.button>
                     <motion.p className={styles.moreInfo}>
                         Ønsker du mer teknisk info? <br />
                         <strong>Se Carl forklare i videoen over</strong>
