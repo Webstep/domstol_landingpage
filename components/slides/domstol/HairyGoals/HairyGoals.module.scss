@@ -45,3 +45,33 @@
         display: block;
     }
 }
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        flex-direction: column;
+        height: 300vh;
+        position: relative;
+        align-items: flex-start;
+        overflow: visible;
+
+        .description {
+            width: 90vw;
+            position: absolute;
+        }
+
+        .image {
+            position: sticky;
+            top: 10px;
+            height: 100vh;
+            //background-image: url(/assets/herman_seip.jpg);
+            //background-size: cover;
+            //background-repeat: no-repeat;
+            //background-position-x: center;
+            align-self: flex-start;
+            * {
+                display: none;
+                position: sticky;
+            }
+        }
+    }
+}

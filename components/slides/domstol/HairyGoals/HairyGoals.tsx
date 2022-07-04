@@ -2,7 +2,6 @@ import { motion, Variants } from 'framer-motion'
 import React from 'react'
 import styles from './HairyGoals.module.scss'
 import Image from 'next/image'
-
 const HairyGoals = () => {
 
     const descriptionContainer: Variants = {
@@ -40,7 +39,8 @@ const HairyGoals = () => {
 
     return (
         <section className={styles.section}>
-            <motion.div
+            <div style={{ position: "sticky", top: 0, backgroundColor: 'blue', height: '20px', width: '20px' }}></div>
+            <motion.div className={styles.image}
                 initial={{ x: -200, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ y: -400, opacity: 0 }}
