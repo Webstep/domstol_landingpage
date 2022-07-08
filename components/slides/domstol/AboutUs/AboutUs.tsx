@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './AboutUs.module.scss'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import Text from '../../../common/Text'
 
 const AboutUs = () => {
     return (
@@ -47,6 +48,7 @@ const AboutUs = () => {
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
                     <span className={styles.redLetter}>D</span>OMSTOL-
+                    <br />
                     <span className={styles.redLetter}>A</span>DMINISTRASJONEN
                 </motion.h1>
                 <motion.div
@@ -55,18 +57,18 @@ const AboutUs = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
                 >
-                    <p>
+                    <Text isOverlay>
                         Domstoladministrasjonen, DA, bygger systemene
                         som samler, sikrer og deler informasjonen. De
                         forvalter tilliten, sikrer uavhengigheten, møter
                         kravene og innfrir forventningene. På våre vegne
                         - alle oss i Norge.
-                    </p>
-                    <p>
+                    </Text>
+                    <Text isOverlay>
                         Å jobbe for DA betyr oppgaver med
                         mening. Mange oppgaver. For tjenester som betyr
                         noe.
-                    </p>
+                    </Text>
                 </motion.div>
             </div>
         </section>

@@ -7,8 +7,8 @@ interface TextProps {
 
 const Text: React.FC<TextProps> = ({ children, isOverlay, ...options }) => {
     return (
-        <div className={styles.container}>
-            <p className={styles.text + (isOverlay ? " " + styles.overlay : "")} {...options}>
+        <div className={styles.container + (isOverlay ? " " + styles.overlay : "")}>
+            <p className={styles.text} {...options}>
                 {children}
             </p>
         </div>

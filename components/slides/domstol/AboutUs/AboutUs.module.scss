@@ -4,10 +4,6 @@
     @include centerContent;
     overflow-x: hidden;
     position: relative;
-    // }
-    // .container {
-    //     display: flex;
-    //     max-width: max-content;
 
     .textSection {
         display: flex;
@@ -58,44 +54,41 @@
 
 @media (max-width: 1200px) {
     .section {
-        height: 370vh;
+        height: 420vh;
         overflow: visible;
-        // align-items: flex-start;
         display: block;
-    }
-    .container {
-        // display: block;
-        flex-direction: column;
-    }
 
-    .media {
-        position: sticky;
-        top: 0;
-        background-image: url(/assets/weapon-shield.jpg);
-        background-position: center;
-        background-size: cover;
-        height: 110vh;
+        .media {
+            position: sticky;
+            top: 0;
+            background-image: url(/assets/weapon-shield.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 110vh;
 
-        z-index: 0;
-
-        * {
-            display: none;
-        }
-    }
-
-    .textSection {
-        z-index: 10;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-
-        h1 {
-            margin-top: 50vh;
+            * {
+                display: none;
+            }
         }
 
-        * > p {
-            margin-top: 100vh;
+        .textSection {
+            z-index: 10;
+            position: absolute;
+            top: 0;
+            margin-left: 0 !important;
+            max-width: 100%;
+
+            h1 {
+                margin-top: 50vh;
+            }
+
+            .description {
+                width: 100vw;
+            }
+
+            .title {
+                margin-inline: auto;
+            }
         }
     }
 }
