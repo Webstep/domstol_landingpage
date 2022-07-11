@@ -5,15 +5,15 @@ import styles from './Number.module.scss';
 
 const NumberSlide = () => {
     const [number, setNumber] = useState<number>(0);
-    const [width, setWidth] = useState<number>(500);
     const [ref, inView] = useInView();
 
     useEffect(() => {
-        setWidth(window.innerWidth * 0.8);
+        console.log(styles.fontsizeAfter);
+
         if (inView) {
             const incrementNumber = () => {
                 if (number < 261974) {
-                    setNumber(number + 397);
+                    setNumber(number + 297);
                 } else {
                     setNumber(261974);
                     clearInterval(interval);
@@ -26,7 +26,6 @@ const NumberSlide = () => {
         }
         else {
             setNumber(0);
-            setWidth(window.innerWidth * 0.8);
         }
     }, [inView, number])
 
@@ -34,36 +33,32 @@ const NumberSlide = () => {
         <section ref={ref} className={styles.section}>
             {inView &&
                 <div className={styles.container}>
-                    <motion.div
-                        className={styles.number}
-                        initial={{ x: width }}
-                        animate={{ x: 0 }}
+
+                    <motion.span className={styles.number}
+                        initial={{
+                            color: '#ffffff',
+                            opacity: 0
+                            //fontSize: '0%',
+                        }}
+                        whileInView={{
+                            color: '#F2B355',
+                            opacity: 1
+                            //fontSize: '100%',
+                        }}
                         viewport={{ once: false }}
-                        transition={{ duration: 2 }}
+                        transition={{
+                            color: {duration: 2, delay: 2},
+                            opacity: {duration: 0.5}
+                        }}
                     >
-                        <motion.span
-                            initial={{
-                                color: '#ffffff',
-                                fontSize: '2rem'
-                            }}
-                            whileInView={{
-                                color: '#F2B355',
-                                fontSize: '14rem'
-                            }}
-                            viewport={{ once: false }}
-                            transition={{
-                                duration: 2,
-                                delay: 2
-                            }}
-                        >
-                            {number.toLocaleString('no')}
-                        </motion.span>
-                    </motion.div>
+                        {number.toLocaleString('no')}
+                    </motion.span>
+
                     <motion.div
                         className={styles.textContainer}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 4 }}
+                        transition={{ duration: 1, delay: 3 }}
                         viewport={{ once: false }}
                     >
                         <p className={styles.text}>Straffede personer i 2020.</p>

@@ -23,6 +23,7 @@
 .number {
     margin-left: 4vw;
     margin-bottom: 4vh;
+    font-size: 14rem;
 }
 
 .text {
@@ -34,4 +35,58 @@
     padding: 0;
     justify-items: flex-start;
     align-items: flex-start;
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        height: 200vh;
+        width: 100vw;
+
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+        overflow: visible;
+        font-family: $font-family-body;
+        font-weight: $font-weight-heading;
+        overflow-x: hidden;
+        height: 200vh;
+        top: 10px;
+
+        /*.description {
+            width: 90vw;
+            position: absolute;
+        }*/
+
+        .textContainer {
+            //margin-left: 0;
+        }
+
+        .text {
+            width: 20.625rem;
+            font-size: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+            justify-items: flex-start;
+            align-items: flex-start;
+        }
+
+        .number {
+            position: sticky;
+            top: 10px;
+            height: 100vh;
+            align-self: flex-start;
+            font-size: 4rem;
+
+            * {
+                display: none;
+                position: sticky;
+            }
+        }
+    }
 }
