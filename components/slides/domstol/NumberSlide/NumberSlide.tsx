@@ -30,43 +30,40 @@ const NumberSlide = () => {
     }, [inView, number])
 
     return (
-        <section ref={ref} className={styles.section}>
-            {inView &&
-                <div className={styles.container}>
+        <section className={styles.section}>
 
-                    <motion.span className={styles.number}
-                        initial={{
-                            color: '#ffffff',
-                            opacity: 0
-                            //fontSize: '0%',
-                        }}
-                        whileInView={{
-                            color: '#F2B355',
-                            opacity: 1
-                            //fontSize: '100%',
-                        }}
-                        viewport={{ once: false }}
-                        transition={{
-                            color: {duration: 2, delay: 2},
-                            opacity: {duration: 0.5}
-                        }}
-                    >
-                        {number.toLocaleString('no')}
-                    </motion.span>
+            <motion.span ref={ref} className={styles.number}
+                initial={{
+                    color: '#ffffff',
+                    opacity: 0.1
+                    //fontSize: '0%',
+                }}
+                whileInView={{
+                    color: '#F2B355',
+                    opacity: 1
+                    //fontSize: '100%',
+                }}
+                viewport={{ once: false }}
+                transition={{
+                    color: { duration: 2, delay: 2 },
+                    opacity: { duration: 0.5 }
+                }}
+            >
+                {number.toLocaleString('no')}
+            </motion.span>
 
-                    <motion.div
-                        className={styles.textContainer}
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        transition={{ duration: 1, delay: 3 }}
-                        viewport={{ once: false }}
-                    >
-                        <p className={styles.text}>Straffede personer i 2020.</p>
-                        <p className={styles.text}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
-                    </motion.div>
+            <motion.div
+                className={styles.textContainer}
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 3 }}
+                viewport={{ once: false }}
+            >
+                <p className={styles.text1}>Straffede personer i 2020.</p>
+                <p className={styles.text2}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
+            </motion.div>
+            <div className={styles.extraheight}></div>
 
-                </div>
-            }
         </section>
     );
 };
