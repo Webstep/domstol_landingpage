@@ -8,7 +8,6 @@ const NumberSlide = () => {
     const [ref, inView] = useInView();
 
     useEffect(() => {
-        console.log(styles.fontsizeAfter);
 
         if (inView) {
             const incrementNumber = () => {
