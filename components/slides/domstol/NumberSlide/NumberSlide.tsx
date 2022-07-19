@@ -30,10 +30,8 @@ const NumberSlide = () => {
 
     return (
         <section className={styles.section}>
-
             <div className={styles.extraheight}></div>
             <div className={styles.extraheight}></div>
-
             <motion.span ref={ref} className={styles.number}
                 initial={{
                     color: '#ffffff',
@@ -54,12 +52,11 @@ const NumberSlide = () => {
                 {number.toLocaleString('no')}
             </motion.span>
             <div className={styles.extraheight}></div>
-
             <motion.span
 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1, delay: 0 }}
                 viewport={{ once: false }}
             >
                 <p className={styles.text1}>Straffede personer i Norge i 2020.</p>
@@ -69,13 +66,12 @@ const NumberSlide = () => {
 
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 1 }}
+                transition={{ duration: 1, delay: 0 }}
                 viewport={{ once: false }}
             >
                 <p className={styles.text2}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
             </motion.span>
             <div className={styles.extraheight}></div>
-
         </section>
     );
 };
