@@ -29,50 +29,37 @@ const NumberSlide = () => {
     }, [inView, number])
 
     return (
-        <section className={styles.section}>
+        <motion.section className={styles.section}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}  >
             <div className={styles.extraheight}></div>
             <div className={styles.extraheight}></div>
             <motion.span ref={ref} className={styles.number}
                 initial={{
                     color: '#ffffff',
-                    opacity: 0.1
-                    //fontSize: '0%',
                 }}
                 whileInView={{
                     color: '#F2B355',
-                    opacity: 1
-                    //fontSize: '100%',
                 }}
                 viewport={{ once: false }}
                 transition={{
                     color: { duration: 2, delay: 2 },
-                    opacity: { duration: 0.5 }
                 }}
             >
                 {number.toLocaleString('no')}
             </motion.span>
             <div className={styles.extraheight}></div>
-            <motion.span
-
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0 }}
-                viewport={{ once: false }}
-            >
+            <span>
                 <p className={styles.text1}>Straffede personer i Norge i 2020.</p>
-            </motion.span>
+            </span>
             <div className={styles.extraheight}></div>
-            <motion.span
-
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 1, delay: 0 }}
-                viewport={{ once: false }}
-            >
+            <span>
                 <p className={styles.text2}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
-            </motion.span>
+            </span>
             <div className={styles.extraheight}></div>
-        </section>
+        </motion.section>
     );
 };
 
