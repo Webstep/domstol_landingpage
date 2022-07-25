@@ -13,6 +13,7 @@ import NumberSlide from '../components/slides/domstol/NumberSlide';
 import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
+import useScreenWidth from '../hooks/isMobile';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
 import { useSlideStore } from '../stores/activeSlide';
 
@@ -36,6 +37,8 @@ const Domstol: React.VFC = () => {
         <Collaboration key="collaboration" />,
         <Employee key="10" />
     ], [])
+
+    const isScreenSmall = useScreenWidth();
 
     useEffect(() => {
         setSlidesLength(slides.length)
@@ -62,7 +65,7 @@ const Domstol: React.VFC = () => {
     return (
         <Device>
             {({ isMobile }) =>
-                isMobile ? (
+                isMobile || isScreenSmall ? (
                     slides
                 ) : (
                     <>
