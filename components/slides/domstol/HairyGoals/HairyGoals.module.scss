@@ -7,9 +7,8 @@
     gap: 3rem;
     font-family: $font-family-body;
 
-    div:nth-child(1) {
-        box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
-        height: 500px;
+    .media {
+        height: 580px;
     }
 }
 
@@ -49,28 +48,48 @@
 @media only screen and (max-width: 1200px) {
     .section {
         flex-direction: column;
-        height: 300vh;
-        position: relative;
+        justify-content: flex-start;
+        height: 820vh;
         align-items: flex-start;
         overflow: visible;
 
         .description {
             width: 90vw;
             position: absolute;
+            display: flex;
+            flex-direction: column;
+
+            .intro {
+                margin-left: 2rem;
+                margin-top: 5rem;
+                height: 30rem;
+            }
+
+            .stickyDiv {
+                position: sticky;
+                top: 40%;
+            }
+
+            .quoteSignature {
+                margin-left: 3rem;
+                margin-bottom: 0rem;
+                margin-top: 140vh;
+            }
         }
 
-        .image {
+        .media {
             position: sticky;
-            top: 10px;
-            height: 100vh;
-            //background-image: url(/assets/herman_seip.jpg);
-            //background-size: cover;
+            top: 0;
+            margin-top: 40rem;
+            background-image: url(/assets/herman_seip.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 110vh;
+            width: 100vw;
             //background-repeat: no-repeat;
-            //background-position-x: center;
-            align-self: flex-start;
+            //background-position: center center;
             * {
                 display: none;
-                position: sticky;
             }
         }
     }
