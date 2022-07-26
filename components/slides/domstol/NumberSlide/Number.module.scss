@@ -3,7 +3,6 @@
 
 @media only screen and (min-width: 1201px) {
     .section {
-        @include centerContent;
         height: 100%;
         width: 100vw;
         display: flex;
@@ -16,7 +15,7 @@
 }
 
 .number {
-    margin-bottom: 4vh;
+    margin-bottom: 1rem;
     font-size: 14rem;
 }
 
@@ -68,7 +67,7 @@
     }
 
     .extraheight {
-        height: 500px;
+        height: 400px;
         width: 100vw;
     }
 

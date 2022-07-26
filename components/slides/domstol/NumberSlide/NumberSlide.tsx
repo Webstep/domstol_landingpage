@@ -1,32 +1,31 @@
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import { animate, motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import styles from './Number.module.scss';
 
+
 const NumberSlide = () => {
-    const [number, setNumber] = useState<number>(0);
-    const [ref, inView] = useInView();
+    const [inViewRef, inView] = useInView();
 
-    useEffect(() => {
+    function Counter({ from, to }: { from: number, to: number }) {
+        const nodeRef = useRef() as React.MutableRefObject<HTMLParagraphElement>;
 
-        if (inView) {
-            const incrementNumber = () => {
-                if (number < 261974) {
-                    setNumber(number + 297);
-                } else {
-                    setNumber(261974);
-                    clearInterval(interval);
-                }
+        useEffect(() => {
+            if (inView) {
+                var node: any = nodeRef.current;
+
+                const controls = animate(from, to, {
+                    duration: 2,
+                    onUpdate(value) {
+                        node.textContent = Number(value.toFixed()).toLocaleString('no');
+                    }
+                });
+                return () => controls.stop();
             }
-            const interval = setInterval(incrementNumber, 1)
-            return () => {
-                clearInterval(interval)
-            }
-        }
-        else {
-            setNumber(0);
-        }
-    }, [inView, number])
+
+        }, [from, to]);
+        return <p className={styles.number} ref={nodeRef} />;
+    }
 
     return (
         <motion.section className={styles.section}
@@ -36,7 +35,8 @@ const NumberSlide = () => {
             transition={{ duration: 0.5 }}  >
             <div className={styles.extraheight}></div>
             <div className={styles.extraheight}></div>
-            <motion.span ref={ref} className={styles.number}
+
+            <motion.span ref={inViewRef} className={styles.number}
                 initial={{
                     color: '#ffffff',
                 }}
@@ -48,7 +48,7 @@ const NumberSlide = () => {
                     color: { duration: 2, delay: 2 },
                 }}
             >
-                {number.toLocaleString('no')}
+                <Counter from={0} to={261974} />
             </motion.span>
             <div className={styles.extraheight}></div>
             <span>
