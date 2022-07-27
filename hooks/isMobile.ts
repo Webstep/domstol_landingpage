@@ -14,7 +14,6 @@ function useIsScreenThin(): boolean {
         if (screenWidth < screenWidthBreakpoint && !isSmallScreen) {
             setIsSmallScreen(true)
         }
-        console.log(screenWidth < screenWidthBreakpoint, isSmallScreen)
     }, [isSmallScreen, screenWidth])
 
     useEffect(() => {
