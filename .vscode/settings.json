@@ -9,5 +9,8 @@
     },
     "[svg]": {
         "editor.defaultFormatter": "jock.svg"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
     }
 }

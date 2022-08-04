@@ -34,7 +34,7 @@ const Domstol: React.VFC = () => {
         <NumberSlide key="8" />,
         <VideoSlideTech key="9" />,
         <Collaboration key="collaboration" />,
-        <Employee key="10" />
+        <Employee key="10" />,
     ], [])
 
     useEffect(() => {
