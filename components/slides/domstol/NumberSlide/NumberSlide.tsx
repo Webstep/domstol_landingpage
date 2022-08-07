@@ -35,8 +35,7 @@ const NumberSlide = () => {
             transition={{ duration: 0.5 }}  >
             <div className={styles.extraheight}></div>
             <div className={styles.extraheight}></div>
-
-            <motion.span ref={inViewRef} className={styles.number}
+            <motion.p ref={inViewRef} className={styles.number}
                 initial={{
                     color: '#ffffff',
                 }}
@@ -49,15 +48,11 @@ const NumberSlide = () => {
                 }}
             >
                 <Counter from={0} to={261974} />
-            </motion.span>
+            </motion.p>
             <div className={styles.extraheight}></div>
-            <span>
-                <p className={styles.text1}>Straffede personer i Norge i 2020.</p>
-            </span>
+            <p className={styles.text1}>Straffede personer i Norge i 2020.</p>
             <div className={styles.extraheight}></div>
-            <span>
-                <p className={styles.text2}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
-            </span>
+            <p className={styles.text2}>Det krever å holde tunga rett i munnen. Og et system som er pålitelig.</p>
             <div className={styles.extraheight}></div>
         </motion.section>
     );
