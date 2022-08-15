@@ -1,36 +1,33 @@
 @use 'styles/variables.scss' as *;
 
-
 @media only screen and (min-width: 1201px) {
     .section {
         height: 100%;
-        width: 100vw;
+        width: 810px;
+        margin: auto;
         display: flex;
         flex-direction: column;
         font-family: $font-family-body;
         font-weight: $font-weight-heading;
-        align-items: flex-start;
         justify-content: center;
-        margin-left: 6rem;
     }
 }
 
 .number {
     margin: 0;
     margin-bottom: 1rem;
-    font-size: 14rem;
+    font-size: 224px;
 }
 
-.text1 {
+.text1,
+.text2 {
     font-size: 1.5rem;
-    margin: 0;
     padding: 0;
+    width: 100%;
 }
 
 .text2 {
-    font-size: 1.5rem;
     margin-top: 1rem;
-    padding: 0;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -40,7 +37,8 @@
         width: 100vw;
         font-family: $font-family-body;
         font-weight: $font-weight-heading;
-        margin-left: 40px;
+        padding-inline: 2rem;
+        box-sizing: border-box;
     }
 
     .number {
@@ -50,25 +48,22 @@
         margin-bottom: 170px;
     }
 
-    .text1 {
-        width: 18rem;
+    .text1,
+    .text2 {
         font-size: 1.4rem;
         position: sticky;
+    }
+
+    .text1 {
         top: 380px;
         margin-bottom: 120px;
     }
 
     .text2 {
-        width: 18rem;
-        font-size: 1.4rem;
-        position: sticky;
         top: 450px;
     }
 
     .extraheight {
         height: 400px;
     }
-
-    
-
 }

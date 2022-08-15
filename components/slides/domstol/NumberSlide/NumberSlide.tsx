@@ -16,7 +16,7 @@ const NumberSlide = () => {
             transition={{ duration: 0.5 }}  >
             <div className={styles.extraheight}></div>
             <div className={styles.extraheight}></div>
-            <motion.div ref={inViewRef}
+            <motion.div ref={inViewRef} className={styles.number}
                 initial={{
                     color: '#ffffff',
                 }}
@@ -25,10 +25,10 @@ const NumberSlide = () => {
                 }}
                 viewport={{ once: false }}
                 transition={{
-                    color: { duration: 2, delay: 2 },
+                    color: { duration: 4, ease: 'easeIn' },
                 }}
             >
-                <Counter from={0} to={261974} shouldAnimate={inView} className={styles.number} />
+                <Counter from={0} to={261974} shouldAnimate={inView} />
             </motion.div>
             <div className={styles.extraheight}></div>
             <p className={styles.text1}>Straffede personer i Norge i 2020.</p>

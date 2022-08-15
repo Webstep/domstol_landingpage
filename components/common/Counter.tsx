@@ -14,16 +14,16 @@ const Counter: React.FC<CounterProps> = ({ from, to, shouldAnimate, className })
     useEffect(() => {
         if (shouldAnimate) {
             const controls = animate(from, to, {
-                duration: 2,
+                duration: 3,
                 onUpdate(value) {
                     nodeRef.current.textContent = Number(value.toFixed()).toLocaleString('no');
-                }
+                },
             });
             return () => controls.stop();
         }
 
     }, [from, to, shouldAnimate]);
-    return <p className={className} ref={nodeRef} />;
+    return <p className={className} style={{ margin: 0 }} ref={nodeRef} />;
 };
 
 export default Counter;
