@@ -36,7 +36,6 @@ const AboutUs = () => {
                         muted
                         loop
                         title='bookStack'
-
                     />
                 </motion.div>
             </div>
