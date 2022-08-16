@@ -83,3 +83,13 @@
 //         text-decoration: underline;
 //     }
 // }
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .section {
+        height: fit-content;
+    }
+}

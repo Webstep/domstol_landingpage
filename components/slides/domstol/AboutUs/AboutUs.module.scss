@@ -78,16 +78,15 @@
             margin-left: 0 !important;
             max-width: 100%;
 
-            h1 {
-                margin-top: 50vh;
-            }
-
             .description {
                 width: 100vw;
             }
 
             .title {
+                margin-top: 50vh;
                 margin-inline: auto;
+                font-size: min(3rem, 8.5vw);
+                width: fit-content;
             }
         }
     }
