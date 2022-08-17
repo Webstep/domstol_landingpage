@@ -1,42 +1,55 @@
-@use 'styles/variables.scss'as *;
+@use 'styles/variables.scss' as *;
 
 .container {
-    width: 80%;
-    color: $font-color;
-}
-
-.origin {
-
-    font-family: $font-family-pixel;
-    font-size: $font-size-pixel;
-    margin-top: 20px;
-
-    .name {
-        font-weight: $font-weight-pixel-name;
-        margin: 0;
-    }
-
-    .occupation {
-        font-weight: $font-weight-pixel;
-        margin: 0;
-    }
-}
-
-.quote {
-    font-family: $font-family-quote;
-    font-weight: $font-weight-quote;
-    line-height: 1.5;
     margin: 0;
 
-    blockquote {
-        margin: 0;
+    .signature {
+        @include pixelText;
+        margin-top: 1rem;
+
+        .name {
+            display: block;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+    }
+}
+
+.longQuote {
+    font-style: italic;
+    display: block;
+    font-size: 1.125rem;
+}
+
+.shortQuote {
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: block;
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        font-weight: 600;
+        font-size: large;
+        font-size: 2rem;
+
+        box-sizing: border-box;
+        padding: 2rem;
+        padding-top: 300px;
+        margin-top: 100vh;
+
+        background: linear-gradient(
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0.5) 220px,
+            rgba(0, 0, 0, 0.7) 400px
+        );
     }
 
-    .long{
-        font-size: $font-size-quote-long;
+    .shortQuote {
+        font-size: 2rem;
     }
 
-    .short {
-        font-size: $font-size-quote-short;
+    .longQuote {
+        font-size: 1.5rem;
     }
 }

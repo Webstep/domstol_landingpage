@@ -35,26 +35,8 @@
         text-transform: uppercase;
         font-size: 3rem;
     }
-
-    blockquote {
-        margin-inline: 0;
-
-        .signature {
-            @include pixelText;
-            display: block;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
-
-            * {
-                display: block;
-            }
-
-            span {
-                font-weight: 700;
-            }
-        }
-    }
 }
+
 @media only screen and (max-width: 1200px) {
     .section {
         height: 600vh;
@@ -85,20 +67,6 @@
         margin-top: -150vh;
 
         h2 {
-            padding-inline: 2rem;
-        }
-
-        blockquote {
-            font-weight: 600;
-            font-size: large;
-            font-size: 2rem;
-            background: linear-gradient(
-                rgba(255, 0, 0, 0),
-                rgba(0, 0, 0, 0.7) 45%
-            );
-            box-sizing: border-box;
-            padding-top: 40vh;
-            margin-top: 100vh;
             padding-inline: 2rem;
         }
     }

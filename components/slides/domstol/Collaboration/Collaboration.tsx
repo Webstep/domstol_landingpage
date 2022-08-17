@@ -3,6 +3,7 @@ import styles from './Collaboration.module.scss';
 import Image from 'next/image'
 import BrigittAndHerman from '../../../../public/assets/domstol/images/BrigittAndHerman_horizontal.jpg';
 import Text from '../../../common/Text';
+import Citation from '../../../common/Citation';
 
 const Collaboration: React.VFC = () => {
     return (
@@ -26,18 +27,8 @@ const Collaboration: React.VFC = () => {
                         DA drømmer om de beste løsningene for brukerne sine. Vi leverer team for å lage disse løsningene. Samarbeidet er tett og godt.
                     </Text>
                 </div>
-                <blockquote>
-                    – Nytteverdien til løsningen er en mer effektiv arbeidsdag og arbeidsflyt for alle de som bruker systemet i hverdagen. Det er alt fra advokater og saksbehandlere, til oss utviklere som jobber med å forbedre koden.
 
-                    <span className={styles.signature}>
-                        <span>
-                            Brigitt Bright
-                        </span>
-                        Systemutvikler, Webstep
-
-                    </span>
-
-                </blockquote>
+                <Citation name="Brigitt Bright" quote="Nytteverdien til løsningen er en mer effektiv arbeidsdag og arbeidsflyt for alle de som bruker systemet i hverdagen. Det er alt fra advokater og saksbehandlere, til oss utviklere som jobber med å forbedre koden." occupation="Systemutvikler, Webstep" />
 
                 <Text isOverlay>
                     Domstolene er en massiv konfliktløser i det norske samfunnet. En strøm av skyld og uskyld, rett og galt strømmer gjennom.  Det gir mening å bygge så viktige systemer for en stolt og offensiv oppdragsgiver som domstoladministrasjonen. Da blir jobben som å bygge en katedral, i motsetning til å hugge stein.
