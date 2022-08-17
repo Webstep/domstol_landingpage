@@ -11,10 +11,11 @@ import useHorizontalScroll, { HorizontalScrollDirection } from '../../../../hook
 const RotatingElement: React.FC<any> = ({ className, children, ...options }) => {
     const perspective = 500
     return (
-        <motion.div
+        <motion.span
             initial={{
                 perspective,
-                rotateX: -90
+                rotateX: -90,
+                display: 'block'
             }}
             animate={{
                 perspective,
@@ -32,7 +33,7 @@ const RotatingElement: React.FC<any> = ({ className, children, ...options }) => 
             {...options}
         >
             {children}
-        </motion.div>
+        </motion.span>
     )
 }
 

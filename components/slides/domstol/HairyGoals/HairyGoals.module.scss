@@ -30,8 +30,7 @@
 }
 
 .description {
-    width: 40vw;
-    max-width: 400px;
+    width: min(40vw, 400px);
     font-weight: 300;
     line-height: 1.4rem;
 
@@ -52,15 +51,16 @@
         height: 820vh;
         align-items: flex-start;
         overflow: visible;
+        width: 100%;
+        position: relative;
 
         .description {
-            width: 90vw;
+            width: 100%;
             position: absolute;
             display: flex;
             flex-direction: column;
 
             .intro {
-                margin-left: 2rem;
                 margin-top: 5rem;
                 height: 30rem;
             }
@@ -68,12 +68,6 @@
             .stickyDiv {
                 position: sticky;
                 top: 40%;
-            }
-
-            .quoteSignature {
-                margin-left: 3rem;
-                margin-bottom: 0rem;
-                margin-top: 140vh;
             }
         }
 
@@ -86,8 +80,6 @@
             background-position: center;
             height: 110vh;
             width: 100vw;
-            //background-repeat: no-repeat;
-            //background-position: center center;
             * {
                 display: none;
             }

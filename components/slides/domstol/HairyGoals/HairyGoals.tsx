@@ -1,42 +1,51 @@
-import { motion, Variants } from 'framer-motion'
+import { motion, Variant, Variants } from 'framer-motion'
 import React from 'react'
 import styles from './HairyGoals.module.scss'
 import Image from 'next/image'
 import Text from '../../../common/Text'
+import Citation from '../../../common/Citation'
+
+interface AnimationStages extends Variants {
+    hidden: Variant;
+    show: Variant;
+    leave: Variant
+}
+
+const descriptionContainer: AnimationStages = {
+    hidden: {},
+    show: {
+        opacity: 1,
+        transition: {
+            delayChildren: 1,
+            staggerChildren: 0.25
+        }
+    },
+    leave: {
+        y: 400,
+        opacity: 0,
+        transition: {
+            duration: 1.5,
+            delay: 0.5
+        }
+    }
+}
+
+const item: AnimationStages = {
+    hidden: {
+        x: 200,
+        opacity: 0,
+    },
+    show: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            duration: 1
+        }
+    },
+    leave: {}
+}
+
 const HairyGoals = () => {
-
-    const descriptionContainer: Variants = {
-        hidden: {},
-        show: {
-            opacity: 1,
-            transition: {
-                delayChildren: 1,
-                staggerChildren: 0.25
-            }
-        },
-        leave: {
-            y: 400,
-            opacity: 0,
-            transition: {
-                duration: 1.5,
-                delay: 0.5
-            }
-        }
-    }
-
-    const item = {
-        hidden: {
-            opacity: 0,
-            x: 200
-        },
-        show: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                duration: 1
-            }
-        }
-    }
 
     return (
         <section className={styles.section}>
@@ -56,16 +65,17 @@ const HairyGoals = () => {
                         width={435}
                         height={580}
                         objectFit={'cover'}
-                    ></Image>
+                    />
                 </motion.div>
             </div>
             <motion.div
-                className={styles.description}
                 variants={descriptionContainer}
                 initial="hidden"
                 animate="show"
                 exit="leave"
-            >   <div className={styles.intro}>
+                className={styles.description}
+            >
+                <div className={styles.intro}>
                     <div className={styles.stickyDiv}>
                         <motion.h2 variants={item}>HÅRETE MÅL</motion.h2>
                         <motion.p variants={item} >
@@ -75,35 +85,31 @@ const HairyGoals = () => {
                         </motion.p>
                     </div>
                 </div>
-                <div className={styles.quoteSignature}>
-                    <motion.q variants={item} className={styles.quote}>
-                        Vi skal være best i verden!
-                    </motion.q>
-                    <motion.span variants={item} className={styles.signature}>
-                        <span>
-                            Herman Seip,
-                        </span>
-                        Arkitekt hos DA
-                    </motion.span>
-                </div>
-                <motion.div variants={item}>
-                    <Text isOverlay>
+
+
+                <Citation name="Herman Seip" occupation="Arkitekt hos DA" quote="Vi skal være best i verden!" quoteType="short" variants={item} />
+
+
+                <div>
+                    <Text isOverlay variants={item}>
                         DA har ambisjon om å la norske borgere
                         kommunisere digitalt med Domstolene. Når Norge
-                        digitaliseres må Domstolene henge med. </Text>
-                    <Text isOverlay> Dette handler om ryggraden av det norske samfunnet, om
+                        digitaliseres må Domstolene henge med.
+                    </Text>
+                    <Text isOverlay variants={item}> Dette handler om ryggraden av det norske samfunnet, om
                         systemer for effektiv samhandling rundt
                         strafferett, sivilrett og tvister.
                     </Text>
-                    <Text isOverlay>
+                    <Text isOverlay variants={item}>
                         DA er en offensiv oppdragsgiver med tro på ny
                         teknologi. De drømmer om verdens beste løsninger
-                        og vi skal være med og gi dem det. </Text>
-                    <Text isOverlay>Oppdraget for Domstoladministrasjon har skapt et drømmemiljø
+                        og vi skal være med og gi dem det.
+                    </Text>
+                    <Text isOverlay variants={item}>Oppdraget for Domstoladministrasjon har skapt et drømmemiljø
                         for softwareutviklere på jakt etter oppgaver som
                         virkelig betyr noe.
                     </Text>
-                </motion.div>
+                </div>
             </motion.div>
         </section>
     )
