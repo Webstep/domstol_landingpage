@@ -1,16 +1,17 @@
+import { motion, MotionProps } from 'framer-motion';
 import React from 'react';
 import styles from './Text.module.scss'
 
-interface TextProps {
+interface TextProps extends MotionProps {
     isOverlay?: boolean
 }
 
 const Text: React.FC<TextProps> = ({ children, isOverlay, ...options }) => {
     return (
         <div className={styles.container + (isOverlay ? " " + styles.overlay : "")}>
-            <p className={styles.text} {...options}>
+            <motion.p className={styles.text} {...options}>
                 {children}
-            </p>
+            </motion.p>
         </div>
     );
 };
