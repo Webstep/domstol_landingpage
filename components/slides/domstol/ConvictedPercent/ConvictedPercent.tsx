@@ -6,7 +6,7 @@ import Text from '../../../common/Text'
 import { useInView } from 'react-intersection-observer'
 
 const ConvictedPercent: React.VFC = () => {
-    const exitAnimationTransition = { duration: 3, times: [0, 0.4, 1] }
+    const exitAnimationTransition = { duration: 1.5, times: [0, 0.4, 1] }
 
     const [ref, inView] = useInView({ threshold: 1 });
     const [isHighlighted, setIsHighlighted] = useState<boolean>(false);
