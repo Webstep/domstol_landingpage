@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 26.25rem;
+    width: min(26.25rem, 100%);
 
     h2 {
         display: flex;
@@ -39,5 +39,34 @@
     p {
         font-size: 1rem;
         margin-top: 0;
+    }
+}
+
+.pixelMan {
+    width: 100%;
+    max-width: 70px;
+    margin: 0px auto;
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        height: 350vh;
+        position: relative;
+        overflow: visible;
+        justify-content: flex-start;
+        padding-top: 50vh;
+
+        h2 {
+            margin-top: 100vh;
+            z-index: 10;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.4);
+        }
+    }
+
+    .container {
+        gap: 1rem;
+        position: sticky;
+        top: 40%;
+        padding-top: 0;
     }
 }
