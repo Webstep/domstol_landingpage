@@ -39,9 +39,11 @@
 
 @media only screen and (max-width: 1200px) {
     .section {
-        height: 600vh;
+        height: 400vh;
         flex-direction: column;
         overflow: visible;
+        justify-content: flex-start;
+        padding-top: 50vh;
     }
 
     .imageContainer {
@@ -64,7 +66,7 @@
         flex-direction: column;
         width: 100%;
         z-index: 2;
-        margin-top: -150vh;
+        margin-top: -142vh;
 
         h2 {
             padding-inline: 2rem;
