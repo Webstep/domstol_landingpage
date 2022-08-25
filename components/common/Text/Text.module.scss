@@ -1,25 +1,29 @@
-$padding-inline: 1rem;
-
 .text {
     color: #fff;
-    padding-inline: $padding-inline;
 }
 
 @media (max-width: 1200px) {
     .container {
+        padding-inline: 2rem;
+
         .text {
             width: min(100%, 600px);
-            margin-inline: auto;
-            text-align: center;
         }
     }
 
     .overlay {
-        width: calc(100vw - 2 * $padding-inline);
+        width: 100vw;
+        box-sizing: border-box;
         background: rgba(6, 2, 44, 0.8);
-        padding: 3rem $padding-inline;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         margin-top: 100vh;
         z-index: 999;
         margin-inline: auto;
+
+        .text {
+            margin-inline: auto;
+            text-align: center;
+        }
     }
 }

@@ -8,10 +8,10 @@ const Navbar = () => {
             <Link href={'#'}>
                 <a>
                     <Image
-                        src={'/assets/logoWebstepWhite.svg'}
+                        src={'/assets/webstep_logo.svg'}
                         width={52}
                         height={37}
-                        alt={'whitelogo'}
+                        alt={'Webstep'}
                     />
                 </a>
             </Link>

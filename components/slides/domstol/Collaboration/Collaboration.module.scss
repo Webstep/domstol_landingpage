@@ -35,23 +35,41 @@
         text-transform: uppercase;
         font-size: 3rem;
     }
+}
 
-    blockquote {
-        margin-inline: 0;
+@media only screen and (max-width: 1200px) {
+    .section {
+        height: 400vh;
+        flex-direction: column;
+        overflow: visible;
+        justify-content: flex-start;
+        padding-top: 50vh;
+    }
 
-        .signature {
-            @include pixelText;
-            display: block;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+    .imageContainer {
+        height: 100vh;
+        width: 100vw;
+        background-image: url(/assets/domstol/images/BrigittAndHerman_horizontal.jpg);
+        background-size: cover;
+        background-position: center;
+        position: sticky;
+        top: 0px;
+        margin: 0;
 
-            * {
-                display: block;
-            }
+        * {
+            display: none !important;
+        }
+    }
 
-            span {
-                font-weight: 700;
-            }
+    .description {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        z-index: 2;
+        margin-top: -142vh;
+
+        h2 {
+            padding-inline: 2rem;
         }
     }
 }
