@@ -4,6 +4,7 @@ import styles from './ImportantCompetency.module.scss';
 import Image from 'next/image';
 import SamfunnsAnsvar from '../../../../public/assets/important-competency.jpg';
 import Text from '../../../common/Text'
+import Citation from '../../../common/Citation';
 
 const ImportantCompetency: React.FC = () => {
 
@@ -40,8 +41,6 @@ const ImportantCompetency: React.FC = () => {
                                 TRENGER VIKTIG KOMPETANSE FRA WEBSTEP
                             </div>
                         </h1>
-
-
                     </motion.div>
 
                     <motion.div
@@ -51,19 +50,17 @@ const ImportantCompetency: React.FC = () => {
                     >
                         <div className={styles.description}>
                             <Text isOverlay>
-                                Dagens DA-løsning er en hybridløsning, dels systemstøtte, dels manuelle operasjoner.</Text>  <Text isOverlay>Ting tar tid fra beslutning til resultat. Men hvordan skulle de løse de teknologiske problemene? Herman har svaret:</Text>
-                            <br />
-                            <br />
-                            <blockquote>
-                                -  Vi trengte bred digital kompetanse, og vi hadde behov for de beste. Webstep har vist oss at de både har kompetansen og kapasiteten til å hjelpe oss på denne veien.
-                            </blockquote>
+                                Dagens DA-løsning er en hybridløsning, dels systemstøtte, dels manuelle operasjoner.
+                            </Text>
                             <Text isOverlay>
-                                Dette er en stor og spennende oppgave, og Webstep bygger sterke software-team for å nå hårete DA-mål. Som nå er blitt våre.</Text>
-                            <br />
-                            <br />
-                            <blockquote>
-                                -  Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.
-                            </blockquote>
+                                Ting tar tid fra beslutning til resultat. Men hvordan skulle de løse de teknologiske problemene? Herman har svaret:
+                            </Text>
+                            <Citation quote="Vi trengte bred digital kompetanse, og vi hadde behov for de beste. Webstep har vist oss at de både har kompetansen og kapasiteten til å hjelpe oss på denne veien.
+                            " />
+                            <Text isOverlay>
+                                Dette er en stor og spennende oppgave, og Webstep bygger sterke software-team for å nå hårete DA-mål. Som nå er blitt våre.
+                            </Text>
+                            <Citation name={'Hermain Seip'} quote={'Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.'} occupation={'Arkitekt hos DA'} />
                         </div>
                     </motion.div>
                 </div>
