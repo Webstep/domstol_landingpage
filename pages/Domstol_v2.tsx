@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import Device from '../components/common/Device/Device';
 import DottedProgressBar from '../components/common/DottedProgressBar';
+import ScrollDownHint from '../components/common/ScrollDownHint';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
@@ -15,6 +16,7 @@ import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScreenWidth from '../hooks/isMobile';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
+import useShowHint from '../hooks/showHint';
 import { useSlideStore } from '../stores/activeSlide';
 
 const Domstol: React.VFC = () => {
@@ -61,6 +63,9 @@ const Domstol: React.VFC = () => {
     }, [preventScrolling, nextSlide, previousSlide])
 
     useScroll({ handleScroll, resetTime: 0.5 });
+    useShowHint({
+        disable: [4, 6, 8].includes(activeSlide)
+    })
 
     return (
         <Device>
@@ -81,6 +86,7 @@ const Domstol: React.VFC = () => {
                         }}>
                             <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
                         </div>
+                        <ScrollDownHint onClick={nextSlide} />
                     </>
                 )
             }
