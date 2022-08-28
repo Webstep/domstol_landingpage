@@ -24,7 +24,8 @@ const ScrollDownHint: React.FC<ScrollDownHintProps> = ({ onClick }) => {
                 }}
                 transition={{
                     repeat: Infinity,
-                    duration: 1.5
+                    duration: 1.5,
+                    delay: 1
                 }}>
 
                 <ArrowButton
