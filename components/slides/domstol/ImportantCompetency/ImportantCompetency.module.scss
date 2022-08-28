@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 3fr 1fr;
 
-    .image {
+    .media {
         grid-column: 2;
         right: 0;
         display: flex;
@@ -18,7 +18,7 @@
         margin-top: 10px;
     }
 
-    .text {
+    .textSection {
         grid-column: 3;
         font-family: $font-family-body;
 
@@ -51,7 +51,6 @@
 
         .container {
             display: flex !important;
-            grid-template-columns: none;
             flex-direction: column;
             height: 800vh;
         }
@@ -76,6 +75,9 @@
         .description {
             display: flex;
             flex-direction: column;
+            p {
+                width: 90vw !important;
+            }
 
             div:nth-child(1) {
                 margin-top: 0;
@@ -88,7 +90,6 @@
             background-image: url(/assets/important-competency.jpg);
             @include darkenBackground;
             background-size: cover;
-            background-position-x: -7rem;
             height: 110vh;
             width: 100vw;
             * {

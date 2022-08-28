@@ -49,18 +49,23 @@ const ImportantCompetency: React.FC = () => {
                         exit={{ y: 100, opacity: 0, transition: exitTransition }}
                     >
                         <div className={styles.description}>
-                            <Text isOverlay>
-                                Dagens DA-løsning er en hybridløsning, dels systemstøtte, dels manuelle operasjoner.
-                            </Text>
-                            <Text isOverlay>
-                                Ting tar tid fra beslutning til resultat. Men hvordan skulle de løse de teknologiske problemene? Herman har svaret:
-                            </Text>
-                            <Citation quote="Vi trengte bred digital kompetanse, og vi hadde behov for de beste. Webstep har vist oss at de både har kompetansen og kapasiteten til å hjelpe oss på denne veien.
+                            <div>
+                                <Text isOverlay>
+                                    Dagens DA-løsning er en hybridløsning, dels systemstøtte, dels manuelle operasjoner.
+                                </Text>
+                                <Text isOverlay>
+                                    Ting tar tid fra beslutning til resultat. Men hvordan skulle de løse de teknologiske problemene? Herman har svaret:
+                                </Text>
+
+                                <Citation quote="Vi trengte bred digital kompetanse, og vi hadde behov for de beste. Webstep har vist oss at de både har kompetansen og kapasiteten til å hjelpe oss på denne veien.
                             " />
-                            <Text isOverlay>
-                                Dette er en stor og spennende oppgave, og Webstep bygger sterke software-team for å nå hårete DA-mål. Som nå er blitt våre.
-                            </Text>
-                            <Citation name={'Hermain Seip'} quote={'Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.'} occupation={'Arkitekt hos DA'} />
+                            </div>
+                            <div>
+                                <Text isOverlay>
+                                    Dette er en stor og spennende oppgave, og Webstep bygger sterke software-team for å nå hårete DA-mål. Som nå er blitt våre.
+                                </Text>
+                                <Citation name={'Hermain Seip'} quote={'Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.'} occupation={'Arkitekt hos DA'} />
+                            </div>
                         </div>
                     </motion.div>
                 </div>
