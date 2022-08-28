@@ -64,7 +64,7 @@ const Domstol: React.VFC = () => {
 
     useScroll({ handleScroll, resetTime: 0.5 });
     useShowHint({
-        disable: [4, 6, 8].includes(activeSlide)
+        disable: [4, 6, 8, slides.length - 1].includes(activeSlide)
     })
 
     return (
