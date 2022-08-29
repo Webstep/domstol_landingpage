@@ -59,12 +59,13 @@ const Domstol: React.VFC = () => {
     }, [preventScrolling, nextSlide, previousSlide])
 
     useScroll({ handleScroll, resetTime: 0.5 });
+    const mobileSlides = slides.filter((_, index) => index !== 0)
 
     return (
         <Device>
             {({ isMobile }) =>
                 isMobile || isScreenSmall ? (
-                    slides
+                    mobileSlides
                 ) : (
                     <>
 

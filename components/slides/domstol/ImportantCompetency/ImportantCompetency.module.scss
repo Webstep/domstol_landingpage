@@ -76,12 +76,9 @@
         .description {
             display: flex;
             flex-direction: column;
-            p {
-                width: 90vw !important;
-            }
-
-            div:nth-child(1) {
-                margin-top: 0;
+            p,
+            blockquote {
+                width: 100% !important;
             }
         }
 
@@ -96,6 +93,7 @@
             * {
                 display: none !important;
             }
+            margin: 0;
         }
     }
 }
