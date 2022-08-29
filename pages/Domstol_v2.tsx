@@ -24,16 +24,16 @@ const Domstol: React.VFC = () => {
     const setActiveSlide = useSlideStore((state) => state.setActiveSlide)
 
     const slides = useMemo(() => [
-        <Introduction key="1" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
-        <AboutUs key="2" />,
-        <ConvictedPercent key="3" />,
-        <HairyGoals key="4" />,
-        <ImportantCompetency key="6" />,
-        <VideoSlideWebstep key="7" />,
-        <NumberSlide key="8" />,
-        <VideoSlideTech key="9" />,
-        <Collaboration key="collaboration" />,
-        <Employee key="10" />
+        <Introduction key="Intro" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
+        <AboutUs key="Domstoladministrasjonen" />,
+        <ConvictedPercent key="1 av 6 personer" />,
+        <HairyGoals key="Hårete mål" />,
+        <ImportantCompetency key="Viktig kompetanse" />,
+        <VideoSlideWebstep key="Hva gjør Webstep?" />,
+        <NumberSlide key="Straffereaksjoner" />,
+        <VideoSlideTech key="Carl forklarer" />,
+        <Collaboration key="Webstep og domstolene" />,
+        <Employee key="Les mer" />
     ], [])
 
     const isScreenSmall = useScreenWidth();
@@ -74,11 +74,11 @@ const Domstol: React.VFC = () => {
                         </AnimatePresence>
                         <div style={{
                             position: "fixed",
-                            right: "20px",
+                            right: "4px",
                             top: "50vh",
                             transform: "translateY(-50%)"
                         }}>
-                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
+                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical titles={slides.map(item => item.key as string)} />
                         </div>
                     </>
                 )
