@@ -10,7 +10,6 @@ import HairyGoals from '../components/slides/domstol/HairyGoals';
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency';
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
-import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScreenWidth from '../hooks/isMobile';
@@ -29,11 +28,10 @@ const Domstol: React.VFC = () => {
         <AboutUs key="Domstoladministrasjonen" />,
         <ConvictedPercent key="1 av 6 personer" />,
         <HairyGoals key="Hårete mål" />,
-        <VideoSlideDA key="Video" />,
         <ImportantCompetency key="Viktig kompetanse" />,
-        <VideoSlideWebstep key="7" />,
+        <VideoSlideWebstep key="Hva gjør Webstep?" />,
         <NumberSlide key="Straffereaksjoner" />,
-        <VideoSlideTech key="9" />,
+        <VideoSlideTech key="Carl forklarer" />,
         <Collaboration key="Webstep og domstolene" />,
         <Employee key="Les mer" />
     ], [])

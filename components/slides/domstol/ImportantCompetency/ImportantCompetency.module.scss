@@ -8,7 +8,7 @@
     display: grid;
     grid-template-columns: 1fr 2fr 3fr 1fr;
 
-    .image {
+    .media {
         grid-column: 2;
         right: 0;
         display: flex;
@@ -18,7 +18,7 @@
         margin-top: 10px;
     }
 
-    .text {
+    .textSection {
         grid-column: 3;
         font-family: $font-family-body;
 
@@ -33,9 +33,68 @@
             display: flex;
             font-weight: $font-weight-body-article;
             font-size: $font-size-body;
-            p {
+            p,
+            blockquote {
                 margin-right: 3vw;
-                width: 20vw;
+                width: min(20vw, 287px);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 800vh;
+        align-items: flex-start;
+        overflow: visible;
+
+        .container {
+            display: flex !important;
+            flex-direction: column;
+            height: 800vh;
+        }
+
+        .textSection {
+            width: 100%;
+            position: absolute;
+            flex-direction: column;
+        }
+        .heading {
+            margin-left: 2rem;
+            margin-top: 110vh;
+            height: 40rem;
+            text-shadow: black;
+            font-size: xx-large;
+        }
+        .stickyDiv {
+            position: sticky;
+            top: 40%;
+        }
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            p {
+                width: 90vw !important;
+            }
+
+            div:nth-child(1) {
+                margin-top: 0;
+            }
+        }
+
+        .media {
+            position: sticky;
+            top: 0;
+            background-image: url(/assets/important-competency.jpg);
+            @include darkenBackground;
+            background-size: cover;
+            height: 110vh;
+            width: 100vw;
+            * {
+                display: none !important;
             }
         }
     }

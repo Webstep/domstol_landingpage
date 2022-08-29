@@ -50,3 +50,7 @@ $color-red: #e84f4f;
     align-items: center;
     overflow: hidden;
 }
+
+@mixin darkenBackground {
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+}
