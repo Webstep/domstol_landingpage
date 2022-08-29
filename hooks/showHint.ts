@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useSlideStore } from '../stores/activeSlide'
 
-const useShowHint = ({ delay = 10000, disable = false }) => {
+const useShowHint = ({ delay = 5000, disable = false }) => {
     const setShowHint = useSlideStore((state) => state.setShowHint)
 
     useEffect(() => {
