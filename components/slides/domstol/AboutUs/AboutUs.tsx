@@ -48,9 +48,9 @@ const AboutUs = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
-                    <span className={styles.redLetter}>D</span>OMSTOL-
+                    DOMSTOL-
                     <br />
-                    <span className={styles.redLetter}>A</span>DMINISTRASJONEN
+                    ADMINISTRASJONEN
                 </motion.h1>
                 <motion.div
                     className={styles.description}
