@@ -33,7 +33,8 @@
             display: flex;
             font-weight: $font-weight-body-article;
             font-size: $font-size-body;
-            p {
+            p,
+            blockquote {
                 margin-right: 3vw;
                 width: 20vw;
             }
