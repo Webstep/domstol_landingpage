@@ -65,13 +65,11 @@ const Domstol: React.VFC = () => {
         disable: [0, 5, 7, slides.length - 1].includes(activeSlide)
     })
 
-    const mobileSlides = slides.filter((_, index) => index !== 0)
-
     return (
         <Device>
             {({ isMobile }) =>
                 isMobile || isScreenSmall ? (
-                    mobileSlides
+                    slides
                 ) : (
                     <>
 
