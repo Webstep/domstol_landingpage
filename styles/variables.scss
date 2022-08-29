@@ -38,10 +38,10 @@ $font-size-body: 1rem;
 
 $font-style: normal;
 $font-color: #fff;
-$font-color-highlight: #f2b355;
 
 $color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
-$color-subcolor: #f2b355;
+$color-hightlight: #f2b355;
+$color-red: #e84f4f;
 
 @mixin centerContent {
     height: 100vh;
@@ -50,5 +50,3 @@ $color-subcolor: #f2b355;
     align-items: center;
     overflow: hidden;
 }
-
-$color-red: #e84f4f;

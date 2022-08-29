@@ -1,3 +1,5 @@
+@use 'styles/variables.scss' as *;
+
 .horizontal {
     display: flex;
     flex-direction: row;
@@ -10,10 +12,29 @@
     justify-content: space-between;
 }
 
-.rectangle {
-    margin: 1rem;
+.button {
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    transition: opacity 0.2s linear;
+    opacity: 0.4;
 
     &:hover {
         cursor: pointer;
+        opacity: 1;
     }
+
+    &[data-highlight='true'] {
+        opacity: 1;
+    }
+}
+
+.label {
+    color: white;
+}
+
+.rectangle {
+    height: 10px;
+    width: 10px;
+    background-color: white;
 }

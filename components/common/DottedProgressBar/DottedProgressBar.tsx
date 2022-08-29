@@ -18,7 +18,7 @@ const DottedProgressBar: React.FC<DottedProgressBarprops> = ({
     return (
         <div className={isVertical ? styles.vertical : styles.horizontal}>
             {numberOfDots.map((_, index) => (
-                <RectangleButton key={index} highlight={index === progress} onClick={() => { onClick(index) }} />
+                <RectangleButton key={index} highlight={index === progress} onClick={() => onClick(index)} />
             ))}
         </div >
     )
