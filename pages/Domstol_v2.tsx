@@ -10,7 +10,6 @@ import HairyGoals from '../components/slides/domstol/HairyGoals';
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency';
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
-import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScreenWidth from '../hooks/isMobile';
@@ -29,7 +28,6 @@ const Domstol: React.VFC = () => {
         <AboutUs key="2" />,
         <ConvictedPercent key="3" />,
         <HairyGoals key="4" />,
-        <VideoSlideDA key="5" />,
         <ImportantCompetency key="6" />,
         <VideoSlideWebstep key="7" />,
         <NumberSlide key="8" />,
