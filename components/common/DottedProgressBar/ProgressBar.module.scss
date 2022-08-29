@@ -1,19 +1,5 @@
 @use 'styles/variables.scss' as *;
 
-@mixin opacity {
-    transition: opacity 0.15s ease-out;
-    opacity: 0.4;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 1;
-    }
-
-    &[data-highlight='true'] {
-        opacity: 1;
-    }
-}
-
 .horizontal,
 .vertical {
     display: flex;
@@ -50,7 +36,17 @@
     flex-direction: row;
     gap: 1rem;
 
-    @include opacity;
+    transition: opacity 0.15s ease-out;
+    opacity: 0.4;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 1;
+    }
+
+    &[data-highlight='true'] {
+        opacity: 1;
+    }
 }
 
 .title {

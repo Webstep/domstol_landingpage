@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styles from './ProgressBar.module.scss'
 import RectangleButton from './Rectangle'
 interface DottedProgressBarprops {
