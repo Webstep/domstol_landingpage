@@ -29,14 +29,16 @@ const AboutUs = () => {
                     transition={{ duration: 1 }}
                 >
                     <video
-                        src={require('../../../../public/videos/Webstap_DA_loop_1_1208x1920.mp4')}
                         width="250px"
                         height="350px"
                         autoPlay
                         muted
                         loop
                         title='bookStack'
-                    />
+                    >
+                        <source src={require('../../../../public/videos/Webstap_DA_loop_1_1208x1920.mp4')} />
+                    </video>
+
                 </motion.div>
             </div>
             <div className={styles.textSection}>
