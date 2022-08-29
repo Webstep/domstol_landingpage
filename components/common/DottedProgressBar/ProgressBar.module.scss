@@ -1,22 +1,7 @@
 @use 'styles/variables.scss' as *;
 
-.horizontal {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.vertical {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.button {
-    margin: 0.5rem;
-    padding: 0.5rem;
-
-    transition: opacity 0.2s linear;
+@mixin opacity {
+    transition: opacity 0.15s ease-out;
     opacity: 0.4;
 
     &:hover {
@@ -29,12 +14,59 @@
     }
 }
 
-.label {
+.horizontal,
+.vertical {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.vertical {
+    flex-direction: column;
+    padding: 1rem;
+    width: 26px;
+    overflow: hidden;
+    align-items: flex-end;
+
+    .title {
+        transition: opacity 0.3s ease-out;
+        opacity: 0;
+    }
+
+    &:hover {
+        width: auto;
+        .title {
+            opacity: 1;
+        }
+    }
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    @include opacity;
+}
+
+.title {
     color: white;
+    font-size: 1rem;
+    margin-bottom: 0.125rem;
+    transition: opacity 0.15s ease-out;
+    white-space: nowrap;
+    height: 100%;
+    padding-left: 0.5rem;
 }
 
 .rectangle {
+    padding: 0.5rem;
     height: 10px;
     width: 10px;
     background-color: white;
+    background-clip: content-box;
 }

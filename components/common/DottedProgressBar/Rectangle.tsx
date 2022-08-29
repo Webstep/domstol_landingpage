@@ -6,14 +6,14 @@ interface RectangleProps {
     onClick: () => void
 }
 
-const RectangleButton: React.VFC<RectangleProps> = ({ highlight = false, onClick }) => {
+const RectangleButton: React.FC<RectangleProps> = ({ highlight = false, onClick, children }) => {
     return (
         <button
             className={styles.button}
             onClick={onClick}
             data-highlight={highlight}
         >
-            <span className={styles.label}></span>
+            {children}
             <span className={styles.rectangle} />
         </button>
     )
