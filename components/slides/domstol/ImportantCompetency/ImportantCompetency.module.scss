@@ -36,7 +36,7 @@
             p,
             blockquote {
                 margin-right: 3vw;
-                width: 20vw;
+                width: min(20vw, 287px);
             }
         }
     }
