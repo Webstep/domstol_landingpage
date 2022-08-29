@@ -5,22 +5,31 @@ interface DottedProgressBarprops {
     isVertical?: boolean,
     size: number,
     progress: number,
-    onClick: (value: number) => void
+    onClick: (value: number) => void,
+    titles?: string[]
 }
 
 const DottedProgressBar: React.FC<DottedProgressBarprops> = ({
     isVertical = false,
     size,
     progress,
-    onClick
+    onClick,
+    titles
 }) => {
     const numberOfDots = [...new Array(size)]
+
+    const items = titles || numberOfDots;
+
     return (
-        <div className={isVertical ? styles.vertical : styles.horizontal}>
-            {numberOfDots.map((_, index) => (
-                <RectangleButton key={index} highlight={index === progress} onClick={() => { onClick(index) }} />
+        <div className={isVertical ? styles.vertical : styles.horizontal} >
+            {items.map((item, index) => (
+                <RectangleButton key={index} highlight={index === progress} onClick={() => onClick(index)}>
+                    {titles && (
+                        <span key={index} className={styles.title}>{item}</span>
+                    )}
+                </RectangleButton>
             ))}
-        </div >
+        </div>
     )
 }
 

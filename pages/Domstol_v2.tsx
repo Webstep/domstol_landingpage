@@ -11,7 +11,6 @@ import HairyGoals from '../components/slides/domstol/HairyGoals';
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency';
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
-import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScreenWidth from '../hooks/isMobile';
@@ -27,17 +26,16 @@ const Domstol: React.VFC = () => {
     const setActiveSlide = useSlideStore((state) => state.setActiveSlide)
 
     const slides = useMemo(() => [
-        <Introduction key="1" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
-        <AboutUs key="2" />,
-        <ConvictedPercent key="3" />,
-        <HairyGoals key="4" />,
-        <VideoSlideDA key="5" />,
-        <ImportantCompetency key="6" />,
-        <VideoSlideWebstep key="7" />,
-        <NumberSlide key="8" />,
-        <VideoSlideTech key="9" />,
-        <Collaboration key="collaboration" />,
-        <Employee key="10" />
+        <Introduction key="Intro" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
+        <AboutUs key="Domstoladministrasjonen" />,
+        <ConvictedPercent key="1 av 6 personer" />,
+        <HairyGoals key="Hårete mål" />,
+        <ImportantCompetency key="Viktig kompetanse" />,
+        <VideoSlideWebstep key="Hva gjør Webstep?" />,
+        <NumberSlide key="Straffereaksjoner" />,
+        <VideoSlideTech key="Carl forklarer" />,
+        <Collaboration key="Webstep og domstolene" />,
+        <Employee key="Les mer" />
     ], [])
 
     const isScreenSmall = useScreenWidth();
@@ -64,14 +62,16 @@ const Domstol: React.VFC = () => {
 
     useScroll({ handleScroll, resetTime: 0.5 });
     useShowHint({
-        disable: [0, 4, 6, 8, slides.length - 1].includes(activeSlide)
+        disable: [0, 5, 7, slides.length - 1].includes(activeSlide)
     })
+
+    const mobileSlides = slides.filter((_, index) => index !== 0)
 
     return (
         <Device>
             {({ isMobile }) =>
                 isMobile || isScreenSmall ? (
-                    slides
+                    mobileSlides
                 ) : (
                     <>
 
@@ -80,11 +80,11 @@ const Domstol: React.VFC = () => {
                         </AnimatePresence>
                         <div style={{
                             position: "fixed",
-                            right: "20px",
+                            right: "4px",
                             top: "50vh",
                             transform: "translateY(-50%)"
                         }}>
-                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
+                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical titles={slides.map(item => item.key as string)} />
                         </div>
                         <ScrollDownHint onClick={nextSlide} />
                     </>

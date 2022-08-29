@@ -52,6 +52,7 @@
         background-image: url(/assets/domstol/images/BrigittAndHerman_horizontal.jpg);
         background-size: cover;
         background-position: center;
+        @include darkenBackground;
         position: sticky;
         top: 0px;
         margin: 0;
