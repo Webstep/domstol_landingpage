@@ -15,7 +15,7 @@ const AboutUs = () => {
                     transition={{ duration: 1 }}
                 >
                     <Image
-                        src={'/assets/weapon-shield.jpg'}
+                        src={'/assets/domstol/images/weapon-shield.jpg'}
                         layout="fixed"
                         width="250vw"
                         height="350vw"
@@ -36,7 +36,7 @@ const AboutUs = () => {
                         loop
                         title='bookStack'
                     >
-                        <source src={require('../../../../public/videos/Webstap_DA_loop_1_1208x1920.mp4')} />
+                        <source src={require('../../../../public/assets/domstol/videos/Webstap_DA_loop_1_1208x1920.mp4')} />
                     </video>
 
                 </motion.div>
