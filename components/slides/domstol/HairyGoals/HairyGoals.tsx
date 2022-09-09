@@ -60,7 +60,7 @@ const HairyGoals = () => {
                     }}
                 >
                     <Image className={styles.hermanImage}
-                        src="/assets/herman_seip.jpg"
+                        src="/assets/domstol/images/herman_seip.jpg"
                         alt="bilde av Herman Seip"
                         width={435}
                         height={580}

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styles from './ImportantCompetency.module.scss';
 import Image from 'next/image';
-import SamfunnsAnsvar from '../../../../public/assets/important-competency.jpg';
+import SamfunnsAnsvar from '../../../../public/assets/domstol/images/important-competency.jpg';
 import Text from '../../../common/Text'
 import Citation from '../../../common/Citation';
 
