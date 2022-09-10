@@ -1,8 +1,8 @@
-$image-width: 1280px;
+$information-width: 320px;
 
 .container {
-    height: 220vh;
-    min-height: 220vh;
+    height: 200vh;
+    min-height: 200vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -10,23 +10,21 @@ $image-width: 1280px;
 
     .tintedBackground {
         height: 100vh;
-        width: $image-width;
+        width: 100vw;
         z-index: 9;
         position: absolute;
         right: 0;
-        // background: rgba($color: #000000, $alpha: 0.5);
         background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
     }
 
     .overlay {
         height: 100vh;
         width: 100vw;
-        // background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
         background-repeat: no-repeat;
         position: absolute;
         z-index: 10;
         display: grid;
-        grid-template-columns: 1fr $image-width 1fr;
+        grid-template-columns: 1fr $information-width 50px;
         flex-direction: row;
         align-items: center;
         justify-content: center;
@@ -38,14 +36,20 @@ $image-width: 1280px;
             height: 100%;
         }
 
-        .information {
-            background-image: url('/assets/webstep_background.png');
+        &::before {
+            background-image: url('/assets/domstol/background-cutout.svg');
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .information {
             height: 100%;
 
+            background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
             grid-column: 2;
             width: 100%;
+
             display: flex;
             align-items: flex-end;
             justify-content: center;
@@ -60,9 +64,9 @@ $image-width: 1280px;
                 font-size: 4rem;
                 margin-bottom: 0;
                 text-align: right;
-            }
-            p {
-                width: min(80%, 340px);
+                width: fit-content;
+                white-space: nowrap;
+                direction: rtl;
             }
 
             .scrollDown {

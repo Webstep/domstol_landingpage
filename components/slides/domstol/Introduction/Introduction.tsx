@@ -5,6 +5,7 @@ import styles from './Introduction.module.scss'
 import Weight from '../../../../public/assets/domstol/weight.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
+import useShowHint from '../../../../hooks/showHint';
 
 interface IntroductionProps {
     allowScrolling: (value: boolean) => void;
@@ -16,6 +17,8 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
     useEffect(() => {
         allowScrolling(inView)
     }, [allowScrolling, inView]);
+
+    useShowHint({ delay: 3.5, disable: !inView })
 
     return (
         <>

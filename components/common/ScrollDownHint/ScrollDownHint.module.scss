@@ -1,5 +1,5 @@
 .scrollDown {
-    position: absolute;
+    position: sticky;
     bottom: 25px;
     left: 50vw;
     transform: translateX(-50%);
@@ -8,8 +8,9 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: fit-content;
+    margin-top: -50px;
 
-    padding: 1rem;
     text-transform: uppercase;
     text-align: center;
 
