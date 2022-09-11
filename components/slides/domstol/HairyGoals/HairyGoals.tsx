@@ -16,7 +16,7 @@ const descriptionContainer: AnimationStages = {
     show: {
         opacity: 1,
         transition: {
-            delayChildren: 1,
+            delayChildren: 0.5,
             staggerChildren: 0.25
         }
     },
@@ -25,7 +25,6 @@ const descriptionContainer: AnimationStages = {
         opacity: 0,
         transition: {
             duration: 1.5,
-            delay: 0.5
         }
     }
 }
@@ -55,7 +54,6 @@ const HairyGoals = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ y: -400, opacity: 0 }}
                     transition={{
-                        delay: 0.5,
                         duration: 1.5,
                     }}
                 >
@@ -86,9 +84,7 @@ const HairyGoals = () => {
                     </div>
                 </div>
 
-
                 <Citation name="Herman Seip" occupation="Arkitekt hos DA" quote="Vi skal være best i verden!" quoteType="short" variants={item} />
-
 
                 <div>
                     <Text isOverlay variants={item}>
