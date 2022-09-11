@@ -71,14 +71,14 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                     }}
 
                 />
-                <div className={styles.videoContainer}>
+                <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
                     <video
                         src={require('../../../../public/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4')}
                         autoPlay
                         muted
                         loop
                     ></video>
-                </div>
+                </motion.div>
             </section>
             <div className={styles.breakpoint} ref={ref}></div>
         </>
