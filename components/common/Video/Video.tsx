@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
 import Image from 'next/image';
@@ -37,6 +37,8 @@ const Video: React.FC<VideoProps> = (props) => {
     }
 
     useEffect(() => {
+        if (!isPlaying) return;
+
         const incrementTime = () => {
             const time = videoRef.current?.currentTime ?? 0
             setCurrentTime(time)
@@ -47,7 +49,7 @@ const Video: React.FC<VideoProps> = (props) => {
         return () => {
             clearInterval(intervall)
         }
-    }, [duration])
+    }, [isPlaying])
 
     const jumpToTime = (newTime: number) => {
         if (videoRef.current !== null) {
@@ -94,5 +96,3 @@ const Video: React.FC<VideoProps> = (props) => {
 }
 
 export default Video
-
-
