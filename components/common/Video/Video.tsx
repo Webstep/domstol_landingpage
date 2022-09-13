@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
 import Image from 'next/image';
@@ -14,7 +13,6 @@ interface VideoProps {
 }
 
 const Video: React.FC<VideoProps> = (props) => {
-    const [ref, inView] = useInView();
     const buttonRef = useRef<HTMLButtonElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [isPlaying, setIsPlaying] = useState<boolean>(props.autoplay)
@@ -57,7 +55,7 @@ const Video: React.FC<VideoProps> = (props) => {
         return () => {
             clearInterval(intervall)
         }
-    }, [inView, buttonWidth, duration])
+    }, [buttonWidth, duration])
 
 
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
@@ -69,39 +67,35 @@ const Video: React.FC<VideoProps> = (props) => {
     }
 
     return (
-        <div ref={ref}>
-            {inView &&
-                <div className={styles.container}>
-                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay} />
-                    <div className={styles.controls}>
-                        <div className={styles.buttonGroup}>
-                            <button
-                                onClick={toggleSound}
-                                className={styles.soundButton}
-                            >
-                                <Image
-                                    alt="sound on/off"
-                                    src={isSound ? SoundIcon : MuteIcon}
-                                />
-                            </button>
-                            <button
-                                className={styles.playButton}
-                                onClick={() => (isPlaying ? pause() : play())}
-                            >
-                                <Image
-                                    alt="play/pause"
-                                    src={isPlaying ? PauseIcon : PlayIcon}
-                                />
-                            </button>
-                        </div>
-                        <div className={styles.timeControl}>
-                            <span>{formatTime(currentTime)}</span>
-                            <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
-                            <span>{formattedDuration}</span>
-                        </div>
-                    </div>
+        <div className={styles.container}>
+            <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay} onLoad={e => console.log(e)} />
+            <div className={styles.controls}>
+                <div className={styles.buttonGroup}>
+                    <button
+                        className={styles.playButton}
+                        onClick={() => (isPlaying ? pause() : play())}
+                    >
+                        <Image
+                            alt="play/pause"
+                            src={isPlaying ? PauseIcon : PlayIcon}
+                        />
+                    </button>
+                    <button
+                        onClick={toggleSound}
+                        className={styles.soundButton}
+                    >
+                        <Image
+                            alt="sound on/off"
+                            src={isSound ? SoundIcon : MuteIcon}
+                        />
+                    </button>
                 </div>
-            }
+                <div className={styles.timeControl}>
+                    <span>{formatTime(currentTime)}</span>
+                    <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
+                    <span>{formattedDuration}</span>
+                </div>
+            </div>
         </div>
     )
 }
