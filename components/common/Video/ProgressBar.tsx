@@ -11,10 +11,8 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ duration, progress, onClick }
     const buttonRef = useRef<HTMLButtonElement>(null)
 
     const progressClick = (e: { nativeEvent: { offsetX: number } }) => {
-        if (!duration) return;
-
         const buttonWidth = buttonRef.current?.clientWidth
-        if (!buttonWidth) return;
+        if (!buttonWidth || !duration) return;
 
         const progressPercentage = (e.nativeEvent.offsetX / buttonWidth) * 100
         const newProgress = (duration / 100) * progressPercentage
@@ -22,14 +20,12 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ duration, progress, onClick }
     }
 
     const progressBarWidth = String(duration ? (progress / duration * 100) : 0) + "%"
-
     const formattedDuration = useMemo(() => formatTime(duration), [duration])
 
     return (
         <div className={styles.timeControl}>
             <span>{formatTime(progress)}</span>
-
-            <button ref={buttonRef} onClick={(e) => progressClick(e)}>
+            <button ref={buttonRef} onClick={progressClick}>
                 <div className={styles.progressBarContainer}>
                     <div
                         className={styles.progressBar}
