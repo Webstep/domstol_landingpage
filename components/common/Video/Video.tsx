@@ -1,5 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { useInView } from 'react-intersection-observer'
+import React, { useEffect, useRef, useState } from 'react'
 import ProgressBar from './ProgressBar'
 import styles from './Video.module.scss'
 import Image from 'next/image';
@@ -14,18 +13,13 @@ interface VideoProps {
 }
 
 const Video: React.FC<VideoProps> = (props) => {
-    const [ref, inView] = useInView();
-    const buttonRef = useRef<HTMLButtonElement>(null)
     const videoRef = useRef<HTMLVideoElement>(null)
     const [isPlaying, setIsPlaying] = useState<boolean>(props.autoplay)
     const [isSound, setIsSound] = useState<boolean>(!props.autoplay)
-    const [duration, setDuration] = useState<number>(0)
+    const [duration, setDuration] = useState<number>()
     const [currentTime, setCurrentTime] = useState<number>(0)
-    const [progress, setProgress] = useState<number>(0)
-    const [buttonWidth, setButtonWidth] = useState<number>(0)
 
     const play = () => {
-        setDuration(videoRef.current?.duration || 1);
         videoRef?.current?.play()
         setIsPlaying(true)
     }
@@ -43,13 +37,11 @@ const Video: React.FC<VideoProps> = (props) => {
     }
 
     useEffect(() => {
-        setButtonWidth(buttonRef?.current?.clientWidth || 100);
-        setDuration(videoRef.current?.duration || 71);
+        if (!isPlaying) return;
 
         const incrementTime = () => {
             const time = videoRef.current?.currentTime ?? 0
             setCurrentTime(time)
-            setProgress((time / duration) * 100)
         }
 
         const intervall = setInterval(incrementTime, 1000)
@@ -57,56 +49,50 @@ const Video: React.FC<VideoProps> = (props) => {
         return () => {
             clearInterval(intervall)
         }
-    }, [inView, buttonWidth, duration])
+    }, [isPlaying])
 
-
-    const formattedDuration = useMemo(() => formatTime(duration), [duration])
-
-    const progressClick = (e: { nativeEvent: { offsetX: number } }) => {
-        const click = (e.nativeEvent.offsetX / buttonWidth) * 100
-        const progressTime = (duration / 100) * click
-        if (videoRef.current !== null) { setProgress(progressTime); videoRef.current.currentTime = progressTime; videoRef.current.play; }
+    const jumpToTime = (newTime: number) => {
+        if (videoRef.current !== null) {
+            videoRef.current.currentTime = newTime;
+            videoRef.current.play;
+            setCurrentTime(newTime)
+        }
     }
 
     return (
-        <div ref={ref}>
-            {inView &&
-                <div className={styles.container}>
-                    <video onClick={() => { isPlaying ? pause() : play(); }} src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture muted={props.autoplay} />
-                    <div className={styles.controls}>
-                        <div className={styles.buttonGroup}>
-                            <button
-                                onClick={toggleSound}
-                                className={styles.soundButton}
-                            >
-                                <Image
-                                    alt="sound on/off"
-                                    src={isSound ? SoundIcon : MuteIcon}
-                                />
-                            </button>
-                            <button
-                                className={styles.playButton}
-                                onClick={() => (isPlaying ? pause() : play())}
-                            >
-                                <Image
-                                    alt="play/pause"
-                                    src={isPlaying ? PauseIcon : PlayIcon}
-                                />
-                            </button>
-                        </div>
-                        <div className={styles.timeControl}>
-                            <span>{formatTime(currentTime)}</span>
-                            <button ref={buttonRef} onClick={(e) => progressClick(e)}><ProgressBar progress={progress} /></button>
-                            <span>{formattedDuration}</span>
-                        </div>
-                    </div>
+        <div className={styles.container}>
+            <video
+                onClick={() => { isPlaying ? pause() : play(); }}
+                src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture
+                muted={props.autoplay}
+                onLoadedMetadata={() => setDuration(videoRef.current?.duration)}
+
+            />
+            <div className={styles.controls}>
+                <div className={styles.buttonGroup}>
+                    <button
+                        className={styles.playButton}
+                        onClick={() => (isPlaying ? pause() : play())}
+                    >
+                        <Image
+                            alt="play/pause"
+                            src={isPlaying ? PauseIcon : PlayIcon}
+                        />
+                    </button>
+                    <button
+                        onClick={toggleSound}
+                        className={styles.soundButton}
+                    >
+                        <Image
+                            alt="sound on/off"
+                            src={isSound ? SoundIcon : MuteIcon}
+                        />
+                    </button>
                 </div>
-            }
+                <ProgressBar duration={duration} progress={currentTime} onClick={jumpToTime} />
+            </div>
         </div>
     )
 }
 
 export default Video
-
-const formatTime = (time: number) => Math.floor(time / 60) + ':' + ('0' + Math.floor(time % 60)).slice(-2)
-
