@@ -67,6 +67,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                     }}
                     transition={{
                         duration: 3.5,
+                        delay: 1,
                         ease: 'linear'
                     }}
 
