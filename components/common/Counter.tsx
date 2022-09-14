@@ -16,13 +16,14 @@ const Counter: React.FC<CounterProps> = ({ from, to, shouldAnimate, className })
             const controls = animate(from, to, {
                 duration: 3,
                 onUpdate(value) {
+                    if (!nodeRef.current) return;
                     nodeRef.current.textContent = Number(value.toFixed()).toLocaleString('no');
                 },
             });
             return () => controls.stop();
         }
-
     }, [from, to, shouldAnimate]);
+
     return <p className={className} style={{ margin: 0 }} ref={nodeRef} />;
 };
 
