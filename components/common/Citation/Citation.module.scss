@@ -2,16 +2,16 @@
 
 .container {
     margin: 0;
+}
 
-    .signature {
-        @include pixelText;
-        margin-top: 1rem;
+.signature {
+    @include pixelText;
+    margin-top: 1rem;
 
-        .name {
-            display: block;
-            font-weight: 600;
-            text-transform: capitalize;
-        }
+    .name {
+        display: block;
+        font-weight: 600;
+        text-transform: capitalize;
     }
 }
 
@@ -24,6 +24,12 @@
     font-size: 1.5rem;
     font-weight: 600;
     display: block;
+}
+
+@media screen and (min-width: 1201px) {
+    .signature {
+        font-size: 1rem;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
