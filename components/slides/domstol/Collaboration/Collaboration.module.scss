@@ -11,15 +11,17 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
-    span,
+    div,
     video {
         display: block;
         grid-row: 1 / 2;
     }
 
-    span {
+    div {
         grid-column: 2 / -1;
         align-self: flex-start;
+        width: fit-content;
+        justify-self: flex-end;
     }
 
     video {
