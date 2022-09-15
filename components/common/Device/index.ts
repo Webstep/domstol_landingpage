@@ -1,5 +1,6 @@
 import dynamic from 'next/dynamic'
 
-const Device = dynamic(() => import('./Device'), { ssr: false })
+const DeviceProvider = dynamic(() => import('./DeviceProvider'), { ssr: false })
 
-export default Device
+export default DeviceProvider
+export { DeviceContext } from './DeviceProvider'

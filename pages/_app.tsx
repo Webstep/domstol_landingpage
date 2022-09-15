@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 import scrollStyles from '../styles/Scroll.module.scss'
 import Navbar from '../components/Navbar'
+import DeviceProvider from '../components/common/Device'
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (
@@ -21,10 +22,12 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <meta name="msapplication-config" content="/meta/browserconfig.xml" />
                 <meta name="theme-color" content="#ffffff" />
             </Head>
-            <article className={scrollStyles.case}>
-                <Navbar />
-                <Component {...pageProps} />
-            </article>
+            <DeviceProvider>
+                <article className={scrollStyles.case}>
+                    <Navbar />
+                    <Component {...pageProps} />
+                </article>
+            </DeviceProvider>
         </>
     )
 }
