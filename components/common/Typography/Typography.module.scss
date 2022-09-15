@@ -1,5 +1,16 @@
-.text {
+@use 'styles/variables.scss' as *;
+
+.text,
+.title {
     color: #fff;
+}
+
+.title {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    // font-size: $font-size-heading-small;
+    font-size: 3rem;
+    text-transform: uppercase;
 }
 
 @media (max-width: 1200px) {
@@ -25,5 +36,10 @@
             margin-inline: auto;
             text-align: center;
         }
+    }
+
+    .title {
+        padding-inline: 2rem;
+        box-sizing: border-box;
     }
 }

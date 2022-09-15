@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
 import PixelatedMan from '../../../common/PixelatedMan'
 import styles from './ConvictedPercent.module.scss'
-import Text from '../../../common/Text'
+import { Text } from '../../../common/Typography'
 import { useInView } from 'react-intersection-observer'
 
 const ConvictedPercent: React.VFC = () => {

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styles from './Collaboration.module.scss';
 import Image from 'next/image'
 import BrigittAndHerman from '../../../../public/assets/domstol/images/BrigittAndHerman_horizontal.jpg';
-import Text from '../../../common/Text';
+import { Text, Title } from '../../../common/Typography';
 import Citation from '../../../common/Citation';
 import { motion, Variants } from 'framer-motion';
 import { DeviceContext } from '../../../common/Device/';
@@ -27,7 +27,7 @@ const Collaboration: React.VFC = () => {
             </div>
             <motion.div className={styles.description} {...(!isMobile ? containerVariants : {})}>
                 <div>
-                    <h2>webstep og domstolene</h2>
+                    <Title>webstep og domstolene</Title>
                     <Text>
                         DA drømmer om de beste løsningene for brukerne sine. Vi leverer team for å lage disse løsningene. Samarbeidet er tett og godt.
                     </Text>

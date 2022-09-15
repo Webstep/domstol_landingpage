@@ -1,6 +1,6 @@
 import { motion, MotionProps } from 'framer-motion';
 import React from 'react';
-import styles from './Text.module.scss'
+import styles from './Typography.module.scss'
 
 interface TextProps extends MotionProps {
     isOverlay?: boolean

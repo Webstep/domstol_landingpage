@@ -2,7 +2,7 @@ import { motion, Variant, Variants } from 'framer-motion'
 import React from 'react'
 import styles from './HairyGoals.module.scss'
 import Image from 'next/image'
-import Text from '../../../common/Text'
+import { Text, Title } from '../../../common/Typography'
 import Citation from '../../../common/Citation'
 
 interface AnimationStages extends Variants {
@@ -75,12 +75,12 @@ const HairyGoals = () => {
             >
                 <div className={styles.intro}>
                     <div className={styles.stickyDiv}>
-                        <motion.h2 variants={item}>HÅRETE MÅL</motion.h2>
-                        <motion.p variants={item} >
+                        <Title variants={item}>HÅRETE MÅL</Title>
+                        <Text variants={item} >
                             Det digitale skiftet er kommet til Domstolene.
                             DA har tro på teknologi og de har en klar
                             ambisjon:
-                        </motion.p>
+                        </Text>
                     </div>
                 </div>
 

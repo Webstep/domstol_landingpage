@@ -5,6 +5,7 @@ import ProgressBar from '../../../common/DottedProgressBar'
 import Image from 'next/image'
 import { EmployeeData } from './EmployeeData'
 import useHorizontalScroll, { HorizontalScrollDirection } from '../../../../hooks/horizontalScroll'
+import { Title } from '../../../common/Typography'
 
 // const Employees = [EmployeeBirgitte, EmployeeCalle].map((Employee, index) => <Employee key={index} />)
 
@@ -126,7 +127,7 @@ const Employee = () => {
 
     return (
         <section className={styles.section}>
-            <h1 className={styles.h1}>MØT VÅRE WEBSTEPPERE</h1>
+            <Title>MØT VÅRE WEBSTEPPERE</Title>
             <div className={styles.container}>
                 <div className={styles.employees}>
                     <AnimatePresence exitBeforeEnter>

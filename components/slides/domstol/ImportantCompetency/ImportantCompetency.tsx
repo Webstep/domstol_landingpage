@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './ImportantCompetency.module.scss';
 import Image from 'next/image';
 import SamfunnsAnsvar from '../../../../public/assets/domstol/images/important-competency.jpg';
-import Text from '../../../common/Text'
+import { Text, Title } from '../../../common/Typography'
 import Citation from '../../../common/Citation';
 
 const ImportantCompetency: React.FC = () => {
@@ -36,11 +36,11 @@ const ImportantCompetency: React.FC = () => {
                         animate={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ x: 100, opacity: 0, transition: exitTransition }}
                     >
-                        <h1 className={styles.heading}>
+                        <Title className={styles.heading}>
                             <div className={styles.stickyDiv}>
                                 TRENGER VIKTIG KOMPETANSE FRA WEBSTEP
                             </div>
-                        </h1>
+                        </Title>
                     </motion.div>
 
                     <motion.div
