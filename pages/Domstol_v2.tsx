@@ -1,6 +1,6 @@
 import { AnimatePresence } from 'framer-motion';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Device from '../components/common/Device/Device';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { DeviceContext } from '../components/common/Device';
 import DottedProgressBar from '../components/common/DottedProgressBar';
 import ScrollDownHint from '../components/common/ScrollDownHint';
 import AboutUs from '../components/slides/domstol/AboutUs';
@@ -13,7 +13,6 @@ import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
-import useScreenWidth from '../hooks/isMobile';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
 import useShowHint from '../hooks/showHint';
 import { useSlideStore } from '../stores/activeSlide';
@@ -25,12 +24,14 @@ const Domstol: React.VFC = () => {
     const nextSlide = useSlideStore((state) => state.nextSlide)
     const setActiveSlide = useSlideStore((state) => state.setActiveSlide)
 
+    const { isMobile } = useContext(DeviceContext)
+
     const slides = useMemo(() => [
         <Introduction key="Intro" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
         <AboutUs key="Domstoladministrasjonen" />,
         <ConvictedPercent key="1 av 6 personer" />,
         <HairyGoals key="Hårete mål" />,
-        <ImportantCompetency key="Viktig kompetanse" />,
+        <ImportantCompetency key="Viktig kompetanse" />, // might cause iphone bug
         <VideoSlideWebstep key="Hva gjør Webstep?" />,
         <NumberSlide key="Straffereaksjoner" />,
         <VideoSlideTech key="Carl forklarer" />,
@@ -38,7 +39,6 @@ const Domstol: React.VFC = () => {
         <Employee key="Les mer" />
     ], [])
 
-    const isScreenSmall = useScreenWidth();
 
     useEffect(() => {
         setSlidesLength(slides.length)
@@ -60,36 +60,31 @@ const Domstol: React.VFC = () => {
         }
     }, [preventScrolling, nextSlide, previousSlide])
 
-    useScroll({ handleScroll, resetTime: 0.5 });
+    useScroll({ handleScroll, resetTime: 0.75 });
     useShowHint({
         disable: [0, 5, 7, slides.length - 1].includes(activeSlide)
     })
 
-    return (
-        <Device>
-            {({ isMobile }) =>
-                isMobile || isScreenSmall ? (
-                    slides
-                ) : (
-                    <>
-
-                        <AnimatePresence exitBeforeEnter>
-                            {slides[activeSlide]}
-                        </AnimatePresence>
-                        <div style={{
-                            position: "fixed",
-                            right: "4px",
-                            top: "50vh",
-                            transform: "translateY(-50%)"
-                        }}>
-                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical titles={slides.map(item => item.key as string)} />
-                        </div>
-                        <ScrollDownHint onClick={nextSlide} />
-                    </>
-                )
-            }
-        </Device>
-    );
+    return (<>
+        {isMobile ? (
+            slides
+        ) : (
+            <>
+                <AnimatePresence exitBeforeEnter>
+                    {slides[activeSlide]}
+                </AnimatePresence>
+                <div style={{
+                    position: "fixed",
+                    right: "4px",
+                    top: "50vh",
+                    transform: "translateY(-50%)"
+                }}>
+                    <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical titles={slides.map(item => item.key as string)} />
+                </div>
+                <ScrollDownHint onClick={nextSlide} />
+            </>
+        )}
+    </>)
 };
 
 export default Domstol;

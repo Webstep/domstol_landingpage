@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from './Collaboration.module.scss';
 import Image from 'next/image'
 import BrigittAndHerman from '../../../../public/assets/domstol/images/BrigittAndHerman_horizontal.jpg';
 import Text from '../../../common/Text';
 import Citation from '../../../common/Citation';
 import { motion, Variants } from 'framer-motion';
+import { DeviceContext } from '../../../common/Device/';
 
 const Collaboration: React.VFC = () => {
+    const { isMobile } = useContext(DeviceContext)
+
     return (
         <section className={styles.section}>
             <div className={styles.imageContainer}>
-                <motion.div {...imageVariants}>
+                <motion.div {...(!isMobile ? imageVariants : {})} >
                     <Image
                         src={BrigittAndHerman}
                         width={463}
@@ -18,11 +21,11 @@ const Collaboration: React.VFC = () => {
                         alt="Brigitt og Herman i dialog"
                     />
                 </motion.div>
-                <motion.video width={574} height={327} loop muted autoPlay {...videoVariants}>
+                <motion.video width={574} height={327} loop muted autoPlay {...(!isMobile ? videoVariants : {})}>
                     <source src="/assets/domstol/videos/Courtroom_loop_16x9.mp4" type="video/mp4" />
                 </motion.video>
             </div>
-            <motion.div className={styles.description} {...containerVariants}>
+            <motion.div className={styles.description} {...(!isMobile ? containerVariants : {})}>
                 <div>
                     <h2>webstep og domstolene</h2>
                     <Text>
