@@ -23,8 +23,6 @@
         font-family: $font-family-body;
 
         .heading {
-            font-weight: $font-weight-body-heading;
-            font-size: $font-size-heading-small;
             margin-bottom: 0;
             margin-top: 10px;
         }
@@ -62,12 +60,12 @@
             flex-direction: column;
         }
         .heading {
-            margin-left: 2rem;
             margin-top: 110vh;
             height: 40rem;
             text-shadow: black;
-            font-size: xx-large;
+            // font-size: xx-large;
         }
+
         .stickyDiv {
             position: sticky;
             top: 40%;

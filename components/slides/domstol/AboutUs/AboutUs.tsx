@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import styles from './AboutUs.module.scss'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import Text from '../../../common/Text'
+import { Text } from '../../../common/Typography'
 import { DeviceContext } from '../../../common/Device'
 
 const AboutUs = () => {
