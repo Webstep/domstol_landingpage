@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './AboutUs.module.scss'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import Text from '../../../common/Text'
+import { DeviceContext } from '../../../common/Device'
 
 const AboutUs = () => {
+    const { isMobile } = useContext(DeviceContext)
+
     return (
         <section className={styles.section} >
             <div className={styles.media}>
                 <motion.div
                     className={styles.weaponShield}
-                    initial={{ x: -550 }}
+                    initial={isMobile ? {} : { x: -550 }}
                     animate={{ x: 0, z: 0 }}
                     transition={{ duration: 1 }}
                 >
@@ -24,7 +27,7 @@ const AboutUs = () => {
                 </motion.div>
                 <motion.div
                     className={styles.bookStack}
-                    initial={{ x: -650 }}
+                    initial={isMobile ? {} : { x: -650 }}
                     animate={{ x: 0, z: 1 }}
                     transition={{ duration: 1 }}
                 >
@@ -44,7 +47,7 @@ const AboutUs = () => {
             <div className={styles.textSection}>
                 <motion.h1
                     className={styles.title}
-                    initial={{ x: 420, opacity: 0 }}
+                    initial={isMobile ? {} : { x: 420, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
                 >
@@ -54,7 +57,7 @@ const AboutUs = () => {
                 </motion.h1>
                 <motion.div
                     className={styles.description}
-                    initial={{ x: 420, opacity: 0 }}
+                    initial={isMobile ? {} : { x: 420, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
                 >
