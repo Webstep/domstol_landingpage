@@ -10,6 +10,7 @@ import SoundIcon from '../../../public/icons/sound.svg';
 interface VideoProps {
     src: string
     autoplay: boolean
+    landscape?: boolean
 }
 
 const Video: React.FC<VideoProps> = (props) => {
@@ -66,6 +67,7 @@ const Video: React.FC<VideoProps> = (props) => {
                 src={props.src} ref={videoRef} autoPlay={props.autoplay} disablePictureInPicture
                 muted={props.autoplay}
                 onLoadedMetadata={() => setDuration(videoRef.current?.duration)}
+                data-landscape={props.landscape}
 
             />
             <div className={styles.controls}>
