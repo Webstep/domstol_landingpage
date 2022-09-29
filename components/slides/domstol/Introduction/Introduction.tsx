@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import React, { useEffect } from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
-import Weight from '../../../../public/assets/domstol/weight.svg';
+import Gavel from '../../../../public/assets/domstol/gavel.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import useShowHint from '../../../../hooks/showHint';
@@ -25,7 +25,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
             <section className={styles.container}>
                 <div className={styles.overlay}>
                     <div className={styles.information}>
-                        <Image src={Weight} alt="" height="41" width="48" />
+                        <Image src={Gavel} alt="" height="60" width="60" />
                         <h1>
                             DIGITALISERING <br /> AV DOMSTOLENE
                         </h1>
@@ -74,11 +74,10 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                 />
                 <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
                     <video
-                        src={require('../../../../public/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4')}
-                        autoPlay
-                        muted
-                        loop
-                    ></video>
+                        src={'/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4'}
+                        autoPlay muted loop>
+                    </video>
+
                 </motion.div>
             </section>
             <div className={styles.breakpoint} ref={ref}></div>
