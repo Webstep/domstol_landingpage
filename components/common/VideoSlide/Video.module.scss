@@ -84,10 +84,17 @@
 @media screen and (max-width: 1200px) {
     .container {
         height: auto;
+        overflow: hidden;
         video {
             width: 100% !important;
             height: auto !important;
+            height: auto;
             max-height: 100vh;
+
+            &[data-landscape='true'] {
+                height: 178vw !important;
+                width: auto !important;
+            }
         }
     }
 }
