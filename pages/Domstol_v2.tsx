@@ -60,7 +60,7 @@ const Domstol: React.VFC = () => {
         }
     }, [preventScrolling, nextSlide, previousSlide])
 
-    useScroll({ handleScroll, resetTime: 0.75 });
+    useScroll({ handleScroll, resetTime: 1.5 });
     useShowHint({
         disable: [0, 5, 7, slides.length - 1].includes(activeSlide)
     })
@@ -70,7 +70,7 @@ const Domstol: React.VFC = () => {
             slides
         ) : (
             <>
-                <AnimatePresence exitBeforeEnter>
+                <AnimatePresence exitBeforeEnter >
                     {slides[activeSlide]}
                 </AnimatePresence>
                 <div style={{
