@@ -6,7 +6,6 @@ import HairyGoals from '../components/slides/domstol/HairyGoals'
 import Employee from '../components/slides/domstol/EmployeeSlide/Employee'
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency'
 import NumberSlide from '../components/slides/domstol/NumberSlide'
-import VideoSlideDA from '../components/slides/domstol/VideoSlideDA'
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech'
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep'
 
@@ -17,7 +16,6 @@ const Domstol = () => {
             <AboutUs />
             <ConvictedPercent />
             <HairyGoals />
-            <VideoSlideDA />
             <ImportantCompetency />
             <VideoSlideWebstep />
             <NumberSlide />

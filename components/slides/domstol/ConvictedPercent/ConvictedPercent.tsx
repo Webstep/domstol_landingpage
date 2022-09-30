@@ -1,11 +1,21 @@
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PixelatedMan from '../../../common/PixelatedMan'
 import styles from './ConvictedPercent.module.scss'
+import { Text } from '../../../common/Typography'
+import { useInView } from 'react-intersection-observer'
 
 const ConvictedPercent: React.VFC = () => {
-    const exitAnimationTransition = { duration: 3, times: [0, 0.4, 1] }
+    const exitAnimationTransition = { duration: 1.5, times: [0, 0.4, 1] }
 
+    const [ref, inView] = useInView({ threshold: 1 });
+    const [isHighlighted, setIsHighlighted] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (!isHighlighted && inView) {
+            setIsHighlighted(true)
+        }
+    }, [inView, isHighlighted]);
 
     return (
         <section className={styles.section}>
@@ -15,9 +25,10 @@ const ConvictedPercent: React.VFC = () => {
                         key={index}
                         exit={{ opacity: [1, index === 2 ? 1 : 0, 0] }}
                         transition={exitAnimationTransition}
+                        style={{ width: 'fit-content', margin: '0 auto' }}
                     >
 
-                        <PixelatedMan key={index + 3} highlight={index === 2} />
+                        <PixelatedMan key={index + 3} highlight={index === 2 && isHighlighted} className={styles.pixelMan} />
                     </motion.div>
                 ))}
             </div>
@@ -38,15 +49,17 @@ const ConvictedPercent: React.VFC = () => {
                         opacity: [1, 1, 0]
                     }}
                     transition={exitAnimationTransition}
+                    ref={ref}
                 >
                     <span>
                         1/6
                     </span>
-                    <div>
-                        av Norges befolkning har blitt          domfelt.
-                    </div>
+                    <span>
+                        av Norges befolkning har blitt domfelt.
+                    </span>
                 </motion.h2>
-                <motion.p
+                <Text
+                    isOverlay
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5 }}
                 >
@@ -56,7 +69,7 @@ const ConvictedPercent: React.VFC = () => {
                     har med andre ord vært i kontakt med
                     domstoladministrasjonen på et eller
                     annet vis i løpet av livet.
-                </motion.p>
+                </Text>
             </motion.div>
         </section>
     )

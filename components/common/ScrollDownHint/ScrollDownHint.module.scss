@@ -1,0 +1,26 @@
+.scrollDown {
+    position: sticky;
+    bottom: 25px;
+    left: 50vw;
+    transform: translateX(-50%);
+    z-index: 999;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    margin-top: -50px;
+
+    text-transform: uppercase;
+    text-align: center;
+
+    span {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    div {
+        width: max-content;
+        margin: auto;
+    }
+}

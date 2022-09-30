@@ -1,13 +1,9 @@
 import React from 'react';
-import Citation from '../../common/Citation';
-import VideoSlide from './VideoSlide';
-import styles from './VideoSlide/VideoSlide.module.scss';
+import VideoSlide from '../../common/VideoSlide';
 
 const VideoSlideTech = () => {
     return (
-        <>
-            <VideoSlide src={require('../../../public/videos/Webstep_DA_intervju_teknisk_1208x1920_v02.mp4')} autoplay={false} />
-        </>
+        <VideoSlide src="https://s3.tebi.io/webstep/Webstep_DA_tekniskfilm_v01.mp4" autoplay={false} />
     );
 };
 

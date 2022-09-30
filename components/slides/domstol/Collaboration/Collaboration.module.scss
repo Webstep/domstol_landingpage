@@ -11,15 +11,17 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
 
-    span,
+    div,
     video {
         display: block;
         grid-row: 1 / 2;
     }
 
-    span {
+    div {
         grid-column: 2 / -1;
         align-self: flex-start;
+        width: fit-content;
+        justify-self: flex-end;
     }
 
     video {
@@ -34,24 +36,44 @@
     h2 {
         text-transform: uppercase;
         font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        height: 400vh;
+        flex-direction: column;
+        overflow: visible;
+        justify-content: flex-start;
+        padding-top: 50vh;
     }
 
-    blockquote {
-        margin-inline: 0;
+    .imageContainer {
+        height: 100vh;
+        width: 100vw;
+        background-image: url(/assets/domstol/images/BrigittAndHerman_horizontal.jpg);
+        background-size: cover;
+        background-position: center;
+        @include darkenBackground;
+        position: sticky;
+        top: 0px;
+        margin: 0;
 
-        .signature {
-            @include pixelText;
-            display: block;
-            margin-top: 1rem;
-            margin-bottom: 2rem;
+        * {
+            display: none !important;
+        }
+    }
 
-            * {
-                display: block;
-            }
+    .description {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        z-index: 2;
+        margin-top: -142vh;
 
-            span {
-                font-weight: 700;
-            }
+        h2 {
+            padding-inline: 2rem;
         }
     }
 }

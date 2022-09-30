@@ -1,8 +1,8 @@
 import { AnimatePresence } from 'framer-motion';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import Device from '../components/common/Device/Device';
+import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
+import { DeviceContext } from '../components/common/Device';
 import DottedProgressBar from '../components/common/DottedProgressBar';
-import PopupVideo from '../components/common/PopupVideo';
+import ScrollDownHint from '../components/common/ScrollDownHint';
 import AboutUs from '../components/slides/domstol/AboutUs';
 import Collaboration from '../components/slides/domstol/Collaboration';
 import ConvictedPercent from '../components/slides/domstol/ConvictedPercent';
@@ -12,10 +12,10 @@ import ImportantCompetency from '../components/slides/domstol/ImportantCompetenc
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
 import TechDetails from '../components/slides/domstol/TechDetails';
-import VideoSlideDA from '../components/slides/domstol/VideoSlideDA';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
+import useShowHint from '../hooks/showHint';
 import { useSlideStore } from '../stores/activeSlide';
 
 const Domstol: React.VFC = () => {
@@ -25,21 +25,22 @@ const Domstol: React.VFC = () => {
     const nextSlide = useSlideStore((state) => state.nextSlide)
     const setActiveSlide = useSlideStore((state) => state.setActiveSlide)
 
+    const { isMobile } = useContext(DeviceContext)
+
     const slides = useMemo(() => [
-        <Introduction key="1" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
-        <AboutUs key="2" />,
-        <ConvictedPercent key="3" />,
-        <HairyGoals key="4" />,
-        <VideoSlideDA key="5" />,
-        <ImportantCompetency key="6" />,
-        <VideoSlideWebstep key="7" />,
-        <NumberSlide key="8" />,
-        <VideoSlideTech key="9" />,
-        <Collaboration key="collaboration" />,
-        <Employee key="10" />,
+        <Introduction key="Intro" allowScrolling={(value: boolean) => setPreventScrolling(!value)} />,
+        <AboutUs key="Domstoladministrasjonen" />,
+        <ConvictedPercent key="1 av 6 personer" />,
+        <HairyGoals key="Hårete mål" />,
+        <ImportantCompetency key="Viktig kompetanse" />, // might cause iphone bug
+        <VideoSlideWebstep key="Hva gjør Webstep?" />,
+        <NumberSlide key="Straffereaksjoner" />,
         <TechDetails key="11" />,
-        /*<PopupVideo key="12" src={require('../public/videos/')} autoplay={false} />*/
+        <VideoSlideTech key="Carl forklarer" />,
+        <Collaboration key="Webstep og domstolene" />,
+        <Employee key="Les mer" />
     ], [])
+
 
     useEffect(() => {
         setSlidesLength(slides.length)
@@ -61,32 +62,31 @@ const Domstol: React.VFC = () => {
         }
     }, [preventScrolling, nextSlide, previousSlide])
 
-    useScroll({ handleScroll, resetTime: 0.5 });
+    useScroll({ handleScroll, resetTime: 1.5 });
+    useShowHint({
+        disable: [0, 5, 8, slides.length - 1].includes(activeSlide)
+    })
 
-    return (
-        <Device>
-            {({ isMobile }) =>
-                isMobile ? (
-                    slides
-                ) : (
-                    <>
-
-                        <AnimatePresence exitBeforeEnter>
-                            {slides[activeSlide]}
-                        </AnimatePresence>
-                        <div style={{
-                            position: "fixed",
-                            right: "20px",
-                            top: "50vh",
-                            transform: "translateY(-50%)"
-                        }}>
-                            <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical />
-                        </div>
-                    </>
-                )
-            }
-        </Device>
-    );
+    return (<>
+        {isMobile ? (
+            slides
+        ) : (
+            <>
+                <AnimatePresence exitBeforeEnter>
+                    {slides[activeSlide]}
+                </AnimatePresence>
+                <div style={{
+                    position: "fixed",
+                    right: "4px",
+                    top: "50vh",
+                    transform: "translateY(-50%)"
+                }}>
+                    <DottedProgressBar size={slides.length} progress={activeSlide} onClick={(newSlideIndex) => setActiveSlide(newSlideIndex)} isVertical titles={slides.map(item => item.key as string)} />
+                </div>
+                <ScrollDownHint onClick={nextSlide} />
+            </>
+        )}
+    </>)
 };
 
 export default Domstol;

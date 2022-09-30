@@ -1,6 +1,8 @@
 import create from 'zustand'
 
 export type SlideStore = {
+    showHint: boolean
+    setShowHint: (value: boolean) => void
     slidesLength: number
     setSlidesLength: (length: number) => void
     activeSlide: number
@@ -10,6 +12,8 @@ export type SlideStore = {
 }
 
 export const useSlideStore = create<SlideStore>((set) => ({
+    showHint: false,
+    setShowHint: (value) => set(() => ({ showHint: value })),
     slidesLength: 0,
     setSlidesLength: (length) =>
         set(() => ({ slidesLength: length > 0 ? length : 0 })),
@@ -21,7 +25,7 @@ export const useSlideStore = create<SlideStore>((set) => ({
                 console.error('Tried to set activeSlide outside of valid range')
                 newIndex = 0
             }
-            return { activeSlide: newIndex }
+            return { activeSlide: newIndex, showHint: false }
         }),
     nextSlide: () =>
         set((state) => ({
@@ -29,6 +33,7 @@ export const useSlideStore = create<SlideStore>((set) => ({
                 state.activeSlide < state.slidesLength - 1
                     ? state.activeSlide + 1
                     : state.activeSlide,
+            showHint: false,
         })),
     previousSlide: () =>
         set((state) => ({
@@ -36,5 +41,7 @@ export const useSlideStore = create<SlideStore>((set) => ({
                 state.activeSlide > 0
                     ? state.activeSlide - 1
                     : state.activeSlide,
+
+            showHint: false,
         })),
 }))

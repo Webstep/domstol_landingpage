@@ -1,36 +1,37 @@
-import React from 'react';
-import { useInView } from 'react-intersection-observer';
+import { motion, MotionProps, Variants } from 'framer-motion';
+import React, { FC } from 'react';
 import styles from './Citation.module.scss';
 
-
-
 interface CitationProps {
-    name: string;
     quote: string;
-    quoteType: string;
-    position: string;
+    name?: string;
+    occupation?: string;
+    quoteType?: 'short' | 'long';
+    variants?: Variants;
 }
 
-const Citation: React.FC<CitationProps> = (props) => {
-    const [ref, inView] = useInView();
+const Citation: FC<CitationProps & MotionProps> = ({ quote, name, occupation, quoteType = 'long', variants, ...options }) => {
 
     return (
-        <>
-            <div ref={ref}>
-                {inView &&
-                    <div className={styles.container} >
-                        <div className={styles.quote}>
-                            <blockquote className={`${styles[props.quoteType]}`}>&quot;{props.quote}&quot;</blockquote>
-                        </div>
-                        <div className={styles.origin}>
-                            <p className={styles.name}>{props.name}</p>
-                            <p className={styles.occupation}>{props.position}</p>
-                        </div>
-                    </div>
-                }
-            </div>
-        </>
-    );
-};
+        <motion.blockquote className={styles.container} {...options}>
+            {quoteType === 'long' ? (
+                <motion.span className={styles.longQuote} variants={variants}>
+                    – {quote}
+                </motion.span>
+            ) : (
+                <motion.q className={styles.shortQuote} variants={variants}>
+                    {quote}
+                </motion.q>
+            )}
 
-export default Citation;
+            {name && occupation && (
+                <motion.footer className={styles.signature} variants={variants}>
+                    <span className={styles.name}>{name},</span>
+                    <span>{occupation}</span>
+                </motion.footer>
+            )}
+        </motion.blockquote>
+    )
+}
+
+export default Citation

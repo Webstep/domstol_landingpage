@@ -1,0 +1,48 @@
+@use 'styles/variables.scss' as *;
+
+.text,
+.title {
+    color: #fff;
+}
+
+.title {
+    font-family: $font-family-heading;
+    font-weight: $font-weight-heading;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.text {
+    line-height: 1.5;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        padding-inline: 2rem;
+
+        .text {
+            width: min(100%, 600px);
+        }
+    }
+
+    .overlay {
+        width: 100vw;
+        box-sizing: border-box;
+        background: rgba(6, 2, 44, 0.8);
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-top: 100vh;
+        z-index: 999;
+        margin-inline: auto;
+
+        .text {
+            margin-inline: auto;
+            text-align: center;
+        }
+    }
+
+    .title {
+        padding-inline: 2rem;
+        box-sizing: border-box;
+    }
+}

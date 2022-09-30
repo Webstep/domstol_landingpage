@@ -7,9 +7,8 @@
     gap: 3rem;
     font-family: $font-family-body;
 
-    div:nth-child(1) {
-        box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
-        height: 500px;
+    .media {
+        height: 580px;
     }
 }
 
@@ -31,17 +30,60 @@
 }
 
 .description {
-    width: 40vw;
-    max-width: 400px;
+    width: min(40vw, 400px);
     font-weight: 300;
     line-height: 1.4rem;
 
     h2 {
-        font-size: 50px;
         min-width: 341px;
     }
 
     span {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 820vh;
+        align-items: flex-start;
+        overflow: visible;
+        width: 100%;
+        position: relative;
+
+        .description {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+
+            .intro {
+                margin-top: 5rem;
+                height: 30rem;
+            }
+
+            .stickyDiv {
+                position: sticky;
+                top: 40%;
+            }
+        }
+
+        .media {
+            position: sticky;
+            top: 0;
+            margin-top: 40rem;
+            background-image: url(/assets/domstol/images/herman_seip.jpg);
+            @include darkenBackground;
+            background-size: cover;
+            background-position: center;
+            height: 110vh;
+            width: 100vw;
+            * {
+                display: none;
+            }
+        }
     }
 }
