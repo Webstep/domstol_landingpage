@@ -6,6 +6,7 @@ import Weight from '../../../../public/assets/domstol/weight.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import useShowHint from '../../../../hooks/showHint';
+import { Text } from '../../../common/Typography'
 
 interface IntroductionProps {
     allowScrolling: (value: boolean) => void;
@@ -29,7 +30,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                         <h1>
                             DIGITALISERING <br /> AV DOMSTOLENE
                         </h1>
-                        <p>
+                        <Text>
                             Maktfordelingsprinsippet og de norske domstolenes
                             uavhengighet er som stoffet din og min frihet er laget
                             av. I flere europeiske land er Domstolenes uavhengighet
@@ -37,7 +38,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                             Og den øker år for år. Det skal vi være glad for. Men
                             tilliten til domstolene kommer med med et like stort
                             ansvar.
-                        </p>
+                        </Text>
                         <div className={styles.scrollDown}>
                             <span>Scroll</span>
                             <motion.div

@@ -70,7 +70,7 @@ const Domstol: React.VFC = () => {
             slides
         ) : (
             <>
-                <AnimatePresence exitBeforeEnter >
+                <AnimatePresence exitBeforeEnter>
                     {slides[activeSlide]}
                 </AnimatePresence>
                 <div style={{
