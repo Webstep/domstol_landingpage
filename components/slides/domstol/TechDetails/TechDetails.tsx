@@ -41,12 +41,12 @@ const TechDetails: React.FC = () => {
                     Ønsker du mer teknisk info? <br />
                     <strong>Se Carl forklare i videoen under</strong>
                 </p>
-                <p className={styles.hashtags}>
+                <div className={styles.hashtags}>
                     <Technology label="kotlin" />
                     <Technology label="react" />
                     <Technology label="java" />
                     <Technology label="swingklient" searchTerm="swing+klient" />
-                </p>
+                </div>
             </motion.div>
             <motion.div
                 className={styles.description}
