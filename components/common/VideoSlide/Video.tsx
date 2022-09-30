@@ -88,6 +88,7 @@ const Video: React.FC<VideoProps> = ({ src, autoplay, landscape }) => {
                 src={src}
                 ref={videoRef}
                 autoPlay={autoplay}
+                playsInline
                 disablePictureInPicture
                 muted={autoplay}
                 onLoadedMetadata={() => setDuration(videoRef.current?.duration)}

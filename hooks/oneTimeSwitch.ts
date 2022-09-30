@@ -7,7 +7,7 @@ const useOneTimeSwitch = (flip: boolean): boolean => {
         if (flip && !hasSwitched) {
             setHasSwitched(true)
         }
-    }, [flip])
+    }, [flip, hasSwitched])
 
     return hasSwitched
 }
