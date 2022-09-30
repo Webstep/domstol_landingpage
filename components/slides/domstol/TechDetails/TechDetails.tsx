@@ -28,6 +28,7 @@ const TechDetails: React.FC = () => {
                 transition={{
                     duration: 1,
                 }}
+                className={styles.media}
             >
                 <Image
                     src="/assets/carl_bokestad.jpg"
@@ -60,7 +61,7 @@ const TechDetails: React.FC = () => {
                 <Citation variants={item} quote="
                         Webstep kom inn i prosjektet på et helt nytt fagfelt for alle involverte. DA har lagt godt til rette for oss og var klare over at vi ikke kunne så mye fra før. Det gode samarbeidet mellom DA og Webstep har vært avgjørende for dette prosjektet."
                 />
-                <Text variants={item}>
+                <Text variants={item} isOverlay>
                     Oppdraget har blitt langt mer enn timeleveranser dag for dag, for
                     en og en konsulent, uke inn og uke ut. Dette er fellesskap, samarbeid
                     og nybrottsarbeid.

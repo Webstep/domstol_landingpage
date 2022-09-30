@@ -6,7 +6,7 @@
     gap: 3rem;
     font-family: $font-family-body;
 
-    div:first-child {
+    .media {
         box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
         height: 464.58px;
         width: 358px;
@@ -54,5 +54,40 @@
 
     span {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 700vh;
+        align-items: flex-start;
+        overflow: visible;
+        width: 100%;
+        position: relative;
+
+        .description {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-top: 50vh;
+        }
+
+        .media {
+            position: sticky;
+            top: 0;
+            background-image: url(/assets/carl_bokestad.jpg);
+            @include darkenBackground;
+            background-size: cover;
+            background-position: center;
+            height: 110vh;
+            width: 100vw;
+            * {
+                display: none !important;
+            }
+        }
     }
 }
