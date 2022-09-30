@@ -11,43 +11,33 @@
         height: 464.58px;
         width: 358px;
     }
-}
 
-.quote {
-    font-size: 2rem;
-    font-weight: 800;
-    display: block;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    line-height: 2.4rem;
-}
+    blockquote:first-child {
+        margin-bottom: 2rem;
 
-.signature {
-
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    span {
-        font-weight: bold;
-        display: block;
-        @include pixelText;
+        & > span {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 2.4rem;
+        }
     }
 }
 
-.hashtags{
+.hashtags {
     display: flex;
-}
 
-.hashtag {
-    text-decoration: none;
-    margin-right: 10px;
-    padding: 0;
-    cursor: pointer;
-    color: #7A76A4;
-    &:hover {
-        color: $color-red;
+    .hashtag {
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 0;
+        cursor: pointer;
+        color: #7a76a4;
+        &:hover {
+            color: $color-red;
+        }
     }
-    
 }
 
 .description {
@@ -65,8 +55,4 @@
     span {
         display: block;
     }
-}
-
-.imageButton {
-    cursor: pointer;
 }

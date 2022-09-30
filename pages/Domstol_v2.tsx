@@ -35,7 +35,7 @@ const Domstol: React.VFC = () => {
         <ImportantCompetency key="Viktig kompetanse" />, // might cause iphone bug
         <VideoSlideWebstep key="Hva gjør Webstep?" />,
         <NumberSlide key="Straffereaksjoner" />,
-        <TechDetails key="11" />,
+        <TechDetails key="Teknologi" />,
         <VideoSlideTech key="Carl forklarer" />,
         <Collaboration key="Webstep og domstolene" />,
         <Employee key="Les mer" />
