@@ -16,7 +16,6 @@ const descriptionContainer: AnimationStages = {
     show: {
         opacity: 1,
         transition: {
-            delayChildren: 0.5,
             staggerChildren: 0.25
         }
     },
@@ -24,7 +23,7 @@ const descriptionContainer: AnimationStages = {
         y: 400,
         opacity: 0,
         transition: {
-            duration: 1.5,
+            duration: 1,
         }
     }
 }
@@ -36,7 +35,7 @@ const item: AnimationStages = {
     },
     show: {
         x: 0,
-        opacity: 1,
+        opacity: [0, 0, 0.3, 0.6, 1],
         transition: {
             duration: 1
         }
@@ -45,7 +44,6 @@ const item: AnimationStages = {
 }
 
 const HairyGoals = () => {
-
     return (
         <section className={styles.section}>
             <div className={styles.media}>
@@ -54,7 +52,7 @@ const HairyGoals = () => {
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ y: -400, opacity: 0 }}
                     transition={{
-                        duration: 1.5,
+                        duration: 1,
                     }}
                 >
                     <Image className={styles.hermanImage}
