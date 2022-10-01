@@ -11,6 +11,7 @@ import HairyGoals from '../components/slides/domstol/HairyGoals';
 import ImportantCompetency from '../components/slides/domstol/ImportantCompetency';
 import Introduction from '../components/slides/domstol/Introduction';
 import NumberSlide from '../components/slides/domstol/NumberSlide';
+import TechDetails from '../components/slides/domstol/TechDetails';
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech';
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep';
 import useScroll, { ScrollDirection } from '../hooks/scroll';
@@ -34,6 +35,7 @@ const Domstol: React.VFC = () => {
         <ImportantCompetency key="Viktig kompetanse" />, // might cause iphone bug
         <VideoSlideWebstep key="Hva gjør Webstep?" />,
         <NumberSlide key="Straffereaksjoner" />,
+        <TechDetails key="Teknologi" />,
         <VideoSlideTech key="Carl forklarer" />,
         <Collaboration key="Webstep og domstolene" />,
         <Employee key="Les mer" />
@@ -62,7 +64,7 @@ const Domstol: React.VFC = () => {
 
     useScroll({ handleScroll, resetTime: 1.5 });
     useShowHint({
-        disable: [0, 5, 7, slides.length - 1].includes(activeSlide)
+        disable: [0, 5, 8, slides.length - 1].includes(activeSlide)
     })
 
     return (<>

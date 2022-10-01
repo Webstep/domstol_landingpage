@@ -1,0 +1,79 @@
+@use '../../../../styles/variables.scss' as *;
+
+.section {
+    @include centerContent;
+
+    gap: 3rem;
+    font-family: $font-family-body;
+
+    .media {
+        box-shadow: 7px 7px 10px rgba(9, 0, 39, 0.6);
+        height: 464.58px;
+        width: 358px;
+    }
+
+    .description {
+        width: min(55vw, 600px);
+    }
+
+    blockquote:first-child {
+        margin-bottom: 2rem;
+
+        & > span {
+            font-size: 2rem;
+            font-weight: 800;
+            display: block;
+            margin-bottom: 1rem;
+            line-height: 2.4rem;
+        }
+    }
+}
+
+.hashtags {
+    display: flex;
+
+    .hashtag {
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 0;
+        cursor: pointer;
+        color: #7a76a4;
+        &:hover {
+            color: $color-red;
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 650vh;
+        align-items: flex-start;
+        overflow: visible;
+        width: 100%;
+        position: relative;
+
+        .description {
+            width: 100%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .media {
+            position: sticky;
+            top: 0;
+            background-image: url(/assets/carl_bokestad.jpg);
+            @include darkenBackground;
+            background-size: cover;
+            background-position: center;
+            height: 110vh;
+            width: 100vw;
+            * {
+                display: none !important;
+            }
+        }
+    }
+}
