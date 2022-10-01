@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React from 'react'
 import styles from './ArrowButton.module.scss'
-import ArrowIcon from '../../../public/icons/pixelated_arrow.svg';
+import ArrowIcon from '../../../public/icons/arrow.svg';
 import Image from 'next/image';
 
 export enum Direction {
@@ -55,11 +55,11 @@ export default ArrowButton
 
 const getVariant = (direction: Direction) => {
     switch (direction) {
-        case Direction.Up:
+        case Direction.Right:
             return { rotate: -90 }
-        case Direction.Down:
-            return { rotate: 90 }
         case Direction.Left:
+            return { rotate: 90 }
+        case Direction.Up:
             return { rotate: 180 }
         default:
             return { rotate: 0 }
@@ -67,5 +67,5 @@ const getVariant = (direction: Direction) => {
 }
 
 const getDimentions = (scale: number = 1) => {
-    return { w: 19 * scale, h: 33.25 * scale }
+    return { w: 35 * scale, h: 33 * scale }
 }

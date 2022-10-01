@@ -23,11 +23,11 @@ $font-weight-pixel: 400;
 $font-weight-pixel-name: 700;
 $font-size-pixel: 1.125rem;
 
-@mixin pixelText($font-weight: 400) {
-    font-family: Lo-Res, sans-serif;
-    font-weight: $font-weight;
-    font-size: 1.125rem;
-}
+// @mixin pixelText($font-weight: 400) {
+//     font-family: Lo-Res, sans-serif;
+//     font-weight: $font-weight;
+//     font-size: 1.125rem;
+// }
 
 //Brødtekst landingpage og artikkel
 $font-family-body: Roboto, sans-serif;
@@ -39,7 +39,7 @@ $font-size-body: 1rem;
 $font-style: normal;
 $font-color: #fff;
 
-$color-background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
+$color-background: linear-gradient(180deg, #031e30 0%, #021827 123.01%);
 $color-hightlight: #f2b355;
 $color-red: #e84f4f;
 
