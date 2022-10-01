@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect } from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
@@ -14,6 +14,18 @@ interface IntroductionProps {
 
 const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) => {
     const { ref, inView } = useInView()
+
+    const controls = useAnimation()
+
+    const startAnimation = () => {
+        controls.start({
+            width: 0,
+            transition: {
+                duration: 3.5,
+                ease: 'linear'
+            },
+        })
+    }
 
     useEffect(() => {
         allowScrolling(inView)
@@ -63,15 +75,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                     initial={{
                         width: '100vw'
                     }}
-                    animate={{
-                        width: '0px'
-                    }}
-                    transition={{
-                        duration: 3.5,
-                        delay: 1,
-                        ease: 'linear'
-                    }}
-
+                    animate={controls}
                 />
                 <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
                     <video
@@ -79,7 +83,8 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                         autoPlay
                         muted
                         loop
-                    ></video>
+                        onLoadedData={startAnimation}
+                    />
                 </motion.div>
             </section>
             <div className={styles.breakpoint} ref={ref}></div>
