@@ -1,4 +1,5 @@
 $information-width: 320px;
+$background: linear-gradient(180deg, #f07589 0%, #c42d46 132.12%);
 
 .container {
     height: 200vh;
@@ -14,7 +15,7 @@ $information-width: 320px;
         z-index: 9;
         position: absolute;
         right: 0;
-        background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
+        background: $background;
     }
 
     .overlay {
@@ -32,7 +33,7 @@ $information-width: 320px;
         &::after,
         &::before {
             content: '';
-            background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
+            background: $background;
             height: 100%;
         }
 
@@ -40,13 +41,13 @@ $information-width: 320px;
             background-image: url('/assets/domstol/background-cutout.svg');
             background-size: cover;
             background-repeat: no-repeat;
-            background-position: center;
+            background-position: left;
         }
 
         .information {
             height: 100%;
 
-            background: linear-gradient(180deg, #e95050 0%, #c63434 132.12%);
+            background: $background;
             grid-column: 2;
             width: 100%;
 
