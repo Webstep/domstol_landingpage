@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useAnimation } from 'framer-motion'
 import React, { useEffect } from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
@@ -6,6 +6,7 @@ import Gavel from '../../../../public/assets/domstol/gavel.svg';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import useShowHint from '../../../../hooks/showHint';
+import { Text } from '../../../common/Typography'
 
 interface IntroductionProps {
     allowScrolling: (value: boolean) => void;
@@ -13,6 +14,18 @@ interface IntroductionProps {
 
 const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) => {
     const { ref, inView } = useInView()
+
+    const controls = useAnimation()
+
+    const startAnimation = () => {
+        controls.start({
+            width: 0,
+            transition: {
+                duration: 3.5,
+                ease: 'linear'
+            },
+        })
+    }
 
     useEffect(() => {
         allowScrolling(inView)
@@ -29,7 +42,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                         <h1>
                             DIGITALISERING <br /> AV DOMSTOLENE
                         </h1>
-                        <p>
+                        <Text>
                             Maktfordelingsprinsippet og de norske domstolenes
                             uavhengighet er som stoffet din og min frihet er laget
                             av. I flere europeiske land er Domstolenes uavhengighet
@@ -37,7 +50,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                             Og den øker år for år. Det skal vi være glad for. Men
                             tilliten til domstolene kommer med med et like stort
                             ansvar.
-                        </p>
+                        </Text>
                         <div className={styles.scrollDown}>
                             <span>Scroll</span>
                             <motion.div
@@ -62,22 +75,16 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
                     initial={{
                         width: '100vw'
                     }}
-                    animate={{
-                        width: '0px'
-                    }}
-                    transition={{
-                        duration: 3.5,
-                        delay: 1,
-                        ease: 'linear'
-                    }}
-
+                    animate={controls}
                 />
                 <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
                     <video
-                        src={'/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4'}
-                        autoPlay muted loop>
-                    </video>
-
+                        src={require('../../../../public/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4')}
+                        autoPlay
+                        muted
+                        loop
+                        onLoadedData={startAnimation}
+                    />
                 </motion.div>
             </section>
             <div className={styles.breakpoint} ref={ref}></div>

@@ -64,7 +64,7 @@ const ImportantCompetency: React.FC = () => {
                                 <Text isOverlay>
                                     Dette er en stor og spennende oppgave, og Webstep bygger sterke software-team for å nå hårete DA-mål. Som nå er blitt våre.
                                 </Text>
-                                <Citation name={'Hermain Seip'} quote={'Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.'} occupation={'Arkitekt hos DA'} />
+                                <Citation name={'Herman Seip'} quote={'Alle som kommer inn døra her ønsker å levere på samfunns- oppdraget vårt.'} occupation={'Arkitekt hos DA'} />
                             </div>
                         </div>
                     </motion.div>

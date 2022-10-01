@@ -8,9 +8,12 @@
 .title {
     font-family: $font-family-heading;
     font-weight: $font-weight-heading;
-    // font-size: $font-size-heading-small;
     font-size: 3rem;
     text-transform: uppercase;
+}
+
+.text {
+    line-height: 1.5;
 }
 
 @media (max-width: 1200px) {

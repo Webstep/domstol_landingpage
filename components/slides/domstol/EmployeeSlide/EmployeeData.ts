@@ -22,7 +22,7 @@ export const EmployeeData: {
         firstname: 'Carl',
         lastname: 'Bøkestad',
         quote: '-  Det som er gøy med å jobbe med DA er at man kjenner på viktigheten av det man gjør. Ikke bare for oss som jobber her, men for den norske befolkningen og det norske demokratiet. Det er ikke et hvilket som helst prosjekt.',
-        role: 'Systemutvikler',
+        role: 'Arkitekt',
         url: '',
     },
 ]

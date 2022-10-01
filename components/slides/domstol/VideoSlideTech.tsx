@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoSlide from './VideoSlide';
+import VideoSlide from '../../common/VideoSlide';
 
 const VideoSlideTech = () => {
     return (
