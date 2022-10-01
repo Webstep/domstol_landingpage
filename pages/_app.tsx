@@ -1,7 +1,6 @@
 import '../styles/globals.scss'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
-import scrollStyles from '../styles/Scroll.module.scss'
 import Navbar from '../components/Navbar'
 import DeviceProvider from '../components/common/Device'
 
@@ -23,7 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                 <meta name="theme-color" content="#ffffff" />
             </Head>
             <DeviceProvider>
-                <article className={scrollStyles.case}>
+                <article>
                     <Navbar />
                     <Component {...pageProps} />
                 </article>

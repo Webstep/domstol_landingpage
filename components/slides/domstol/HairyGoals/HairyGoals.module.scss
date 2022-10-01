@@ -20,15 +20,6 @@
     margin-bottom: 1rem;
 }
 
-.signature {
-    @include pixelText;
-
-    span {
-        font-weight: bold;
-        display: block;
-    }
-}
-
 .description {
     width: min(40vw, 400px);
     font-weight: 300;

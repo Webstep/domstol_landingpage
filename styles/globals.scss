@@ -19,11 +19,15 @@ button {
     justify-content: center;
 }
 
-// article {
-//     height: 100vh;
-//     background: linear-gradient(180deg, #1c1e4e 0%, #06022d 123.01%);
-//     color: white;
-// }
+article {
+    min-height: 100vh;
+    background: $color-background;
+    color: white;
+
+    section {
+        min-height: 100vh;
+    }
+}
 
 //This styles hide the scrollbar
 * {
