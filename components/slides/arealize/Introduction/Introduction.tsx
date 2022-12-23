@@ -80,8 +80,7 @@ const ArealizeIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) 
                 />
                 <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
                     <video
-                        // TODO: Change video
-                        src={'/assets/domstol/videos/Webstep_DA_illustrasjon_v02.mp4'}
+                        src={'/assets/arealize/videos/Arealize_Illustrasjonsfilm_v01.mov'}
                         autoPlay
                         muted
                         loop
