@@ -1,9 +1,10 @@
 import { motion, Variant, Variants } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./ClearGoals.module.scss";
 import Image from 'next/image';
 import { Text, Title } from "../../../common/Typography";
 import Citation from "../../../common/Citation";
+import { DeviceContext } from "../../../common/Device";
 
 interface AnimationStages extends Variants {
     hidden: Variant;
@@ -28,6 +29,8 @@ const item: AnimationStages = {
 
 
 const ClearGoals: React.FC = () => {
+    const { isMobile } = useContext(DeviceContext)
+
     const enterTransistion = {
         duration: 1.5,
     }
@@ -40,6 +43,40 @@ const ClearGoals: React.FC = () => {
         <>
             <section className={styles.section}>
                 <div className={styles.container}>
+                    <div className={styles.textSection}>
+                        <motion.div
+                            initial={isMobile ? {} : { y: -200, opacity: 0 }}
+                            animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                            exit={{ x: 100, opacity: 0, transition: exitTransition }}
+                        >
+                            <Title className={styles.heading}>
+                                <div className={styles.stickyDiv}>
+                                    TYDELIGE MÅL
+                                </div>
+                            </Title>
+                        </motion.div>
+
+                        <motion.div
+                            initial={isMobile ? {} : { x: 200, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1, transition: enterTransistion }}
+                            exit={{ y: 100, opacity: 0, transition: exitTransition }}
+                        >
+                            <div className={styles.description}>
+                                {isMobile ?
+                                    <Text><b>Målet til Arealize er klart og tydelig:</b> <br /> De ønsker å optimalisere og effektivisere planleggingingsprosessen på en måte som er både juridisk og psykososialt ansvarlig for at arbeidsmiljøet skal bli så bra som mulig.</Text>
+                                    :
+                                    <Text>Målet er klart og tydelig: Arealize vil optimalisere og effektivisere planleggingingsprosessen på en måte som er både juridisk og psykososialt ansvarlig for at arbeidsmiljøet skal bli så bra som mulig.</Text>
+                                }
+                                <div className={styles.quote}>
+                                    <Citation
+                                        quote="Slik skaper vi arbeidsmiljø som man kan trives i, samtidig som det ser fint ut."
+                                        quoteType="short"
+                                        variants={item}
+                                    />
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
                     <motion.div
                         className={styles.mediaLeft}
                         initial={{ y: 0, opacity: 0 }}
@@ -68,40 +105,8 @@ const ClearGoals: React.FC = () => {
                             objectFit={'cover'}
                         />
                     </motion.div>
-                    <div className={styles.textSection}>
-                        <motion.div
-                            initial={{ y: -200, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1, transition: enterTransistion }}
-                            exit={{ x: 100, opacity: 0, transition: exitTransition }}
-                        >
-                            <Title className={styles.heading}>
-                                <div className={styles.stickyDiv}>
-                                    TYDELIGE MÅL
-                                </div>
-                            </Title>
-                        </motion.div>
-
-                        <motion.div
-                            initial={{ x: 200, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1, transition: enterTransistion }}
-                            exit={{ y: 100, opacity: 0, transition: exitTransition }}
-                        >
-                            <div className={styles.description}>
-                                <Text isOverlay>
-                                    Målet er klart og tydelig: Arealize vil optimalisere og effektivisere planleggingingsprosessen på en måte som er både juridisk og psykososialt ansvarlig for at arbeidsmiljøet skal bli så bra som mulig.
-                                </Text>
-                                <div className={styles.quote}>
-                                    <Citation
-                                        quote="Slik skaper vi arbeidsmiljø som man kan trives i, samtidig som det ser fint ut."
-                                        quoteType="short"
-                                        variants={item}
-                                    />
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
                 </div>
-            </section>
+            </section >
         </>
     );
 };

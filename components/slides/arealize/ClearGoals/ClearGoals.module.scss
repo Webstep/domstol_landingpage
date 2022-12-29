@@ -1,5 +1,6 @@
 @use 'styles/variables.scss' as *;
 $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+$background-mobile: inear-gradient(180deg, #80aaff 0%, #093ea8 132.12%);
 
 .section {
     @include centerContent;
@@ -45,6 +46,42 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
                         font-size: 1rem;
                         font-weight: 800;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .section {
+        height: 100vh;
+        display: block;
+        background: $background-mobile;
+        overflow-x: hidden;
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .mediaRight {
+                display: none;
+            }
+
+            .textSection {
+                margin-top: 30vh;
+                overflow-x: hidden;
+
+                .heading {
+                    font-size: min(3rem, 8.5vw);
+                }
+
+                .description {
+                    text-align: left;
+                }
+
+                blockquote {
+                    display: none;
                 }
             }
         }
