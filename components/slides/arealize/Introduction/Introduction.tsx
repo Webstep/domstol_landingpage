@@ -1,17 +1,20 @@
 import { motion, useAnimation } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
 import useShowHint from '../../../../hooks/showHint';
 import { Text } from '../../../common/Typography'
+import { DeviceContext } from '../../../common/Device'
 
 interface IntroductionProps {
     allowScrolling: (value: boolean) => void;
 }
 
 const ArealizeIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) => {
+    const { isMobile } = useContext(DeviceContext)
+
     const { ref, inView } = useInView()
 
     const controls = useAnimation()
@@ -36,22 +39,52 @@ const ArealizeIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) 
     return (
         <>
             <section className={styles.container}>
+                {isMobile ?
+                    <div className={styles.imageContainer}>
+                        <Image
+                            src={'/assets/arealize/images/arealize-intro-mobile.png'}
+                            layout="fill"
+                            objectFit='cover'
+                            alt="Arealize intro"
+                        />
+                    </div>
+                    :
+                    <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
+                        <video
+                            src={'/assets/arealize/videos/Arealize_Illustrasjonsfilm_v01.mov'}
+                            autoPlay
+                            muted
+                            loop
+                            onLoadedData={startAnimation}
+                        />
+                    </motion.div>}
                 <div className={styles.overlay}>
                     <div className={styles.information}>
-                        <Image src={'/assets/arealize/logo.svg'} alt="" height="60" width="60" />
+                        {!isMobile && <Image src={'/assets/arealize/logo.svg'} alt="" height="60" width="60" />}
                         <h1>
                             REISEN MED <br /> AREALIZE
                         </h1>
-                        <Text>
-                            Arealize er en oppstartsabedrift fra NTNU som utvikler
-                            programvare for AI-drevne plantegninger. Arealize skal
-                            gjøre det lettere for eiendomssjefer å anskaffe nye
-                            leietakere for byggene sine. Ved hjelp av en automatisk
-                            plantegninsgenerator kan brukere uten teknisk bakgrunn
-                            også involvere seg i prosessen. Med fokus på kontorbygg,
-                            har Arealize som ambisjon å være det ledende verktøyet
-                            for å skape gode og effektive arbeidsområder.
-                        </Text>
+                        {isMobile ?
+                            <div style={{ width: '100vw' }}>
+                                <Text isOverlay>
+                                    Arealize er en oppstartsabedrift som utvikler programvare
+                                    for AI-drevne plantegninger. De skal gjøre det lettere
+                                    for eiendomssjefer å anskaffe nye leietakere for byggene
+                                    sine med fokus på kontorbygg.
+                                </Text>
+                            </div>
+                            :
+                            <Text>
+                                Arealize er en oppstartsabedrift fra NTNU som utvikler
+                                programvare for AI-drevne plantegninger. Arealize skal
+                                gjøre det lettere for eiendomssjefer å anskaffe nye
+                                leietakere for byggene sine. Ved hjelp av en automatisk
+                                plantegninsgenerator kan brukere uten teknisk bakgrunn
+                                også involvere seg i prosessen. Med fokus på kontorbygg,
+                                har Arealize som ambisjon å være det ledende verktøyet
+                                for å skape gode og effektive arbeidsområder.
+                            </Text>
+                        }
                         <div className={styles.scrollDown}>
                             <span>Scroll</span>
                             <motion.div
@@ -78,15 +111,6 @@ const ArealizeIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) 
                     }}
                     animate={controls}
                 />
-                <motion.div className={styles.videoContainer} initial={{ height: '100vh' }} exit={{ height: 0, marginTop: 'auto', transition: { duration: 1 } }}>
-                    <video
-                        src={'/assets/arealize/videos/Arealize_Illustrasjonsfilm_v01.mov'}
-                        autoPlay
-                        muted
-                        loop
-                        onLoadedData={startAnimation}
-                    />
-                </motion.div>
             </section>
             <div className={styles.breakpoint} ref={ref}></div>
         </>

@@ -1,5 +1,5 @@
 $information-width: 390px;
-$background: linear-gradient(180deg, #4B87FF 0%, #2257C0 100%);
+$background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
 .container {
     height: 200vh;
@@ -119,8 +119,52 @@ $background: linear-gradient(180deg, #4B87FF 0%, #2257C0 100%);
     justify-self: center;
 }
 
-@media screen and (max-width: 1200px) {
+@media only screen and (max-width: 1200px) {
     .container {
-        display: none;
+        height: 320vh;
+        overflow: visible;
+        display: block;
+
+        .imageContainer {
+            position: sticky;
+            top: 0;
+            height: 110vh;
+            filter: grayscale(100%);
+            color: black;
+            opacity: 0.5;
+        }
+
+        .tintedBackground {
+            background: none;
+        }
+
+        .overlay {
+            height: auto !important;
+
+            &::after,
+            &::before {
+                display: none;
+            }
+
+            .information {
+                z-index: 10;
+                position: absolute;
+                top: 0;
+                margin-left: 0 !important;
+                max-width: 100%;
+                background: none;
+
+                h1 {
+                    margin-inline: auto;
+                    text-align: left;
+                    font-size: min(4rem, 14vw);
+                    width: fit-content;
+                }
+
+                .scrollDown {
+                    display: none;
+                }
+            }
+        }
     }
 }
