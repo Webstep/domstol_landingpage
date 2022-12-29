@@ -5,7 +5,7 @@ import Introduction from "../components/slides/arealize/Introduction";
 const Arealize = () => {
     return (
         <>
-            <Introduction allowScrolling={() => { }} />
+            <Introduction allowScrolling={() => {/* remove this parameter if we decide to not use slides*/ }} />
             <ClearGoals />
         </>
     );
