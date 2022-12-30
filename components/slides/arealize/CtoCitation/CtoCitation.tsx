@@ -3,10 +3,16 @@ import React, { useContext } from "react";
 import Citation from "../../../common/Citation";
 import styles from "./CtoCitation.module.scss";
 import { DeviceContext } from "../../../common/Device";
+import { useInView } from "react-intersection-observer";
 
 const CtoCitation = () => {
 
     const { isMobile } = useContext(DeviceContext)
+
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
 
     return (
         <section className={styles.section}>
@@ -30,8 +36,9 @@ const CtoCitation = () => {
             <motion.div
                 className={styles.textSection}
                 initial={{}}
-                animate={isMobile ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
+                animate={isMobile && inView ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
                 exit={{}}
+                ref={ref}
             >
                 <motion.div
                     initial={{ y: 200, opacity: 0 }}
