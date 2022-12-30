@@ -1,0 +1,22 @@
+@use 'styles/variables.scss' as *;
+$background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+
+.section {
+    display: flex;
+    gap: 50px;
+    background: $background;
+
+    .media {
+        video {
+            height: 100vh;
+            width: auto;
+            transform: scaleX(-1);
+        }
+    }
+
+    .textSection {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
