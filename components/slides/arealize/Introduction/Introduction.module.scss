@@ -129,9 +129,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
             position: sticky;
             top: 0;
             height: 110vh;
-            filter: grayscale(100%);
-            color: black;
-            opacity: 0.5;
+            filter: grayscale(100%) brightness(30%);
         }
 
         .tintedBackground {
