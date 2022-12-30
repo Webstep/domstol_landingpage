@@ -1,15 +1,18 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useContext } from "react";
 import Citation from "../../../common/Citation";
 import styles from "./CtoCitation.module.scss";
-import { Text } from "../../../common/Typography";
+import { DeviceContext } from "../../../common/Device";
 
 const CtoCitation = () => {
+
+    const { isMobile } = useContext(DeviceContext)
+
     return (
         <section className={styles.section}>
             <div className={styles.media}>
                 <motion.div
-                    initial={{ x: -200, opacity: 0 }}
+                    initial={isMobile ? {} : { x: -200, opacity: 0 }}
                     animate={{ x: 0, opacity: 1 }}
                     exit={{ y: -400, opacity: 0 }}
                     transition={{
@@ -24,10 +27,15 @@ const CtoCitation = () => {
                     />
                 </motion.div>
             </div>
-            <div className={styles.textSection}>
+            <motion.div
+                className={styles.textSection}
+                initial={{}}
+                animate={isMobile ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
+                exit={{}}
+            >
                 <motion.div
                     initial={{ y: 200, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, transition: { duration: 1 } }}
+                    animate={isMobile ? { y: -200, opacity: 1, transition: { duration: 1 } } : { y: 0, opacity: 1, transition: { duration: 1 } }}
                     exit={{ y: 100, opacity: 0, transition: { duration: 1 } }}
                 >
                     <Citation
@@ -37,7 +45,7 @@ const CtoCitation = () => {
                         quoteType="short"
                     />
                 </motion.div>
-            </div>
+            </motion.div>
         </section>
 
     );
