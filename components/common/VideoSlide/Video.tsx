@@ -47,11 +47,13 @@ const Video: React.FC<VideoProps> = ({ src, autoplay, landscape }) => {
     }, [pause, inView]);
 
     const toggleSound = useCallback(() => {
-        setHasSound(!hasSound);
-        if (videoRef.current !== null) {
-            videoRef.current.muted = hasSound
-        };
-    }, [hasSound])
+        setHasSound((hasSound) => {
+            if (videoRef.current !== null) {
+                videoRef.current.muted = hasSound
+            }
+            return !hasSound
+        })
+    }, [])
 
     useEffect(() => {
         if (!isPlaying) return;
