@@ -5,6 +5,7 @@ import styles from './SeniorHelp.module.scss';
 import Image from 'next/image'
 import { Title, Text } from '../../../common/Typography';
 import Citation from '../../../common/Citation';
+import { useInView } from 'react-intersection-observer';
 
 const containerVariants: Variants = {
     initial: { x: 100, y: 50, opacity: 0 },
@@ -70,10 +71,14 @@ const imageVariants: Variants = {
 
 const SeniorHelp = () => {
     const { isMobile } = useContext(DeviceContext)
+    // the threshold is calculated of the elements height and padding
+    // height + padding = 200vh. => threshold = 200vh * 0.25 = 50vh
+    const { ref, inView: shouldChangeImage } = useInView({ threshold: 0.25 })
+
 
     return (
         <section className={styles.section}>
-            <div className={styles.imageContainer}>
+            <div className={styles.imageContainer} data-animate={shouldChangeImage}>
                 <motion.div
                     className={styles.ellipse}
                     {...(!isMobile ? imageVariants : {})}
@@ -117,9 +122,11 @@ const SeniorHelp = () => {
                         occupation={'CTO i Arealize'}
                     />
                 }
-                <Text isOverlay>
-                    Webstep har koblet Arealize opp mot flere ressurser i selskapet og i Trondheim generelt sett. Arealize var blant annet med på å lage case for et hackathon som Webstep var involvert i, og satte Arealize i kontakt med dyktige studenter fra NTNU.
-                </Text>
+                <div ref={ref}>
+                    <Text isOverlay>
+                        Webstep har koblet Arealize opp mot flere ressurser i selskapet og i Trondheim generelt sett. Arealize var blant annet med på å lage case for et hackathon som Webstep var involvert i, og satte Arealize i kontakt med dyktige studenter fra NTNU.
+                    </Text>
+                </div>
             </motion.div>
         </section>
     );
