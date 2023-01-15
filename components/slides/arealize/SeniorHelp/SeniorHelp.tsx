@@ -76,9 +76,7 @@ const SeniorHelp = () => {
             <div className={styles.imageContainer}>
                 <motion.div
                     className={styles.ellipse}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    {...(!isMobile ? imageVariants : {})}
                 >
                     <Image
                         src={'/assets/arealize/ellipse.svg'}
@@ -87,7 +85,7 @@ const SeniorHelp = () => {
                         alt={'Webstep'}
                     />
                 </motion.div>
-                <motion.div {...(!isMobile ? imageVariants : {})}>
+                <motion.div className={styles.imageRight} {...(!isMobile ? imageVariants : {})}>
                     <Image
                         src="/assets/arealize/images/seniorhelp.png"
                         width={463}
@@ -98,16 +96,27 @@ const SeniorHelp = () => {
                 <motion.video width={574} height={327} loop muted autoPlay {...(!isMobile ? videoVariants : {})}>
                     <source src="/assets/arealize/videos/seniorhelp-loop.mov" type="video/mp4" />
                 </motion.video>
+
             </div>
             <motion.div className={styles.description} {...(!isMobile ? containerVariants : {})}>
-                <div>
-                    <Title>Seniorhjelp</Title>
+                <Title>Seniorhjelp</Title>
+                {isMobile &&
+                    <Text isOverlay>
+                        Som studenter kjente Arealize på at de trengte seniorrådgivning. Webstep er interessert i oppstartsbedrifter i Trondheim og fant fort ut at dette var en god match.
+                    </Text>
+                }
+                {isMobile ?
                     <Citation
+                        quote='De hjalp oss med produktene, utviklingen, og med å modne hele utviklingsprosessen raskere enn det vi kunne gjort selv. '
+                        name='Yanislav Zagorov'
+                        occupation='CTO i Arealize'
+                    />
+                    : <Citation
                         quote={'Vi som studenter kjente på at vi trengte seniorrådgivning. Webstep var interessert i oppstartsbedrifter i Trondheim og vi fant fort ut at vi matchet bra på kompetansen. De hjalp oss med produktene, utviklingen, og med å modne hele utviklingsprosessen raskere enn det vi kunne gjort selv.'}
                         name={'Yanislav Zagorov'}
                         occupation={'CTO i Arealize'}
                     />
-                </div>
+                }
                 <Text isOverlay>
                     Webstep har koblet Arealize opp mot flere ressurser i selskapet og i Trondheim generelt sett. Arealize var blant annet med på å lage case for et hackathon som Webstep var involvert i, og satte Arealize i kontakt med dyktige studenter fra NTNU.
                 </Text>
