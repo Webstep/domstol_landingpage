@@ -66,6 +66,6 @@ const getVariant = (direction: Direction) => {
     }
 }
 
-const getDimentions = (scale: number = 1) => {
+const getDimentions = (scale = 1) => {
     return { w: 35 * scale, h: 33 * scale }
 }

@@ -28,6 +28,10 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
         })
     }
 
+    const scrollDown = () => {
+        document.querySelectorAll("section")[0].scrollIntoView({ behavior: 'smooth', block: 'end' })
+    }
+
     useEffect(() => {
         allowScrolling(inView)
     }, [allowScrolling, inView]);
@@ -65,7 +69,7 @@ const DomstolIntroduction: React.VFC<IntroductionProps> = ({ allowScrolling }) =
 
                                 <ArrowButton
                                     direction={Direction.Down}
-                                    onClick={() => { }}
+                                    onClick={scrollDown}
                                     alt='pil ned'
                                 />
                             </motion.div>

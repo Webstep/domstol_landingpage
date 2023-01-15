@@ -7,7 +7,6 @@
 }
 
 .container {
-    // width: ;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -16,8 +15,6 @@
 }
 
 .textSection {
-    // display: flex;
-    // flex-direction: column;
     max-width: 250px;
     text-align: left;
 }
@@ -40,31 +37,9 @@
     font-size: $font-size-pixel;
     margin-top: -0.8vw;
 
-    // div {
-    //     display: inline;
-    // }
     display: flex;
     flex-direction: row;
 }
-
-// .moreInfo {
-//     font-family: $font-family-pixel;
-//     font-weight: $font-weight-pixel-name;
-//     font-size: $font-size-pixel;
-//     padding-top: 0.5rem;
-//     padding-inline: 2vw;
-//     a:link,
-//     a:visited,
-//     a:active {
-//         padding: 0 0.3125rem;
-//         text-decoration: none;
-//         font-weight: bold;
-//         color: $font-color;
-//     }
-//     a:hover {
-//         text-decoration: underline;
-//     }
-// }
 
 @media only screen and (max-width: 1200px) {
     .container {
