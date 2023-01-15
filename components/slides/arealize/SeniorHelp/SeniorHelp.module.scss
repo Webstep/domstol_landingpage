@@ -1,0 +1,51 @@
+@use 'styles/variables' as *;
+$background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+
+.section {
+    @include centerContent;
+    background: $background;
+}
+
+.imageContainer {
+    height: 550px;
+    width: 650px;
+    margin-right: 3rem;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+
+    div,
+    video,
+    .ellipse {
+        display: block;
+        grid-row: 1 / 2;
+    }
+
+    .ellipse {
+        grid-column: 1 / 5;
+        align-self: flex-start;
+        justify-self: flex-start;
+        margin: 50px 0 0 20px;
+    }
+
+    div {
+        grid-column: 2 / -1;
+        align-self: flex-start;
+        width: fit-content;
+        justify-self: flex-end;
+    }
+
+    video {
+        grid-column: 1 / 5;
+        align-self: flex-end;
+    }
+}
+
+.description {
+    width: 400px;
+
+    h2 {
+        text-transform: uppercase;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+}
