@@ -33,11 +33,8 @@ const CtoCitation = () => {
                     />
                 </motion.div>
             </div>
-            <motion.div
+            <div
                 className={styles.textSection}
-                initial={{}}
-                animate={isMobile && inView ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
-                exit={{}}
                 ref={ref}
             >
                 <motion.div
@@ -52,7 +49,7 @@ const CtoCitation = () => {
                         quoteType="short"
                     />
                 </motion.div>
-            </motion.div>
+            </div>
         </section>
 
     );
