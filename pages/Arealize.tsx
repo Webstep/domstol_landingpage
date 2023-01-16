@@ -13,11 +13,8 @@ const Arealize = () => {
             }} />
             <ClearGoals />
             <CtoCitation />
-<<<<<<< HEAD
             <SeniorHelp />
-=======
             <EntrepreneurialJourney />
->>>>>>> 9a12680 (feat(#131): desktop version)
         </>
     );
 };
