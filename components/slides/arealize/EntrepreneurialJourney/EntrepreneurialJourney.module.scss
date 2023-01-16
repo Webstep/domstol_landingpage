@@ -1,0 +1,65 @@
+@use 'styles/variables.scss' as *;
+
+$rocket-height: 72px;
+$rocket-width: 88px;
+
+.background {
+    background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+}
+
+.section {
+    @include centerContent;
+    // flex-direction: column;
+    // flex-wrap: wrap;
+    padding-top: calc(2 * $rocket-height);
+    // height: calc(100vh - (4 * $rocket-height));
+    height: calc(100vh - (2 * $rocket-height));
+    box-sizing: border-box;
+    min-height: auto !important;
+
+    .container {
+        // flex-basis: 100%;
+        @include centerContent;
+        flex-direction: row;
+        height: fit-content;
+        max-width: 1200px;
+        gap: 2rem;
+
+        .description {
+            height: fit-content;
+            max-width: 40%;
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+
+        .image,
+        span {
+            height: 100% !important;
+            width: auto;
+            // width: 100%;
+        }
+    }
+}
+
+.rocket {
+    background-image: url(/assets/arealize/dash.svg);
+    background-position: left;
+    background-repeat: repeat-x;
+    max-width: calc(100vw - $rocket-width);
+    padding-bottom: $rocket-height;
+    background-origin: content-box;
+
+    &::after {
+        content: '';
+        display: block;
+        height: $rocket-height;
+        width: $rocket-width;
+        margin-left: auto;
+        margin-right: calc(-1 * $rocket-width);
+
+        background-image: url(/assets/arealize/rocket.svg);
+        background-repeat: no-repeat;
+    }
+}
