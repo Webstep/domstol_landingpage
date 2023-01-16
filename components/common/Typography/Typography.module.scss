@@ -19,6 +19,8 @@
 @media (max-width: 1200px) {
     .container {
         padding-inline: 2rem;
+        width: 100vw;
+        box-sizing: border-box;
 
         .text {
             width: min(100%, 600px);
@@ -26,8 +28,6 @@
     }
 
     .overlay {
-        width: 100vw;
-        box-sizing: border-box;
         background: rgba(6, 2, 44, 0.8);
         padding-top: 3rem;
         padding-bottom: 3rem;

@@ -24,9 +24,9 @@ const EntrepreneurialJourney = () => {
                         <Title>GRÜNDERREISEN</Title>
 
                         <Text>
-                            Vi hadde en del usikkerhet rundt robustheten og sikkerheten til programvaren, men som vi manglet seniorkompetanse for å få til. Her kom Webstep inn og forsikret oss om at vi gjorde ting 100% riktig fra starten av
+                            Å starte en bedrift er en reise. Selv om visjonen er tydelig er det alltid ting som dukker opp underveis som man ikke kan forutse. Her har Webstep også vært viktig for Arealize.
                         </Text>
-                        <Citation quote={'Vi hadde en del usikkerhet rundt robustheten og sikkerheten til programvaren, men som vi manglet seniorkompetanse for å få til. Her kom Webstep inn og forsikret oss om at vi gjorde ting 100% riktig fra starten av'} quoteType="long" name="Yanislav Zagorov" occupation='CTO i Arealize' />
+                        <Citation quote={'Vi hadde en del usikkerhet rundt robustheten og sikkerheten til programvaren, men som vi manglet seniorkompetanse for å få til. Her kom Webstep inn og forsikret oss om at vi gjorde ting 100% riktig fra starten av.'} quoteType="long" name="Yanislav Zagorov" occupation='CTO i Arealize' />
                     </div>
                 </div>
             </section>
