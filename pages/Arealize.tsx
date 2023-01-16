@@ -2,6 +2,7 @@ import React from "react";
 import ClearGoals from "../components/slides/arealize/ClearGoals";
 import CtoCitation from "../components/slides/arealize/CtoCitation";
 import Introduction from "../components/slides/arealize/Introduction";
+import SeniorHelp from "../components/slides/arealize/SeniorHelp";
 
 const Arealize = () => {
     return (
@@ -11,6 +12,7 @@ const Arealize = () => {
             }} />
             <ClearGoals />
             <CtoCitation />
+            <SeniorHelp />
         </>
     );
 };
