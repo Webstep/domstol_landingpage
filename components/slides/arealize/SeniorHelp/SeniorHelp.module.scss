@@ -2,8 +2,11 @@
 $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
 .section {
-    @include centerContent;
     background: $background;
+}
+
+.container {
+    @include centerContent;
 }
 
 .imageContainer {
@@ -40,6 +43,48 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
     }
 }
 
+.singleImageContainer {
+    height: 550px;
+    width: 650px;
+    margin-right: 3rem;
+}
+
+.citation {
+    @include centerContent;
+    color: black;
+    background-image: url(/assets/arealize/images/seniorhjelp-team-pic.png);
+    position: relative;
+
+    .blockquote {
+        position: absolute;
+        height: 500px;
+        width: 425px;
+        top: 0;
+        left: 0;
+        margin-top: 80px;
+        margin-left: 80px;
+
+        .qoute {
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            color: black;
+        }
+
+        .signature {
+            margin-top: 1rem;
+            font-size: 1rem;
+
+            .name {
+                display: block;
+                font-weight: 700;
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
 .description {
     width: 400px;
 
@@ -48,17 +93,42 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
         font-size: 3rem;
         margin-bottom: 1rem;
     }
+
+    .link {
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
 }
 
 @media only screen and (max-width: 1200px) {
     $background-height: 100vh;
 
-    .section {
+    .container {
         height: fit-content;
         flex-direction: column;
         overflow: visible;
         justify-content: flex-start;
         padding-top: calc($background-height / 2);
+
+        .description {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 5;
+            margin-top: calc(-1.5 * $background-height);
+
+            & > div:last-child {
+                padding-bottom: 100vh;
+            }
+
+            h2 {
+                padding-inline: 2rem;
+                text-align: center;
+                margin-top: 20vh;
+                font-size: min(10vw, 3rem);
+            }
+        }
     }
 
     .imageContainer {
@@ -83,22 +153,40 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
         }
     }
 
-    .description {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        z-index: 2;
-        margin-top: calc(-1.5 * $background-height);
+    .citation {
+        width: 100vw;
+        background-size: cover;
+        background-position: center;
+        background-image: url(/assets/arealize/images/seniorhjelp-team-pic.png);
+        @include darkenBackground;
 
-        & > div:last-child {
-            padding-bottom: 100vh;
-        }
+        .blockquote {
+            position: relative;
+            width: 80vw;
+            height: 50vh;
+            margin-top: 70%;
+            margin-left: 0;
 
-        h2 {
-            padding-inline: 2rem;
-            text-align: center;
-            margin-top: 20vh;
-            font-size: min(10vw, 3rem);
+            .qoute {
+                bottom: 0;
+                font-size: 2.2rem;
+                font-weight: bold;
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+                color: white;
+            }
+
+            .signature {
+                margin-top: 1rem;
+                font-size: 1rem;
+                color: white;
+
+                .name {
+                    display: block;
+                    font-weight: 700;
+                    text-transform: capitalize;
+                }
+            }
         }
     }
 }
