@@ -39,8 +39,8 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
             z-index: 2;
             width: 100vw;
             height: 100vh;
-            background-color: rgb(0, 0, 0, 0.5);
-            transition: background-color 1s;
+            background: rgba(0, 0, 0, 0);
+            animation: change-color 5s forwards;
 
             blockquote {
                 q {
@@ -49,5 +49,14 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
                 }
             }
         }
+    }
+}
+
+@keyframes change-color {
+    0% {
+        background: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.5);
     }
 }
