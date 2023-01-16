@@ -35,9 +35,8 @@ const CtoCitation = () => {
             </div>
             <motion.div
                 className={styles.textSection}
-                initial={{}}
-                animate={isMobile && inView ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
-                exit={{}}
+                // initial={isMobile && inView ? { background: 'black' } : {}}
+                // animate={isMobile && inView ? { background: 'rgb(0, 0, 0, 0.5)', transition: { duration: 1 } } : {}}
                 ref={ref}
             >
                 <motion.div
