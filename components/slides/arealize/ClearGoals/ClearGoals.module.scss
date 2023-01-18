@@ -37,14 +37,14 @@ $background-mobile: inear-gradient(180deg, #80aaff 0%, #093ea8 132.12%);
             .description {
                 display: flex;
                 flex-direction: column;
-                font-weight: $font-weight-body-article;
-                font-size: $font-size-body;
+                font-weight: $font-weight-normal;
+                font-size: $font-size-small;
                 text-align: justify;
 
                 blockquote {
                     q {
                         font-size: 1rem;
-                        font-weight: 800;
+                        font-weight: $font-weight-extra-bold;
                     }
                 }
             }
@@ -52,7 +52,7 @@ $background-mobile: inear-gradient(180deg, #80aaff 0%, #093ea8 132.12%);
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .section {
         height: 100vh;
         display: block;

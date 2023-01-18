@@ -20,7 +20,7 @@
 
         & > span {
             font-size: 2rem;
-            font-weight: 800;
+            font-weight: $font-weight-extra-bold;
             display: block;
             margin-bottom: 1rem;
             line-height: 2.4rem;
@@ -43,7 +43,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .section {
         flex-direction: column;
         justify-content: flex-start;

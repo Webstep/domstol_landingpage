@@ -12,17 +12,16 @@
         margin-left: 3rem;
     }
     .title {
-        font-family: $font-family-heading;
-        font-weight: $font-weight-heading;
-        font-size: $font-size-heading-small;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-xxlarge;
         margin-bottom: -0.5rem;
         margin-top: -100px;
     }
 
     .description {
         font-family: $font-family-body;
-        font-weight: $font-weight-body-article;
-        font-size: $font-size-body;
+        font-weight: $font-weight-normal;
+        font-size: $font-size-small;
         width: 17.5rem;
     }
 
@@ -49,7 +48,7 @@
     }
 }
 
-@media (max-width: 1200px) {
+@include mobile {
     .section {
         height: 420vh;
         overflow: visible;

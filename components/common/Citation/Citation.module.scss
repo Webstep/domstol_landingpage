@@ -11,7 +11,7 @@
 
     .name {
         display: block;
-        font-weight: 700;
+        font-weight: $font-weight-bold;
         text-transform: capitalize;
     }
 }
@@ -22,7 +22,7 @@
 
 .shortQuote {
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: $font-weight-medium;
     display: block;
 }
 
@@ -32,9 +32,9 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .container {
-        font-weight: 600;
+        font-weight: $font-weight-medium;
         font-size: large;
         font-size: 2rem;
 
