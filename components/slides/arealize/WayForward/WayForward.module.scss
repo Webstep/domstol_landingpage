@@ -1,0 +1,82 @@
+@use 'styles/variables.scss' as *;
+
+.section {
+    @include centerContent;
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 2rem;
+        width: 1000px;
+
+        .video {
+            grid-column: 1 / 2;
+            grid-row: 1 / 3;
+            object-fit: cover;
+            height: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .description {
+            grid-column: 2/3;
+            grid-row: 1 / 2;
+        }
+
+        & > span:last-of-type {
+            grid-column: 2/3;
+            grid-row: 2 / 3;
+        }
+    }
+}
+
+@include mobile {
+    .section {
+        align-items: flex-start;
+        height: fit-content;
+        min-width: fit-content;
+        overflow: visible;
+
+        .container {
+            grid-template-columns: 100%;
+            grid-template-rows: 100%;
+            gap: 0;
+            align-items: start;
+            height: fit-content;
+            width: 100%;
+            isolation: isolate;
+            position: sticky;
+            top: 0;
+
+            .video,
+            .description {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .video {
+                position: sticky;
+                height: 100vh;
+                top: 0px;
+                object-fit: cover;
+                filter: brightness(50%);
+            }
+
+            .description {
+                height: fit-content;
+                z-index: 1;
+                padding-bottom: 20vh;
+            }
+
+            .title {
+                text-align: center;
+                margin-top: 50vh;
+            }
+
+            & > span:last-of-type {
+                display: none;
+            }
+        }
+    }
+}
