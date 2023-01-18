@@ -1,0 +1,126 @@
+@use 'styles/variables.scss' as *;
+
+$rocket-height: 72px;
+$rocket-width: 88px;
+
+.background {
+    background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+}
+
+.section {
+    @include centerContent;
+    padding-top: calc(2 * $rocket-height);
+    height: calc(100vh - (2 * $rocket-height));
+    box-sizing: border-box;
+    min-height: auto !important;
+
+    .container {
+        @include centerContent;
+        flex-direction: row;
+        height: fit-content;
+        max-width: 1200px;
+        gap: 2rem;
+
+        .description {
+            height: fit-content;
+            max-width: 40%;
+
+            h2 {
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+.rocket {
+    background-image: url(/assets/arealize/dash.svg);
+    background-position: left;
+    background-repeat: repeat-x;
+    max-width: calc(100vw - $rocket-width);
+    padding-bottom: $rocket-height;
+    background-origin: content-box;
+
+    &::after {
+        content: '';
+        display: block;
+        height: $rocket-height;
+        width: $rocket-width;
+        margin-left: auto;
+        margin-right: calc(-1 * $rocket-width);
+
+        background-image: url(/assets/arealize/rocket.svg);
+        background-repeat: no-repeat;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .rocket {
+        display: none;
+    }
+
+    .section {
+        padding-top: 0;
+        height: fit-content;
+        min-height: 100vh;
+
+        .container {
+            margin-top: 30vh;
+            flex-direction: column-reverse;
+            height: fit-content;
+            gap: 0;
+
+            & > span:first-of-type {
+                display: none !important;
+            }
+
+            .description {
+                max-width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+
+                & > div:first-of-type:after {
+                    content: '';
+                    display: block;
+                    height: 0;
+                    width: 100vw;
+                    box-sizing: border-box;
+
+                    background-image: url(/assets/arealize/images/entrepreneurial.png);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    margin-left: -2rem;
+                    margin-top: 2rem;
+                    padding-top: 73%; //https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+
+                    z-index: 1;
+                    position: relative;
+                }
+
+                & > blockquote {
+                    margin-top: 1rem;
+
+                    &:first-of-type:before {
+                        content: '';
+                        display: block;
+                        box-sizing: border-box;
+                        height: 500px;
+                        width: 100%;
+                        margin-bottom: 2rem;
+
+                        background-image: url(/assets/arealize/images/moving-rocket.png);
+                        background-position: center;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+        h2 {
+            font-size: min(3rem, 9vw);
+        }
+    }
+}
