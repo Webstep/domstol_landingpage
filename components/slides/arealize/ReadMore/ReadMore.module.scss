@@ -1,0 +1,22 @@
+@use 'styles/variables.scss' as *;
+$background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
+
+.section {
+    @include centerContent;
+    flex-direction: column;
+    gap: 2.5rem;
+    background: $background;
+
+    .container {
+        .articleCard {
+            margin: 3%;
+            position: relative;
+
+            .cardContent {
+                position: absolute;
+                bottom: 60px;
+                left: 50px;
+            }
+        }
+    }
+}
