@@ -21,7 +21,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
     }
 }
 
-@media (max-width: 1200px) {
+@include mobile {
     .section {
         flex-direction: column;
         gap: 0;
@@ -45,7 +45,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
             blockquote {
                 q {
                     font-size: 1.5rem;
-                    font-weight: 800;
+                    font-weight: $font-weight-extra-bold;
                 }
             }
         }

@@ -1,3 +1,5 @@
+@use 'styles/variables.scss' as *;
+
 .scrollDown {
     position: sticky;
     bottom: 25px;
@@ -16,7 +18,7 @@
 
     span {
         font-size: 1.5rem;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 
     div {

@@ -15,8 +15,8 @@
 
     text-align: center;
     font-family: $font-family-pixel;
-    font-weight: $font-weight-pixel;
-    font-size: $font-size-pixel;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-medium;
 }
 
 .middleSection {
@@ -44,7 +44,7 @@
     border: 0.16rem solid white;
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .navbar {
         background: linear-gradient(
             rgba(0, 0, 0, 0.9) 0%,

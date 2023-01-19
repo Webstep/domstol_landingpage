@@ -20,28 +20,26 @@
 }
 
 .quote {
-    font-family: $font-family-quote;
-    font-weight: $font-weight-quote-xsmall;
-    font-size: $font-size-quote-xsmall;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-small;
 }
 
 .name {
     font-family: $font-family-pixel;
-    font-weight: $font-weight-pixel-name;
-    font-size: $font-size-pixel;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
 }
 
 .title {
-    font-family: $font-family-pixel;
-    font-weight: $font-weight-pixel;
-    font-size: $font-size-pixel;
+    font-weight: $font-weight-normal;
+    font-size: $font-size-medium;
     margin-top: -0.8vw;
 
     display: flex;
     flex-direction: row;
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .container {
         flex-direction: column;
     }
