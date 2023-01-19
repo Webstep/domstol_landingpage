@@ -1,5 +1,6 @@
 $information-width: 320px;
 $background: linear-gradient(180deg, #f07589 0%, #c42d46 132.12%);
+@use '../../../../styles/variables.scss' as *;
 
 .container {
     height: 200vh;
@@ -83,7 +84,7 @@ $background: linear-gradient(180deg, #f07589 0%, #c42d46 132.12%);
 
                 span {
                     font-size: 1.5rem;
-                    font-weight: bold;
+                    font-weight: $font-weight-bold;
                 }
 
                 div {
@@ -118,7 +119,7 @@ $background: linear-gradient(180deg, #f07589 0%, #c42d46 132.12%);
     justify-self: center;
 }
 
-@media screen and (max-width: 1200px) {
+@include mobile {
     .container {
         display: none;
     }

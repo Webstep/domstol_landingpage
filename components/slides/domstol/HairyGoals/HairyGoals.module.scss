@@ -5,7 +5,6 @@
 
     flex-direction: row;
     gap: 3rem;
-    font-family: $font-family-body;
 
     .media {
         height: 580px;
@@ -14,7 +13,7 @@
 
 .quote {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: $font-weight-extra-bold;
     display: block;
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -22,7 +21,6 @@
 
 .description {
     width: min(40vw, 400px);
-    font-weight: 300;
     line-height: 1.4rem;
 
     h2 {
@@ -34,7 +32,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .section {
         flex-direction: column;
         justify-content: flex-start;

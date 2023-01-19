@@ -20,7 +20,6 @@
 
     .textSection {
         grid-column: 3;
-        font-family: $font-family-body;
 
         .heading {
             margin-bottom: 0;
@@ -29,8 +28,8 @@
 
         .description {
             display: flex;
-            font-weight: $font-weight-body-article;
-            font-size: $font-size-body;
+            font-weight: $font-weight-normal;
+            font-size: $font-size-small;
             p,
             blockquote {
                 margin-right: 3vw;
@@ -40,7 +39,7 @@
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     .section {
         flex-direction: column;
         justify-content: flex-start;

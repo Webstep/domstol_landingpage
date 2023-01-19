@@ -1,27 +1,5 @@
-//Overskrift landingpage og artikkel
-$font-family-heading: futura-pt-bold, sans-serif;
-$font-weight-heading: 700;
-$font-size-heading-large: 4rem;
-$font-size-heading-small: 3rem;
-//For testing
-$font-family-heading-test: Helvetica, sans-serif;
-
-//Sitat stor og liten
-$font-family-quote: noto-sans, sans-serif;
-$font-weight-quote: 800;
-$font-size-quote-short: 3.125rem;
-$font-size-quote-long: 2rem;
-
-//Sitat ansatt
-$font-family-quote: noto-sans, sans-serif;
-$font-weight-quote-xsmall: 300;
-$font-size-quote-xsmall: 1rem;
-
-//Webstepper navn og tittel
+$font-family-body: Roboto, sans-serif;
 $font-family-pixel: Lo-Res, sans-serif;
-$font-weight-pixel: 400;
-$font-weight-pixel-name: 700;
-$font-size-pixel: 1.125rem;
 
 // @mixin pixelText($font-weight: 400) {
 //     font-family: Lo-Res, sans-serif;
@@ -29,12 +7,16 @@ $font-size-pixel: 1.125rem;
 //     font-size: 1.125rem;
 // }
 
-//Brødtekst landingpage og artikkel
-$font-family-body: Roboto, sans-serif;
-$font-weight-body-landing: 600;
-$font-weight-body-article: 300;
-$font-weight-body-heading: 900;
-$font-size-body: 1rem;
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+$font-size-small: 1rem;
+$font-size-medium: 1.25rem;
+$font-size-large: 1.5rem;
+$font-size-xlarge: 2rem;
+$font-size-xxlarge: 3rem;
 
 $font-style: normal;
 $font-color: #fff;
@@ -53,4 +35,10 @@ $color-red: #e84f4f;
 
 @mixin darkenBackground {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.4);
+}
+
+@mixin mobile {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
 }

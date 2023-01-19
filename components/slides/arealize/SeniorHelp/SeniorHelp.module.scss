@@ -70,7 +70,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
         .qoute {
             font-size: 2.2rem;
-            font-weight: bold;
+            font-weight: $font-weight-bold;
             margin-top: 1rem;
             margin-bottom: 2rem;
             color: black;
@@ -82,7 +82,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
             .name {
                 display: block;
-                font-weight: 700;
+                font-weight: $font-weight-bold;
                 text-transform: capitalize;
             }
         }
@@ -101,11 +101,11 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
     .link {
         color: white;
         text-decoration: underline;
-        font-weight: bold;
+        font-weight: $font-weight-bold;
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@include mobile {
     $background-height: 100vh;
 
     .container {
@@ -174,7 +174,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
             .qoute {
                 bottom: 0;
                 font-size: 2.2rem;
-                font-weight: bold;
+                font-weight: $font-weight-bold;
                 margin-top: 2rem;
                 margin-bottom: 2rem;
                 color: white;
@@ -187,7 +187,7 @@ $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
                 .name {
                     display: block;
-                    font-weight: 700;
+                    font-weight: $font-weight-bold;
                     text-transform: capitalize;
                 }
             }

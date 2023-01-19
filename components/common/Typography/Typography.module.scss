@@ -6,17 +6,17 @@
 }
 
 .title {
-    font-family: $font-family-heading;
-    font-weight: $font-weight-heading;
+    font-weight: $font-weight-bold;
     font-size: 3rem;
     text-transform: uppercase;
+    margin-top: 0;
 }
 
 .text {
     line-height: 1.5;
 }
 
-@media (max-width: 1200px) {
+@include mobile {
     .container {
         padding-inline: 2rem;
         width: 100vw;
