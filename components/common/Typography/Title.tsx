@@ -7,10 +7,11 @@ interface TitleProps extends MotionProps {
 }
 
 const Title: React.FC<TitleProps> = ({ className, children, ...options }) => {
+    const classes = styles.title + (className ? " " + className : "");
     return (
         <motion.h2
             {...options}
-            className={className ? className + " " + styles.title : styles.title}
+            className={classes}
         >
             {children}
         </motion.h2>
