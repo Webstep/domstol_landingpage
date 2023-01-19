@@ -15,8 +15,8 @@ const Arealize = () => {
             <ClearGoals />
             <CtoCitation />
             <SeniorHelp />
-            <WayForward />
             <EntrepreneurialJourney />
+            <WayForward />
         </>
     );
 };
