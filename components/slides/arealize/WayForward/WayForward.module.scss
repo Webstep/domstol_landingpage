@@ -1,6 +1,7 @@
 @use 'styles/variables.scss' as *;
 
 .section {
+    background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
     @include centerContent;
 
     .container {
@@ -9,6 +10,7 @@
         grid-template-rows: 1fr 1fr;
         gap: 2rem;
         width: 1000px;
+        height: fit-content;
 
         .video {
             grid-column: 1 / 2;
@@ -17,6 +19,10 @@
             height: 100%;
             max-width: 100%;
             overflow: hidden;
+        }
+
+        .image {
+            object-fit: cover;
         }
 
         .description {
