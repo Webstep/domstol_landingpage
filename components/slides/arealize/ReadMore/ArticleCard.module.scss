@@ -1,0 +1,22 @@
+@use 'styles/variables.scss' as *;
+
+.articleCard {
+    position: relative;
+    min-height: 0;
+
+    .cardContent {
+        position: absolute;
+        bottom: 60px;
+        left: 50px;
+
+        .title {
+            font-family: $font-family-pixel;
+            font-weight: $font-weight-bold;
+            font-size: $font-size-xlarge;
+        }
+
+        .description {
+            font-size: $font-size-medium;
+        }
+    }
+}

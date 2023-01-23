@@ -1,24 +1,25 @@
 import Image from "next/image"
 import React from "react"
-import styles from "./ReadMore.module.scss"
+import styles from "./ArticleCard.module.scss"
 
-type ArticleCardProps = {
+export type ArticleCardProps = {
     title: string
     description: string
     image: string
-    link: string
+    link?: string
 }
 
 const ArticleCard = ({ title, description, image, link }: ArticleCardProps) => {
     return (
-        <div className={styles.articleCard}>
-            <Image src={image} alt={title} width={900} height={600} />
+        <article className={styles.articleCard} onClick={() => window.open(link)}>
+            <Image src={image} alt={
+                title
+            } width={810} height={540} />
             <div className={styles.cardContent}>
-                <h3>{title}</h3>
-                <p>{description}</p>
-                <a href={link} target="_blank" rel="noreferrer">Les mer</a>
+                <h2 className={styles.title} >{title}</h2>
+                <p className={styles.description}>{description}</p>
             </div>
-        </div>
+        </article>
     );
 };
 
