@@ -2,20 +2,28 @@
 $background: linear-gradient(180deg, #4b87ff 0%, #2257c0 100%);
 
 .section {
-    @include centerContent;
-    flex-direction: column;
-    gap: 2.5rem;
+    // @include centerContent;
+    // flex-direction: column;
+    // gap: 2rem;
     background: $background;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        padding-top: 15%;
+    }
 
     .container {
-        .articleCard {
-            margin: 3%;
-            position: relative;
+        .myswiper {
+            width: 100%;
 
-            .cardContent {
-                position: absolute;
-                bottom: 60px;
-                left: 50px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
             }
         }
     }
