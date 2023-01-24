@@ -17,10 +17,11 @@ export enum Size {
 }
 
 interface ArrowButtonProps {
-    direction: Direction
-    onClick: () => void
-    alt: string
-    size?: Size
+    direction: Direction,
+    onClick?: () => void,
+    alt: string,
+    size?: Size,
+    ref?: React.Ref<HTMLButtonElement>,
 }
 
 const ArrowButton: React.FC<ArrowButtonProps> = ({
@@ -28,6 +29,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
     onClick,
     alt,
     size = Size.Small,
+    ref,
 }) => {
     const variant = getVariant(direction)
     const dimentions = getDimentions(size === Size.Large ? 2 : 1)
@@ -45,6 +47,7 @@ const ArrowButton: React.FC<ArrowButtonProps> = ({
             }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0 }}
+            ref={ref}
         >
             <Image src={ArrowIcon} height={dimentions.h} width={dimentions.w} alt={alt} />
         </motion.button>

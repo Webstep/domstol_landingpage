@@ -1,0 +1,52 @@
+@use 'styles/variables.scss' as *;
+$background: #1a66ff;
+
+.section {
+    // @include centerContent;
+    // flex-direction: column;
+    // gap: 2rem;
+    background: $background;
+    width: 100%;
+    height: 100%;
+    position: relative;
+
+    .title {
+        display: flex;
+        justify-content: center;
+        padding-top: 15%;
+    }
+
+    .container {
+        .myswiper {
+            width: 100%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+@include mobile {
+    .section {
+        .title {
+            padding-top: 20%;
+            font-size: 2rem;
+        }
+
+        .container {
+            margin-top: 15%;
+            .myswiper {
+                width: 90%;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}
