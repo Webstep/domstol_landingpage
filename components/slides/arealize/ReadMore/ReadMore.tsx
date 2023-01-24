@@ -5,7 +5,6 @@ import styles from './ReadMore.module.scss'
 import { articleData } from './ArticleData'
 import ArrowButton, { Direction } from '../../../common/ArrowButton';
 import DottedProgressBar from "../../../common/DottedProgressBar";
-import * as ReactDOMServer from "react-dom/server";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 
