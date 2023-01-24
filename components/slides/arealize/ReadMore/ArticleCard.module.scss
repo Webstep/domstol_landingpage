@@ -20,3 +20,15 @@
         }
     }
 }
+
+@include mobile {
+    .articleCard {
+        width: 390;
+        height: 472;
+
+        .cardContent {
+            bottom: 30px;
+            left: 30px;
+        }
+    }
+}

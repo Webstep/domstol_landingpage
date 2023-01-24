@@ -17,7 +17,7 @@ export const articleData: {
     },
     {
         title: 'Birgitt Bright',
-        description: 'Systemutvikler, Webstepo.png',
+        description: 'Systemutvikler, Webstep',
         image: '/assets/arealize/images/birgitt.png',
     },
 ]

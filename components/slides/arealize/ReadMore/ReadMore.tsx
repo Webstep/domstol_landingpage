@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Title } from '../../../common/Typography'
 import ArticleCard from './ArticleCard'
 import styles from './ReadMore.module.scss'
@@ -14,6 +14,7 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 
 import { EffectCoverflow, Pagination } from "swiper";
+import { DeviceContext } from "../../../common/Device";
 
 
 const ReadMore = () => {
@@ -24,25 +25,30 @@ const ReadMore = () => {
     const [prevEl, setPrevEl] = useState<HTMLElement | null>(null)
     const [nextEl, setNextEl] = useState<HTMLElement | null>(null)
 
+    const { isMobile } = useContext(DeviceContext);
+
     const slideTo = (index: number) => {
         swiper?.slideTo(index)
     }
 
     return (
         <section className={styles.section}>
-            <Title className={styles.title}>VIL DU LSESE MER?</Title>
+            {isMobile ?
+                <Title className={styles.title}>LES MER</Title>
+                :
+                <Title className={styles.title}>VIL DU LSESE MER?</Title>
+            }
             <div className={styles.container}>
                 <Swiper
                     effect={"coverflow"}
                     grabCursor={true}
                     centeredSlides={true}
-                    slidesPerView={3}
                     coverflowEffect={{
                         rotate: 0,
                         stretch: 0,
                         depth: 100,
                         modifier: 3,
-                        slideShadows: true,
+                        slideShadows: false,
                     }}
                     pagination={false}
                     modules={[EffectCoverflow, Navigation, Pagination]}
@@ -54,6 +60,14 @@ const ReadMore = () => {
                     initialSlide={currentCard}
                     onSlideChange={(swiper) => setCurrentCard(swiper.activeIndex)}
                     onSwiper={setSwiper}
+                    breakpoints={{
+                        320: {
+                            slidesPerView: 1,
+                        },
+                        768: {
+                            slidesPerView: 3,
+                        },
+                    }}
                 >
                     {articleData.map((article, index) => {
                         return <SwiperSlide key={index}>
@@ -69,14 +83,17 @@ const ReadMore = () => {
                 </Swiper>
             </div >
 
-            <div style={{
-                marginTop: '5rem',
-                width: '100%',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                gap: '3rem',
-            }}>
+            <div
+                style={{
+                    marginTop: '5rem',
+                    width: '100%',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '3rem',
+                }}
+                className={styles.pagination}
+            >
                 <div ref={node => setPrevEl(node)}>
                     <ArrowButton direction={Direction.Left} alt={''}>Forrige</ArrowButton>
                 </div>
