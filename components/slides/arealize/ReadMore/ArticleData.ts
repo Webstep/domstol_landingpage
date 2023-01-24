@@ -5,23 +5,19 @@ export const articleData: {
     link?: string
 }[] = [
     {
-        title: 'Nei?',
-        description: 'Digitalarkivet er et prosjekt.',
-        image: '/assets/arealize/images/seniorhelp.png',
+        title: 'Arve Nygård',
+        description: 'Arkitekt, Webstep',
+        image: '/assets/arealize/images/arve.png',
+        link: 'https://www.webstep.no/arve-nygard/',
     },
     {
-        title: 'Hore',
-        description: 'Digitalarkivet er et prosjekt.',
-        image: '/assets/arealize/images/entrepreneurial.png',
+        title: 'Digitalisering av domstolene',
+        description: 'Kundehistorie',
+        image: '/assets/arealize/images/DA-kundehistorie.png',
     },
     {
-        title: 'Moren din?',
-        description: 'Digitalarkivet er et prosjekt.',
-        image: '/assets/arealize/images/arealize-intro.png',
-    },
-    {
-        title: 'Faren din',
-        description: 'Digitalarkivet er et prosjekt.',
-        image: '/assets/arealize/images/seniorhelp.png',
+        title: 'Birgitt Bright',
+        description: 'Systemutvikler, Webstepo.png',
+        image: '/assets/arealize/images/birgitt.png',
     },
 ]
