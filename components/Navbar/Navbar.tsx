@@ -13,12 +13,12 @@ const Navbar = () => {
                     alt={'Webstep'}
                 />
             </Link>
-            {/* <div className={styles.middleSection}>
-                <Link href={'#'}>Samarbeid</Link>
+            <div className={styles.middleSection}>
+                <Link href={'/Arealize'}>Arealize</Link>
                 <div className={styles.rectangle}></div>
-                <Link href={'#'}>Ansatte</Link>
+                <Link href={'/Domstol'}>Domstol</Link>
             </div>
-            <div className={styles.menu}>
+            {/* <div className={styles.menu}>
                 <div>Meny</div>
                 <div className={styles.hamburgerMenu}></div>
             </div> */}
