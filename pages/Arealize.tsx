@@ -10,9 +10,7 @@ import WayForward from '../components/slides/arealize/WayForward';
 const Arealize = () => {
     return (
         <>
-            <Introduction allowScrolling={() => {
-                // remove this parameter if we decide to not use slides 
-            }} />
+            <Introduction />
             <ClearGoals />
             <CtoCitation />
             <SeniorHelp />

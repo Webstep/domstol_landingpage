@@ -27,7 +27,7 @@ const ImportantCompetency: React.FC = () => {
                         animate={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ x: -100, opacity: 0, transition: exitTransition }}
                     >
-                        <Image src={SamfunnsAnsvar} alt="" width="358px" height="467px" />
+                        <Image src={SamfunnsAnsvar} alt="" width={358} height={467} />
                     </motion.div>
                 </div>
                 <div className={styles.textSection}>

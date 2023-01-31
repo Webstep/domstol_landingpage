@@ -8,6 +8,7 @@ import { DeviceContext } from '../../../common/Device'
 const AboutUs = () => {
     const { isMobile } = useContext(DeviceContext)
 
+
     return (
         <section className={styles.section} >
             <div className={styles.media}>
@@ -20,8 +21,8 @@ const AboutUs = () => {
                     <Image
                         src={'/assets/domstol/images/weapon-shield.jpg'}
                         layout="fixed"
-                        width="250vw"
-                        height="350vw"
+                        width={250}
+                        height={350}
                         alt={'weaponShield'}
                     />
                 </motion.div>
