@@ -24,8 +24,9 @@ const ImportantCompetency: React.FC = () => {
                     <motion.div
                         className={styles.image}
                         initial={{ y: -200, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ x: -100, opacity: 0, transition: exitTransition }}
+                        viewport={{ once: true }}
                     >
                         <Image src={SamfunnsAnsvar} alt="" width={358} height={467} />
                     </motion.div>
@@ -33,8 +34,9 @@ const ImportantCompetency: React.FC = () => {
                 <div className={styles.textSection}>
                     <motion.div
                         initial={{ y: -200, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ x: 100, opacity: 0, transition: exitTransition }}
+                        viewport={{ once: true }}
                     >
                         <Title className={styles.heading}>
                             <div className={styles.stickyDiv}>
@@ -45,8 +47,9 @@ const ImportantCompetency: React.FC = () => {
 
                     <motion.div
                         initial={{ y: 200, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ y: 100, opacity: 0, transition: exitTransition }}
+                        viewport={{ once: true }}
                     >
                         <div className={styles.description}>
                             <div>

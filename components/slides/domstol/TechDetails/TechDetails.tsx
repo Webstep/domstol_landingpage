@@ -23,11 +23,12 @@ const TechDetails: React.FC = () => {
         <section className={styles.section} >
             <motion.div
                 initial={{ x: -200, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                whileInView={{ x: 0, opacity: 1 }}
                 exit={{ y: -400, opacity: 0 }}
                 transition={{
                     duration: 1,
                 }}
+                viewport={{ once: true }}
                 className={styles.media}
             >
                 <Image
@@ -52,8 +53,9 @@ const TechDetails: React.FC = () => {
                 className={styles.description}
                 variants={descriptionContainer}
                 initial="hidden"
-                animate="show"
+                whileInView="show"
                 exit="leave"
+                viewport={{ once: true }}
             >
                 <Citation quote="Vi har fått lov til å være med å utvikle den teknologien som kommer til å ligge foran oss i mange år"
                     name="Carl Fredrik Bøkestad"

@@ -15,8 +15,9 @@ const AboutUs = () => {
                 <motion.div
                     className={styles.weaponShield}
                     initial={isMobile ? {} : { x: -550 }}
-                    animate={{ x: 0, z: 0 }}
+                    whileInView={{ x: 0, z: 0 }}
                     transition={{ duration: 1 }}
+                    viewport={{ once: true }}
                 >
                     <Image
                         src={'/assets/domstol/images/weapon-shield.jpg'}
@@ -29,8 +30,9 @@ const AboutUs = () => {
                 <motion.div
                     className={styles.bookStack}
                     initial={isMobile ? {} : { x: -650 }}
-                    animate={{ x: 0, z: 1 }}
+                    whileInView={{ x: 0, z: 1 }}
                     transition={{ duration: 1 }}
+                    viewport={{ once: true }}
                 >
                     <video
                         width="250px"
@@ -49,8 +51,9 @@ const AboutUs = () => {
                 <motion.h1
                     className={styles.title}
                     initial={isMobile ? {} : { x: 420, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, ease: 'easeOut' }}
+                    viewport={{ once: true }}
                 >
                     DOMSTOL-
                     <br />
@@ -59,8 +62,9 @@ const AboutUs = () => {
                 <motion.div
                     className={styles.description}
                     initial={isMobile ? {} : { x: 420, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     transition={{ duration: 1, delay: 0.25, ease: 'easeOut' }}
+                    viewport={{ once: true }}
                 >
                     <Text isOverlay>
                         Domstoladministrasjonen, DA, bygger systemene

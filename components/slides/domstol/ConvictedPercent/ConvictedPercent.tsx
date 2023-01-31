@@ -37,10 +37,11 @@ const ConvictedPercent: React.VFC = () => {
                 initial={{
                     opacity: 0,
                 }}
-                animate={{
+                whileInView={{
                     opacity: 1,
                 }}
                 transition={{ duration: 2, delay: 0.5 }}
+                viewport={{ once: true }}
                 className={styles.textSection}
             >
                 <motion.h2

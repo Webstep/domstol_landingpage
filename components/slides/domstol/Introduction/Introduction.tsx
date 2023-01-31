@@ -1,5 +1,5 @@
 import { motion, useAnimation } from 'framer-motion'
-import React, { useEffect } from 'react'
+import React from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
 import Gavel from '../../../../public/assets/domstol/gavel.svg';
