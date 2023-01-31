@@ -5,15 +5,13 @@ import styles from './Navbar.module.scss'
 const Navbar = () => {
     return (
         <nav className={styles.navbar}>
-            <Link href={'#'}>
-                {/* {/* <a> */}
+            <Link href={'#'} passHref>
                 <Image
                     src={'/assets/webstep_logo.svg'}
                     width={52}
                     height={37}
                     alt={'Webstep'}
                 />
-                {/* </a> */}
             </Link>
             {/* <div className={styles.middleSection}>
                 <Link href={'#'}>Samarbeid</Link>
