@@ -7,7 +7,7 @@ export const articleData: {
     {
         title: 'Arve Nygård',
         description: 'Arkitekt, Webstep',
-        image: '/assets/arealize/images/arve.png',
+        image: '/assets/arealize/images/DA-kundehistorie.png',
         link: 'https://www.webstep.no/arve-nygard/',
     },
     {
