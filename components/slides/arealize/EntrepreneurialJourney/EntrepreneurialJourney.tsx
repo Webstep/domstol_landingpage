@@ -1,11 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './EntrepreneurialJourney.module.scss'
 import Image from 'next/image';
 import { Title, Text } from '../../../common/Typography';
 import Citation from '../../../common/Citation';
-import { motion } from 'framer-motion';
+import { motion, useAnimationControls } from "framer-motion"
+import { useInView } from 'react-intersection-observer';
+import useOneTimeSwitch from '../../../../hooks/oneTimeSwitch';
 
 const EntrepreneurialJourney = () => {
+    const { inView, ref } = useInView();
+    const startAnimation = useOneTimeSwitch(inView);
+    const controls = useAnimationControls()
+
+    useEffect(() => {
+        if (startAnimation) {
+            controls.start({
+                width: '100vw',
+                transition: {
+                    duration: 3,
+                }
+            })
+        }
+    }, [startAnimation, controls]);
+
     return (
         <div className={styles.background}>
             <section className={styles.section}>
@@ -30,7 +47,7 @@ const EntrepreneurialJourney = () => {
                     </div>
                 </div>
             </section>
-            <motion.div initial={{ width: 0 }} whileInView={{ width: "100vw", transition: { duration: 3, } }} className={styles.rocket}>
+            <motion.div initial={{ width: 0 }} className={styles.rocket} animate={controls} ref={ref}>
             </motion.div>
         </div>
     );

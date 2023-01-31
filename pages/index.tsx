@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-import Domstol from './Domstol_v2'
+import Domstol from './Domstol'
 
 const Home: NextPage = () => {
     return (

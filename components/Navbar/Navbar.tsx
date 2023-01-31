@@ -6,14 +6,14 @@ const Navbar = () => {
     return (
         <nav className={styles.navbar}>
             <Link href={'#'}>
-                <a>
-                    <Image
-                        src={'/assets/webstep_logo.svg'}
-                        width={52}
-                        height={37}
-                        alt={'Webstep'}
-                    />
-                </a>
+                {/* {/* <a> */}
+                <Image
+                    src={'/assets/webstep_logo.svg'}
+                    width={52}
+                    height={37}
+                    alt={'Webstep'}
+                />
+                {/* </a> */}
             </Link>
             {/* <div className={styles.middleSection}>
                 <Link href={'#'}>Samarbeid</Link>
