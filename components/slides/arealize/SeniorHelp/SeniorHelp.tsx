@@ -1,4 +1,4 @@
-import { motion, Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { DeviceContext } from '../../../common/Device';
 import styles from './SeniorHelp.module.scss';
@@ -8,68 +8,6 @@ import Citation from '../../../common/Citation';
 import { useInView } from 'react-intersection-observer';
 import { AboutArve } from './AboutArve';
 import { SeniorHelpCitation } from './SeniorHelpCitation';
-
-const containerVariants: Variants = {
-    initial: { x: 100, y: 50, opacity: 0 },
-    animate: {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 1,
-        }
-    },
-    exit: {
-        x: 100,
-        y: 50,
-        opacity: 0,
-        transition: {
-            duration: 1,
-        }
-    }
-}
-
-const videoVariants: Variants = {
-    initial: {
-        y: 100,
-        x: -50,
-        opacity: 0,
-    },
-    animate: {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 1
-        }
-    },
-    exit: {
-        y: 100, x: -50, opacity: 0,
-        transition: { duration: 1 }
-    }
-}
-
-const imageVariants: Variants = {
-    initial: {
-        y: -100,
-        x: 50,
-        opacity: 0,
-        zIndex: 999
-    },
-    animate: {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 1
-        }
-    },
-    exit: {
-        y: -100, x: 50, opacity: 0,
-        transition: { duration: 1 }
-    }
-}
-
 
 const SeniorHelp = () => {
     const { isMobile } = useContext(DeviceContext)
