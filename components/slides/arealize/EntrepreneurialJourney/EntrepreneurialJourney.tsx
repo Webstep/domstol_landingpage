@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import styles from './EntrepreneurialJourney.module.scss'
 import Image from 'next/image';
 import { Title, Text } from '../../../common/Typography';
@@ -6,11 +6,13 @@ import Citation from '../../../common/Citation';
 import { motion, useAnimationControls } from "framer-motion"
 import { useInView } from 'react-intersection-observer';
 import useOneTimeSwitch from '../../../../hooks/oneTimeSwitch';
+import { DeviceContext } from '../../../common/Device';
 
 const EntrepreneurialJourney = () => {
     const { inView, ref } = useInView();
     const startAnimation = useOneTimeSwitch(inView);
     const controls = useAnimationControls()
+    const { isMobile } = useContext(DeviceContext);
 
     useEffect(() => {
         if (startAnimation) {
@@ -28,13 +30,13 @@ const EntrepreneurialJourney = () => {
             <section className={styles.section}>
                 <div className={styles.container}>
 
-                    <Image src={'/assets/arealize/images/entrepreneurial.png'}
+                    {!isMobile && <Image src={'/assets/arealize/images/entrepreneurial.png'}
                         alt="Idémyldring"
                         width={607}
                         height={443}
                         style={{ objectFit: 'cover' }}
                         className={styles.image}
-                    />
+                    />}
 
                     <div className={styles.description}>
 
