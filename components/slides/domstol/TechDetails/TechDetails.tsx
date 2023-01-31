@@ -35,7 +35,7 @@ const TechDetails: React.FC = () => {
                     alt="bilde av Carl Fredrik Bøkestad"
                     width={358}
                     height={464.58}
-                    objectFit="cover"
+                    style={{ objectFit: 'cover' }}
                 />
                 <p className={styles.moreInfo}>
                     Ønsker du mer teknisk info? <br />

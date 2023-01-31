@@ -32,7 +32,7 @@ const EntrepreneurialJourney = () => {
                         alt="Idémyldring"
                         width={607}
                         height={443}
-                        objectFit="cover"
+                        style={{ objectFit: 'cover' }}
                         className={styles.image}
                     />
 

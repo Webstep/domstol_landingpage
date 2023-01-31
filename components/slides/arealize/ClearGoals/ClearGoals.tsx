@@ -87,7 +87,7 @@ const ClearGoals: React.FC = () => {
                         alt=""
                         width={481}
                         height={598}
-                        objectFit={'cover'}
+                        style={{ objectFit: 'cover' }}
                     />
                 </motion.div>
                 <motion.div
@@ -101,7 +101,7 @@ const ClearGoals: React.FC = () => {
                         alt=""
                         width={481}
                         height={300}
-                        objectFit={'cover'}
+                        style={{ objectFit: 'cover' }}
                     />
                 </motion.div>
             </div>
