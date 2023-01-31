@@ -19,11 +19,12 @@ const CtoCitation = () => {
             <div className={styles.media}>
                 <motion.div
                     initial={isMobile ? {} : { x: -200, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     exit={{ y: -400, opacity: 0 }}
                     transition={{
                         duration: 1,
                     }}
+                    viewport={{ once: true }}
                 >
                     <video
                         autoPlay
@@ -39,9 +40,10 @@ const CtoCitation = () => {
             >
                 <motion.div
                     initial={{ y: 200, opacity: 0 }}
-                    animate={isMobile ? { y: -200, opacity: 1 } : { y: 0, opacity: 1 }}
+                    whileInView={isMobile ? { y: -200, opacity: 1 } : { y: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     exit={{ y: 100, opacity: 0 }}
+                    viewport={{ once: true }}
                 >
                     <Citation
                         quote="Vi fokuserer på å gjenbruke så mye som mulig innad i bygget, men samtidig tilpasse det til den nye leietakeren"

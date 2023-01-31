@@ -49,11 +49,12 @@ const HairyGoals = () => {
             <div className={styles.media}>
                 <motion.div
                     initial={{ x: -200, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
+                    whileInView={{ x: 0, opacity: 1 }}
                     exit={{ y: -400, opacity: 0 }}
                     transition={{
                         duration: 1,
                     }}
+                    viewport={{ once: true }}
                 >
                     <Image className={styles.hermanImage}
                         src="/assets/domstol/images/herman_seip.jpg"
@@ -67,8 +68,9 @@ const HairyGoals = () => {
             <motion.div
                 variants={descriptionContainer}
                 initial="hidden"
-                animate="show"
+                whileInView="show"
                 exit="leave"
+                viewport={{ once: true }}
                 className={styles.description}
             >
                 <div className={styles.intro}>

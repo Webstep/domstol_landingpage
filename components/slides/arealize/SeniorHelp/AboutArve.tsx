@@ -5,53 +5,18 @@ import { Title, Text } from '../../../common/Typography';
 import { useContext } from 'react';
 import { DeviceContext } from '../../../common/Device';
 
-const containerVariants: Variants = {
-    initial: { x: 100, y: 50, opacity: 0 },
-    animate: {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        transition: {
-            duration: 1,
-        }
-    },
-    exit: {
-        x: 100,
-        y: 50,
-        opacity: 0,
-        transition: {
-            duration: 1,
-        }
-    }
-}
-
-const imageVariants: Variants = {
-    initial: {
-        y: -100,
-        x: 50,
-        opacity: 0,
-        zIndex: 999
-    },
-    animate: {
-        y: 0,
-        x: 0,
-        opacity: 1,
-        transition: {
-            duration: 1
-        }
-    },
-    exit: {
-        y: -100, x: 50, opacity: 0,
-        transition: { duration: 1 }
-    }
-}
-
 export const AboutArve = () => {
     const { isMobile } = useContext(DeviceContext)
 
     return (
         <div className={styles.container}>
-            <motion.div className={styles.singleImageContainer} {...(!isMobile ? imageVariants : {})}>
+            <motion.div
+                className={styles.singleImageContainer}
+                initial={isMobile ? {} : { x: -100, y: 50, opacity: 0, zIndex: 999 }}
+                whileInView={isMobile ? {} : { x: 0, y: 0, opacity: 1, transition: { duration: 1 } }}
+                exit={isMobile ? {} : { x: 50, y: -100, opacity: 0, transition: { duration: 1 } }}
+                viewport={{ once: true }}
+            >
                 <Image
                     src="/assets/arealize/images/arve.png"
                     width={618}
@@ -60,7 +25,13 @@ export const AboutArve = () => {
                 />
             </motion.div>
 
-            <motion.div className={styles.description} {...(!isMobile ? containerVariants : {})}>
+            <motion.div
+                className={styles.description}
+                initial={isMobile ? {} : { x: 100, y: 50, opacity: 0 }}
+                whileInView={isMobile ? {} : { x: 0, y: 0, opacity: 1, transition: { duration: 1 } }}
+                exit={isMobile ? {} : { x: 100, y: 50, opacity: 0, transition: { duration: 1 } }}
+                viewport={{ once: true }}
+            >
                 <Title>Seniorhjelp</Title>
                 <Text>
                     Arve har Master of Computer Science fra NTNU med spesialisering innen Kunstig Intelligens. Som arkitekt har Arve bygget seg opp en sterk erfaringsbase og drevet utrettelig med kompetansebygging innenfor faget.
