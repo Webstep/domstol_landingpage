@@ -84,7 +84,10 @@ const SeniorHelp = () => {
                 <div className={styles.imageContainer} data-animate={shouldChangeImage}>
                     <motion.div
                         className={styles.ellipse}
-                        {...(!isMobile ? imageVariants : {})}
+                        initial={isMobile ? {} : { y: -100, x: 50, opacity: 0, zIndex: 999 }}
+                        whileInView={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
+                        exit={{ y: -100, x: 50, opacity: 0, transition: { duration: 1 } }}
+                        viewport={{ once: true }}
                     >
                         <Image
                             src={'/assets/arealize/ellipse.svg'}
@@ -93,7 +96,13 @@ const SeniorHelp = () => {
                             alt={'Webstep'}
                         />
                     </motion.div>
-                    <motion.div className={styles.imageRight} {...(!isMobile ? imageVariants : {})}>
+                    <motion.div
+                        className={styles.imageRight}
+                        initial={isMobile ? {} : { y: -100, x: 50, opacity: 0, zIndex: 999 }}
+                        whileInView={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
+                        exit={{ y: -100, x: 50, opacity: 0, transition: { duration: 1 } }}
+                        viewport={{ once: true }}
+                    >
                         <Image
                             src="/assets/arealize/images/seniorhelp.png"
                             width={463}
@@ -101,12 +110,28 @@ const SeniorHelp = () => {
                             alt="Yanislav peker på tavle"
                         />
                     </motion.div>
-                    <motion.video width={574} height={327} loop muted autoPlay {...(!isMobile ? videoVariants : {})}>
+                    <motion.video
+                        width={574}
+                        height={327}
+                        loop
+                        muted
+                        autoPlay
+                        initial={isMobile ? {} : { y: 100, x: -50, opacity: 0 }}
+                        whileInView={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
+                        exit={{ y: 100, x: -50, opacity: 0, transition: { duration: 1 } }}
+                        viewport={{ once: true }}
+                    >
                         <source src="/assets/arealize/videos/seniorhelp-loop.mov" type="video/mp4" />
                     </motion.video>
 
                 </div>
-                <motion.div className={styles.description} {...(!isMobile ? containerVariants : {})}>
+                <motion.div
+                    className={styles.description}
+                    initial={isMobile ? {} : { x: 100, y: 50, opacity: 0 }}
+                    whileInView={{ x: 0, y: 0, opacity: 1, transition: { duration: 1 } }}
+                    exit={{ x: 100, y: 50, opacity: 0, transition: { duration: 1 } }}
+                    viewport={{ once: true }}
+                >
                     <Title>Seniorhjelp</Title>
                     {isMobile &&
                         <Text isOverlay>

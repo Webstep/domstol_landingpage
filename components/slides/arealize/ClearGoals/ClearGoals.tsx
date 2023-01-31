@@ -45,8 +45,9 @@ const ClearGoals: React.FC = () => {
                 <div className={styles.textSection}>
                     <motion.div
                         initial={isMobile ? {} : { y: -200, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                        whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ x: 100, opacity: 0, transition: exitTransition }}
+                        viewport={{ once: true }}
                     >
                         <Title className={styles.heading}>
                             <div className={styles.stickyDiv}>
@@ -57,8 +58,9 @@ const ClearGoals: React.FC = () => {
 
                     <motion.div
                         initial={isMobile ? {} : { x: 200, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1, transition: enterTransistion }}
+                        whileInView={{ x: 0, opacity: 1, transition: enterTransistion }}
                         exit={{ y: 100, opacity: 0, transition: exitTransition }}
+                        viewport={{ once: true }}
                     >
                         <div className={styles.description}>
                             {isMobile ?
@@ -79,8 +81,9 @@ const ClearGoals: React.FC = () => {
                 <motion.div
                     className={styles.mediaLeft}
                     initial={{ y: 0, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                    whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                     exit={{ x: 0, opacity: 0, transition: exitTransition }}
+                    viewport={{ once: true }}
                 >
                     <Image
                         src={'/assets/arealize/images/clear-goal-left.png'}
@@ -93,8 +96,9 @@ const ClearGoals: React.FC = () => {
                 <motion.div
                     className={styles.mediaRight}
                     initial={{ x: 0, opacity: 1 }}
-                    animate={{ y: 0, opacity: 1, transition: enterTransistion }}
+                    whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                     exit={{ x: 0, opacity: 1, transition: exitTransition }}
+                    viewport={{ once: true }}
                 >
                     <Image
                         src={'/assets/arealize/images/clear-goal-right.png'}
