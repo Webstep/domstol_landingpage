@@ -33,8 +33,8 @@ const ArealizeIntroduction: React.VFC = () => {
                 <div className={styles.imageContainer}>
                     <Image
                         src={'/assets/arealize/images/arealize-intro-mobile.png'}
-                        layout="fill"
-                        objectFit='cover'
+                        fill
+                        style={{ objectFit: 'cover' }}
                         alt="Arealize intro"
                     />
                 </div>

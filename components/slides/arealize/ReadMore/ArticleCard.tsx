@@ -16,9 +16,14 @@ const ArticleCard = ({ title, description, image, link }: ArticleCardProps) => {
     if (isMobile) {
         return (
             <div className={styles.articleCard} onClick={() => window.open(link)}>
-                <Image src={image} alt={
-                    title
-                } width={390} height={472} />
+                <Image
+                    src={image}
+                    alt={
+                        title
+                    }
+                    width={390}
+                    height={472}
+                />
                 <div className={styles.cardContent}>
                     <h2 className={styles.title} >{title}</h2>
                     <p className={styles.description}>{description}</p>

@@ -60,7 +60,7 @@ const HairyGoals = () => {
                         alt="bilde av Herman Seip"
                         width={435}
                         height={580}
-                        objectFit={'cover'}
+                        style={{ objectFit: 'cover' }}
                     />
                 </motion.div>
             </div>
