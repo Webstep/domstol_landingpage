@@ -7,6 +7,7 @@ import ImportantCompetency from '../components/slides/domstol/ImportantCompetenc
 import NumberSlide from '../components/slides/domstol/NumberSlide'
 import VideoSlideTech from '../components/slides/domstol/VideoSlideTech'
 import VideoSlideWebstep from '../components/slides/domstol/VideoSlideWebstep'
+import Employee from '../components/slides/domstol/EmployeeSlide/Employee'
 
 const Domstol = () => {
     return (
@@ -19,6 +20,7 @@ const Domstol = () => {
             <VideoSlideWebstep />
             <NumberSlide />
             <VideoSlideTech />
+            <Employee />
         </>
     )
 }
