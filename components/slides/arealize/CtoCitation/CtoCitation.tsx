@@ -46,9 +46,9 @@ const CtoCitation = () => {
                     viewport={{ once: true }}
                 >
                     <Citation
-                        quote="Vi fokuserer på å gjenbruke så mye som mulig innad i bygget, men samtidig tilpasse det til den nye leietakeren"
+                        quote="Vi fokuserer på gjenbruk - og personlig tilpasning til nye leietakere"
                         name="Yanislav Zagorov"
-                        occupation="CTO i Arealize"
+                        occupation="Arealize CTO"
                         quoteType="short"
                     />
                 </motion.div>

@@ -59,7 +59,7 @@ const TechDetails: React.FC = () => {
             >
                 <Citation quote="Vi har fått lov til å være med å utvikle den teknologien som kommer til å ligge foran oss i mange år"
                     name="Carl Fredrik Bøkestad"
-                    occupation="Systemutvikler, Webstep" variants={item} />
+                    occupation="Arkitekt, Webstep" variants={item} />
                 <Citation variants={item} quote="
                         Webstep kom inn i prosjektet på et helt nytt fagfelt for alle involverte. DA har lagt godt til rette for oss og var klare over at vi ikke kunne så mye fra før. Det gode samarbeidet mellom DA og Webstep har vært avgjørende for dette prosjektet."
                 />

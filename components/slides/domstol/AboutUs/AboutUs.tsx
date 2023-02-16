@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Text } from '../../../common/Typography'
 import { DeviceContext } from '../../../common/Device'
+import Link from 'next/link'
 
 const AboutUs = () => {
     const { isMobile } = useContext(DeviceContext)
@@ -11,6 +12,11 @@ const AboutUs = () => {
 
     return (
         <section className={styles.section} >
+            {isMobile && <div className={styles.caseLink}>
+                <Link href={'/Arealize'}>Arealize</Link>
+                <div className={styles.rectangle}></div>
+                <Link href={'/Domstol'}>Domstol</Link>
+            </div>}
             <div className={styles.media}>
                 <motion.div
                     className={styles.weaponShield}
