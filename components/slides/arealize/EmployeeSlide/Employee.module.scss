@@ -1,0 +1,53 @@
+@use 'styles/variables.scss' as *;
+$background: #1a66ff;
+
+.section {
+    @include centerContent;
+    flex-direction: column;
+    gap: 2.5rem;
+    background: $background;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 4rem;
+}
+
+.textSection {
+    max-width: 250px;
+    text-align: left;
+}
+
+.quote {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-small;
+}
+
+.name {
+    font-family: $font-family-pixel;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
+}
+
+.title {
+    font-weight: $font-weight-normal;
+    font-size: $font-size-medium;
+    margin-top: -0.8vw;
+
+    display: flex;
+    flex-direction: row;
+}
+
+@include mobile {
+    .container {
+        flex-direction: column;
+    }
+
+    .section {
+        height: fit-content;
+        padding-bottom: 10vh;
+    }
+}

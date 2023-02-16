@@ -5,6 +5,7 @@ import EntrepreneurialJourney from '../components/slides/arealize/Entrepreneuria
 import Introduction from "../components/slides/arealize/Introduction";
 import SeniorHelp from "../components/slides/arealize/SeniorHelp";
 import WayForward from '../components/slides/arealize/WayForward';
+import Employee from "../components/slides/arealize/EmployeeSlide/Employee";
 // import ReadMore from "../components/slides/arealize/ReadMore";
 
 const Arealize = () => {
@@ -16,6 +17,7 @@ const Arealize = () => {
             <SeniorHelp />
             <EntrepreneurialJourney />
             <WayForward />
+            <Employee />
             {/* Add read more, when more cases is introduced
             <ReadMore /> */}
         </>
