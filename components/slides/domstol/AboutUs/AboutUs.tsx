@@ -12,11 +12,11 @@ const AboutUs = () => {
 
     return (
         <section className={styles.section} >
-            <div className={styles.caseLink}>
+            {isMobile && <div className={styles.caseLink}>
                 <Link href={'/Arealize'}>Arealize</Link>
                 <div className={styles.rectangle}></div>
                 <Link href={'/Domstol'}>Domstol</Link>
-            </div>
+            </div>}
             <div className={styles.media}>
                 <motion.div
                     className={styles.weaponShield}
