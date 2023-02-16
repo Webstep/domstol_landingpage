@@ -34,13 +34,13 @@ export const AboutArve = () => {
             >
                 <Title>Seniorhjelp</Title>
                 <Text>
-                    Arve har Master of Computer Science fra NTNU med spesialisering innen Kunstig Intelligens. Som arkitekt har Arve bygget seg opp en sterk erfaringsbase og drevet utrettelig med kompetansebygging innenfor faget.
+                    Arve har Master of Computer Science fra NTNU, med spesialisering innen kunstig intelligens. Han har omfattende erfaring som arkitekt og har drevet utrettelig kompetansebygging på sine fagområder.
                 </Text>
                 <Text>
-                    Hos etablerte og anerkjente selskaper, som Enova, Trønderenergi og Telenor Digital, har han stått for arkitekturen av flere forretningskritiske systemer. Eksempelvis tjenester for overvåkning og styring av strømnettet og varslingssystemer og innen domenet betalingsløsninger. Han har jobbet med arkitektur, infrastruktur og integrering hos giganter som Telenor Digital, Trønderenergi og Aker BP, samt hos oppstartsselskap som Arealize, Spiff og Stready.
+                    Arve har stått for arkitekturen på flere forretningskritiske systemer for anerkjente selskaper som Aker BP,  Enova, Trønderenergi og Telenor Digital, blant annet på tjenester for overvåkning og styring av strømnettet og varslingssystemer innen betalingsløsninger. Han har også jobbet med arkitektur, infrastruktur og integrering både for store selskapet og oppstartsselskaper som Arealize, Spiff og Stready.
                 </Text>
                 <Text>
-                    Arve har nylig gjennomført en større leveranse i rollen som arkitekt og utvikler for Enova. Her har Arve vært ansvarlig for å designet og utvikle Enovas nye digitale forretningsplattform, Plattform 42. Den skybaserte plattformen vil være en verktøykasse for digitalisering av energi- og klimavirkemidler.
+                    Som arkitekt  og utvikler har Arve nylig gjennomført en større leveranse for Enova. Her har han hatt ansvar for for design og utvikling av Enovas nye digitale og skybaserte forretningsplattform, Plattform 42 - en verktøykasse for digitalisering innen energi og klima.
                 </Text>
                 <a className={styles.link} href='https://www.webstep.no/arve-nygard/'>
                     Les mer om Arve her

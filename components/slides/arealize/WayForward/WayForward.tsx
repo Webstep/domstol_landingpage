@@ -34,8 +34,8 @@ const WayForward = () => {
                     viewport={{ once: true }}
                 >
                     <Title className={styles.title}>veien videre</Title>
-                    <Text isOverlay>Fremtiden til Arealize ser lys ut. De er i full sving med brukertesting og vet hva neste steg i prosessen er.</Text>
-                    <Citation quote="Akkurat nå har vi mye på gang. Vi har jobbet hardt og vi liker retningen vi går i. Så her er det bare å holde farten og fortsette med utviklingen!" name="Yanislav Zagorov" occupation='CTO i Arealize' />
+                    <Text isOverlay>Fremtiden til Arealize ser lys ut. De er i full sving med brukertesting og vet hva neste steg er.</Text>
+                    <Citation quote="Akkurat nå har vi mye på gang. Vi har jobbet hardt og vi liker retningen vi går i. Nå er det bare å holde farten og fortsette utviklingen!" name="Yanislav Zagorov" occupation='Arealize CTO' />
                 </motion.div>
                 {!isMobile && <motion.div
                     className={styles.image}

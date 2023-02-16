@@ -70,16 +70,14 @@ const ArealizeIntroduction: React.VFC = () => {
                             </Text>
                         </div>
                         :
-                        <Text>
-                            Arealize er en oppstartsabedrift fra NTNU som utvikler
-                            programvare for AI-drevne plantegninger. Arealize skal
-                            gjøre det lettere for eiendomssjefer å anskaffe nye
-                            leietakere for byggene sine. Ved hjelp av en automatisk
-                            plantegninsgenerator kan brukere uten teknisk bakgrunn
-                            også involvere seg i prosessen. Med fokus på kontorbygg,
-                            har Arealize som ambisjon å være det ledende verktøyet
-                            for å skape gode og effektive arbeidsområder.
-                        </Text>
+                        <>
+                            <Text>
+                                NTNU-oppstartsbedriften Arealize utvikler programvare for AI-drevne plantegninger. Selskapet skal gjøre det enklere for eiendomssjefer å skaffe nye leietakere i byggene sine.
+                            </Text>
+                            <Text>
+                                Helt uten tekniske forkunnskaper kan kunder og brukere delta i avansert modellering av arealer, på jakt etter de beste og mest effektive løsningene. Arealize sikter mot å bli bransjeledende.
+                            </Text>
+                        </>
                     }
                     <div className={styles.scrollDown}>
                         <span>Scroll</span>

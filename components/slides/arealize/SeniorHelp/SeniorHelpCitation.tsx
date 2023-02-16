@@ -18,8 +18,7 @@ export const SeniorHelpCitation = () => {
                     exit={{ opacity: 0, x: 200 }}
                     viewport={{ once: true }}
                 >
-                    Webstep har satt oss i kontakt med verdifulle personer og vært med på å bygge kulturen innad i Arealize som et sted å vokse og lære
-                </motion.q>
+                    Webstep har satt oss i kontakt med verdifulle personer og vært med på å bygge Arealize-kulturen som et sted å vokse og lære                </motion.q>
                 <motion.footer
                     className={styles.signature}
                     initial={{ opacity: 0, x: 200 }}
@@ -28,7 +27,7 @@ export const SeniorHelpCitation = () => {
                     viewport={{ once: true }}
                 >
                     <span className={styles.name}>Yanislav Zagorov,</span>
-                    <span>CTO i Arealize</span>
+                    <span>Arealize CTO</span>
                 </motion.footer>
             </motion.blockquote>
         </div>

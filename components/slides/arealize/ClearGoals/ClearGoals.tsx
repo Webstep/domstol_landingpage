@@ -66,11 +66,11 @@ const ClearGoals: React.FC = () => {
                             {isMobile ?
                                 <Text><b>Målet til Arealize er klart og tydelig:</b> <br /> De ønsker å optimalisere og effektivisere planleggingingsprosessen på en måte som er både juridisk og psykososialt ansvarlig for at arbeidsmiljøet skal bli så bra som mulig.</Text>
                                 :
-                                <Text>Målet er klart og tydelig: Arealize vil optimalisere og effektivisere planleggingingsprosessen på en måte som er både juridisk og psykososialt ansvarlig for at arbeidsmiljøet skal bli så bra som mulig.</Text>
+                                <Text>Arealize vil skape de beste arealene å jobbe i - hensyn tatt til jobbopplevelse, arbeidsmiljø og lovkrav.</Text>
                             }
                             <div className={styles.quote}>
                                 <Citation
-                                    quote="Slik skaper vi arbeidsmiljø som man kan trives i, samtidig som det ser fint ut."
+                                    quote="Vi skal skape fine miljøer som folk trives i"
                                     quoteType="short"
                                     variants={item}
                                 />

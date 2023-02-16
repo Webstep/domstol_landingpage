@@ -80,17 +80,17 @@ const SeniorHelp = () => {
                         <Citation
                             quote='De hjalp oss med produktene, utviklingen, og med å modne hele utviklingsprosessen raskere enn det vi kunne gjort selv. '
                             name='Yanislav Zagorov'
-                            occupation='CTO i Arealize'
+                            occupation='Arealize CTO'
                         />
                         : <Citation
-                            quote={'Vi som studenter kjente på at vi trengte seniorrådgivning. Webstep var interessert i oppstartsbedrifter i Trondheim og vi fant fort ut at vi matchet bra på kompetansen. De hjalp oss med produktene, utviklingen, og med å modne hele utviklingsprosessen raskere enn det vi kunne gjort selv.'}
+                            quote={'Som studenter trengte vi å jobbe sammen med flinke folk. Webstep var opptatt av oppstartsbedrifter i Trondheim og vi opplevde raskt riktig match. De hjalp oss med produktene, utviklingen og med å modne hele utviklingsprosessen raskere enn de vi kunne klart selv.'}
                             name={'Yanislav Zagorov'}
-                            occupation={'CTO i Arealize'}
+                            occupation={'Arealize CTO'}
                         />
                     }
                     <div ref={ref}>
                         <Text isOverlay>
-                            Webstep har koblet Arealize opp mot flere ressurser i selskapet og i Trondheim generelt sett. Arealize var blant annet med på å lage case for et hackathon som Webstep var involvert i, og satte Arealize i kontakt med dyktige studenter fra NTNU.
+                            Arealize har fått tilgang til flinke folk i Webstep og i Webstep sitt nettverk i Trondheim, ikke minst dyktige NTNU-studenter.
                         </Text>
                     </div>
                 </motion.div>
