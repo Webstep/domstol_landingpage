@@ -5,6 +5,7 @@ import styles from './Introduction.module.scss'
 import Gavel from '../../../../public/assets/domstol/gavel.svg';
 import Image from 'next/image';
 import { Text } from '../../../common/Typography'
+import Link from 'next/link';
 
 
 const DomstolIntroduction: React.VFC = () => {
@@ -28,6 +29,11 @@ const DomstolIntroduction: React.VFC = () => {
 
     return (
         <section className={styles.container}>
+            <div className={styles.caseLink}>
+                <Link href={'/Arealize'}>Arealize</Link>
+                <div className={styles.rectangle}></div>
+                <Link href={'/Domstol'}>Domstol</Link>
+            </div>
             <div className={styles.overlay}>
                 <div className={styles.information}>
                     <Image src={Gavel} alt="" height="60" width="60" />

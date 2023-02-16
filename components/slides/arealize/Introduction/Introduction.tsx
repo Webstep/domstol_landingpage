@@ -5,6 +5,7 @@ import styles from './Introduction.module.scss'
 import Image from 'next/image';
 import { Text } from '../../../common/Typography'
 import { DeviceContext } from '../../../common/Device'
+import Link from 'next/link';
 
 
 const ArealizeIntroduction: React.VFC = () => {
@@ -29,6 +30,11 @@ const ArealizeIntroduction: React.VFC = () => {
 
     return (
         <section className={styles.container}>
+            <div className={styles.caseLink}>
+                <Link href={'/Arealize'}>Arealize</Link>
+                <div className={styles.rectangle}></div>
+                <Link href={'/Domstol'}>Domstol</Link>
+            </div>
             {isMobile ?
                 <div className={styles.imageContainer}>
                     <Image
