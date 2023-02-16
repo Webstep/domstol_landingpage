@@ -32,11 +32,11 @@ const ClearGoals: React.FC = () => {
     const { isMobile } = useContext(DeviceContext)
 
     const enterTransistion = {
-        duration: 1.5,
+        duration: 1,
     }
 
     const exitTransition = {
-        duration: 1,
+        duration: 0.5,
     }
 
     return (
@@ -80,9 +80,9 @@ const ClearGoals: React.FC = () => {
                 </div>
                 <motion.div
                     className={styles.mediaLeft}
-                    initial={{ y: 0, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
-                    exit={{ x: 0, opacity: 0, transition: exitTransition }}
+                    initial={{ x: -200, opacity: 0 }}
+                    whileInView={{ x: 0, opacity: 1, transition: enterTransistion }}
+                    exit={{ x: -100, opacity: 0, transition: exitTransition }}
                     viewport={{ once: true }}
                 >
                     <Image
@@ -95,9 +95,9 @@ const ClearGoals: React.FC = () => {
                 </motion.div>
                 <motion.div
                     className={styles.mediaRight}
-                    initial={{ x: 0, opacity: 1 }}
+                    initial={{ y: 200, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
-                    exit={{ x: 0, opacity: 1, transition: exitTransition }}
+                    exit={{ x: 100, opacity: 1, transition: exitTransition }}
                     viewport={{ once: true }}
                 >
                     <Image
