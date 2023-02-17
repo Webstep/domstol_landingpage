@@ -13,7 +13,7 @@ export const EmployeeData: {
         img: Arve,
         firstname: 'Arve',
         lastname: 'Nygård',
-        quote: 'Utførende konsulent i Arealize oppdraget',
+        quote: 'Startups er et kinderegg! Kombinasjonen kreativitet, nysgjerrighet og opplevd verdi av kunnskap er helt gull. Anbefales!',
         role: 'Seniorkonsulent',
         url: 'https://www.webstep.no/arve-nygard/',
     },
