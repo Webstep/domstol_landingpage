@@ -21,6 +21,7 @@ const WayForward = () => {
                 >
                     <video
                         autoPlay
+                        playsInline
                         loop
                         muted
                         src="/assets/arealize/videos/Arealize_loop2_1920x1080.mp4"

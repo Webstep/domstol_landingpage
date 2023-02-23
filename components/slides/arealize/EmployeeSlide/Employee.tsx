@@ -130,7 +130,7 @@ const Employee = () => {
             <Title>MØT VÅRE WEBSTEPPERE</Title>
             <div className={styles.container}>
                 <div className={styles.employees}>
-                    <AnimatePresence exitBeforeEnter>
+                    <AnimatePresence mode='wait'>
                         {img}
                     </AnimatePresence>
 
@@ -162,12 +162,12 @@ const Employee = () => {
                             , Webstep
                         </motion.span>
                     </p>
-                    <AnimatePresence exitBeforeEnter>
+                    <AnimatePresence mode='wait'>
                         {quote}
                     </AnimatePresence>
                 </div>
             </div>
-            <ProgressBar progress={currentEmployee} size={EmployeeData.length} onClick={(value) => setCurrentEmployee(value)} />
+            {/* <ProgressBar progress={currentEmployee} size={EmployeeData.length} onClick={(value) => setCurrentEmployee(value)} /> */}
         </section>
     )
 }
