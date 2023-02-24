@@ -42,12 +42,13 @@ $background: #1a66ff;
 }
 
 @include mobile {
-    .container {
-        flex-direction: column;
-    }
-
     .section {
         height: fit-content;
-        padding-bottom: 10vh;
+        padding-top: 20vh;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 0rem;
     }
 }

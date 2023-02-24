@@ -28,6 +28,7 @@ const CtoCitation = () => {
                 >
                     <video
                         autoPlay
+                        playsInline
                         loop
                         muted
                         src="/assets/arealize/videos/Arealize_loop1.mov"
@@ -39,7 +40,7 @@ const CtoCitation = () => {
                 ref={ref}
             >
                 <motion.div
-                    initial={{ y: 200, opacity: 0 }}
+                    initial={isMobile ? {} : { y: 200, opacity: 0 }}
                     whileInView={isMobile ? { y: -200, opacity: 1 } : { y: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                     exit={{ y: 100, opacity: 0 }}

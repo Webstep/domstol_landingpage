@@ -80,7 +80,7 @@ const ClearGoals: React.FC = () => {
                 </div>
                 <motion.div
                     className={styles.mediaLeft}
-                    initial={{ x: -200, opacity: 0 }}
+                    initial={isMobile ? {} : { x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: enterTransistion }}
                     exit={{ x: -100, opacity: 0, transition: exitTransition }}
                     viewport={{ once: true }}
@@ -95,7 +95,7 @@ const ClearGoals: React.FC = () => {
                 </motion.div>
                 <motion.div
                     className={styles.mediaRight}
-                    initial={{ y: 200, opacity: 0 }}
+                    initial={isMobile ? {} : { y: 200, opacity: 0 }}
                     whileInView={{ y: 0, opacity: 1, transition: enterTransistion }}
                     exit={{ x: 100, opacity: 1, transition: exitTransition }}
                     viewport={{ once: true }}
