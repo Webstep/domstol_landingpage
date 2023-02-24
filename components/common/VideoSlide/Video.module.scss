@@ -7,6 +7,7 @@
     grid-template-rows: 90% 10%;
     grid-template-columns: 5% 10% 70% 15%;
     background-color: black;
+    overflow: hidden;
 
     video {
         grid-column: 1/5;

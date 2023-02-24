@@ -16,11 +16,16 @@
         .video {
             grid-column: 1 / 2;
             grid-row: 1 / 3;
-            object-fit: cover;
             height: 100%;
             max-width: 100%;
             overflow: hidden;
-            object-position: 40% 50%;
+
+            video {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: 40% 50%;
+            }
         }
 
         .image {
