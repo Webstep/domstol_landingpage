@@ -11,6 +11,7 @@ const Navbar = () => {
                     width={52}
                     height={37}
                     alt={'Webstep'}
+                    priority
                 />
             </Link>
             {/* <div className={styles.menu}>

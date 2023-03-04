@@ -61,18 +61,18 @@ $background: linear-gradient(180deg, #f07589 0%, #c42d46 132.12%);
         align-items: center;
         justify-content: center;
 
-        &::after,
-        &::before {
+        &::after {
             content: '';
             background: $background;
             height: 100%;
         }
 
-        &::before {
-            background-image: url('/assets/domstol/background-cutout.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: left;
+        .cutout {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            grid-column: 1;
+            object-position: left center;
         }
 
         .information {

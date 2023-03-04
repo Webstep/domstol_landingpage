@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { Text } from '../../../common/Typography'
 import { DeviceContext } from '../../../common/Device'
 import Link from 'next/link';
+import Cutout from '../../../../public/assets/arealize/background-cutout.svg';
 
 
 const ArealizeIntroduction: React.VFC = () => {
@@ -55,6 +56,7 @@ const ArealizeIntroduction: React.VFC = () => {
                     />
                 </motion.div>}
             <div className={styles.overlay}>
+                <Image src={Cutout} alt={''} className={styles.cutout} priority />
                 <div className={styles.information}>
                     {!isMobile && <Image src={'/assets/arealize/logo.svg'} alt="" height="60" width="60" />}
                     <h1>
