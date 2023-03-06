@@ -3,13 +3,12 @@ import React from 'react'
 import ArrowButton, { Direction } from '../../../common/ArrowButton'
 import styles from './Introduction.module.scss'
 import Gavel from '../../../../public/assets/domstol/gavel.svg';
+import Cutout from '../../../../public/assets/domstol/background-cutout.svg';
 import Image from 'next/image';
 import { Text } from '../../../common/Typography'
 import Link from 'next/link';
 
-
 const DomstolIntroduction: React.VFC = () => {
-
     const controls = useAnimation()
 
     const startAnimation = () => {
@@ -35,8 +34,9 @@ const DomstolIntroduction: React.VFC = () => {
                 <Link href={'/Domstol'}>Domstol</Link>
             </div>
             <div className={styles.overlay}>
+                <Image src={Cutout} alt={''} className={styles.cutout} priority />
                 <div className={styles.information}>
-                    <Image src={Gavel} alt="" height="60" width="60" />
+                    <Image src={Gavel} alt="" height="60" width="60" priority />
                     <h1>
                         DIGITALISERING <br /> AV DOMSTOLENE
                     </h1>

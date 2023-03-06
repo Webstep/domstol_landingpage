@@ -61,18 +61,18 @@ $background: linear-gradient(180deg, #1a66ff 0%, #1a66ff 100%);
         align-items: center;
         justify-content: center;
 
-        &::after,
-        &::before {
+        &::after {
             content: '';
             background: $background;
             height: 100%;
         }
 
-        &::before {
-            background-image: url('/assets/arealize/background-cutout.svg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: left;
+        .cutout {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            grid-column: 1;
+            object-position: left center;
         }
 
         .information {
@@ -171,7 +171,7 @@ $background: linear-gradient(180deg, #1a66ff 0%, #1a66ff 100%);
             height: auto !important;
 
             &::after,
-            &::before {
+            .cutout {
                 display: none;
             }
 
