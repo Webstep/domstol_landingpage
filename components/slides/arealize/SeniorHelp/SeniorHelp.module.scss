@@ -24,10 +24,18 @@ $background: #1a66ff;
     }
 
     .ellipse {
-        grid-column: 1 / 5;
+        grid-column: 1 / 2;
         align-self: flex-start;
-        justify-self: flex-start;
-        margin: 50px 0 0 20px;
+        justify-self: flex-end;
+        margin-top: 50px;
+        overflow: hidden;
+        z-index: 999;
+        height: 125px;
+        width: 125px;
+
+        div {
+            transform-origin: bottom right;
+        }
     }
 
     div {

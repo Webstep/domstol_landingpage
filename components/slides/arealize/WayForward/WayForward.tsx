@@ -16,11 +16,11 @@ const WayForward = () => {
                     className={styles.video}
                     initial={isMobile ? {} : { x: -200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-                    exit={{ x: -100, opacity: 0, transition: { duration: 1 } }}
                     viewport={{ once: true }}
                 >
                     <video
                         autoPlay
+                        playsInline
                         loop
                         muted
                         src="/assets/arealize/videos/Arealize_loop2_1920x1080.mp4"
@@ -30,7 +30,6 @@ const WayForward = () => {
                     className={styles.description}
                     initial={isMobile ? {} : { x: 200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-                    exit={{ x: 100, opacity: 0, transition: { duration: 1 } }}
                     viewport={{ once: true }}
                 >
                     <Title className={styles.title}>veien videre</Title>
@@ -41,7 +40,6 @@ const WayForward = () => {
                     className={styles.image}
                     initial={{ x: 200, opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1, transition: { duration: 1 } }}
-                    exit={{ x: 100, opacity: 0, transition: { duration: 1 } }}
                     viewport={{ once: true }}
                 >
                     <Image src="/assets/arealize/images/way-forward.png" alt="Det jobbes hardt på Arealize kontoret"

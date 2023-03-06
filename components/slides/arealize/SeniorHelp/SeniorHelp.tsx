@@ -15,30 +15,30 @@ const SeniorHelp = () => {
     // height + padding = 200vh. => threshold = 200vh * 0.25 = 50vh
     const { ref, inView: shouldChangeImage } = useInView({ threshold: 0.25 })
 
-
     return (
         <section className={styles.section}>
             <div className={styles.container}>
                 <div className={styles.imageContainer} data-animate={shouldChangeImage}>
-                    <motion.div
+                    <div
                         className={styles.ellipse}
-                        initial={isMobile ? {} : { y: -100, x: 50, opacity: 0, zIndex: 999 }}
-                        whileInView={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
-                        exit={{ y: -100, x: 50, opacity: 0, transition: { duration: 1 } }}
-                        viewport={{ once: true }}
                     >
-                        <Image
-                            src={'/assets/arealize/ellipse.svg'}
-                            width={125}
-                            height={125}
-                            alt={'Webstep'}
-                        />
-                    </motion.div>
+                        <motion.div
+                            initial={isMobile ? {} : { height: 0, width: 0, rotate: 270, scale: 0.3 }}
+                            whileInView={{ height: 125, width: 125, rotate: 0, scale: 1, transition: { duration: 1, delay: 1 } }}
+                            viewport={{ once: true }}
+                        >
+                            <Image
+                                src={'/assets/arealize/ellipse.svg'}
+                                width={125}
+                                height={125}
+                                alt={'Webstep'}
+                            />
+                        </motion.div>
+                    </div>
                     <motion.div
                         className={styles.imageRight}
                         initial={isMobile ? {} : { y: -100, x: 50, opacity: 0, zIndex: 999 }}
                         whileInView={{ y: 0, x: 0, opacity: 1, transition: { duration: 1 } }}
-                        exit={{ y: -100, x: 50, opacity: 0, transition: { duration: 1 } }}
                         viewport={{ once: true }}
                     >
                         <Image
