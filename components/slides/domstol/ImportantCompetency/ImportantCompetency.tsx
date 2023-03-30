@@ -40,7 +40,7 @@ const ImportantCompetency: React.FC = () => {
                     >
                         <Title className={styles.heading}>
                             <div className={styles.stickyDiv}>
-                                TRENGER VIKTIG KOMPETANSE FRA WEBSTEP
+                                WEBSTEP BIDRAR MED VIKTIG KOMPETANSE
                             </div>
                         </Title>
                     </motion.div>
