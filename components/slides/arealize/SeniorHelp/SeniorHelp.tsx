@@ -83,7 +83,7 @@ const SeniorHelp = () => {
                             occupation='Arealize CTO'
                         />
                         : <Citation
-                            quote={'Som studenter trengte vi å jobbe sammen med flinke folk. Webstep var opptatt av oppstartsbedrifter i Trondheim og vi opplevde raskt riktig match. De hjalp oss med produktene, utviklingen og med å modne hele utviklingsprosessen raskere enn de vi kunne klart selv.'}
+                            quote={'Webstep var opptatt av oppstartsbedrifter i Trondheim og vi opplevde raskt riktig match. De hjalp oss med produktene, utviklingen og med å modne hele utviklingsprosessen raskere enn de vi kunne klart selv.'}
                             name={'Yanislav Zagorov'}
                             occupation={'Arealize CTO'}
                         />
