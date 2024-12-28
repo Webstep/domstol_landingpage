@@ -3,7 +3,7 @@ import VideoSlide from '../../common/VideoSlide';
 
 const VideoSlideWebstep = () => {
     return (
-        <VideoSlide src="https://s3.tebi.io/webstep/Webstep_DA_hovedfilm_v01_utentekst.mp4"
+        <VideoSlide src="https://webstep-kundehistorier.fra1.cdn.digitaloceanspaces.com/Webstep_DA_hovedfilm_v01_utentekst.mp4"
             autoplay={true} landscape />
     );
 };

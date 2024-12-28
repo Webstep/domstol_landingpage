@@ -14,10 +14,6 @@ const Navbar = () => {
                     priority
                 />
             </Link>
-            {/* <div className={styles.menu}>
-                <div>Meny</div>
-                <div className={styles.hamburgerMenu}></div>
-            </div> */}
         </nav>
     )
 }
